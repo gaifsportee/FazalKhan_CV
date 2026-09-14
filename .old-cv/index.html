@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazal Khan — AI Video Creator & VFX Artist</title>
+  <meta name="description" content="Interactive CV of Fazal Khan — AI Video Creator, VFX Artist, and Digital Production Specialist based in Wrocław, Poland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="progress-bar"></div>
+
+  <!-- BACKGROUND -->
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- NAV DOTS -->
+  <nav class="nav-dots" aria-label="Section navigation">
+    <div class="nav-dot active" data-target="hero"       data-label="Intro"></div>
+    <div class="nav-dot"        data-target="summary"    data-label="Summary"></div>
+    <div class="nav-dot"        data-target="skills"     data-label="Skills"></div>
+    <div class="nav-dot"        data-target="experience" data-label="Experience"></div>
+    <div class="nav-dot"        data-target="tools"      data-label="Tools"></div>
+    <div class="nav-dot"        data-target="ai"         data-label="AI Tools"></div>
+    <div class="nav-dot"        data-target="education"  data-label="Education"></div>
+    <div class="nav-dot"        data-target="languages"  data-label="Languages"></div>
+    <div class="nav-dot"        data-target="portfolio"  data-label="Portfolio"></div>
+  </nav>
+
+  <div class="wrapper">
+
+    <!-- ════════════════════════════════════════
+         HERO / HEADER
+    ═══════════════════════════════════════════ -->
+    <header id="section-hero" data-section="hero">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-name">
+            Fazal<br><span class="accent-word">Khan</span>
+          </h1>
+          <div class="hero-tagline">
+            <span class="tag tag-accent">AI Video Creator</span>
+            <span class="tag tag-teal">VFX Artist</span>
+            <span class="tag tag-remote">Remote · Poland</span>
+          </div>
+          <p style="margin-top:16px; font-size:14px; color:var(--muted);">
+            <span id="typed-title" style="font-weight:600; color:var(--accent); border-right:2px solid var(--accent); padding-right:3px;"></span>
+          </p>
+        </div>
+
+        <div class="hero-contact">
+          <div class="location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Wrocław, Poland — Open to Remote
+          </div>
+          <a href="tel:+48721453840">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.5 1.18 2 2 0 012.5.5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.08a16 16 0 006 6l.86-.86a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +48 721 453 840
+          </a><br>
+          <a href="mailto:fazalkhan.4426@gmail.com">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            fazalkhan.4426@gmail.com
+          </a><br>
+          <a href="https://vimeo.com/1048543687" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+            Vimeo Showreel ↗
+          </a><br>
+          <a href="https://www.behance.net/gaifsportee" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="9" height="9" rx="2"/><rect x="13" y="7" width="9" height="9" rx="2"/></svg>
+            Behance Portfolio ↗
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ════════════════════════════════════════
+         PROFESSIONAL SUMMARY
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-summary" data-section="summary">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Creative media professional with <strong>7+ years of experience</strong> in VFX, post-production, and AI-assisted video production. Proven expertise in compositing, motion design, and generative AI workflows using Nuke, DaVinci Resolve, Unreal Engine, Runway ML, and Adobe Creative Suite. Experienced delivering visual content for international commercial, broadcast, and digital platforms — and teaching production pipelines at university level. Passionate about scaling creative output through generative AI and remote-first collaboration.
+      </p>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CORE SKILLS
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-skills" data-section="skills">
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-wrap">
+        <div class="skill-pill"><span>AI Video Production</span></div>
+        <div class="skill-pill"><span>VFX Compositing</span></div>
+        <div class="skill-pill"><span>Generative AI Workflows</span></div>
+        <div class="skill-pill"><span>Remote Collaboration</span></div>
+        <div class="skill-pill"><span>Visual Storytelling</span></div>
+        <div class="skill-pill"><span>Post-Production Pipeline</span></div>
+        <div class="skill-pill"><span>3D / CG Integration</span></div>
+        <div class="skill-pill"><span>Digital Content Creation</span></div>
+        <div class="skill-pill"><span>Cross-Team Coordination</span></div>
+        <div class="skill-pill"><span>Teaching &amp; Mentorship</span></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PROFESSIONAL EXPERIENCE
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-experience" data-section="experience">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="job-card">
+        <div class="job-top">
+          <div>
+            <div class="job-title-text">Conforming &amp; Compositing Artist</div>
+            <div class="job-company-text">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              <strong>JUICE</strong> · Wrocław, Poland
+            </div>
+          </div>
+          <span class="job-date-badge">2020 – 2025</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Managed conforming workflows and prepared high-resolution footage for complex post-production pipelines</li>
+          <li>Executed advanced compositing: chroma keying, wire removal, motion tracking, and clean-plate creation</li>
+          <li>Coordinated cross-departmental tasks with editors, colorists, and producers via ShotGrid</li>
+          <li>Delivered VFX and motion-design assets for commercial productions and digital marketing campaigns</li>
+          <li>Contributed to AI-assisted visual projects including face-swapping, de-aging, and generative video effects</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-top">
+          <div>
+            <div class="job-title-text">Academic Tutor — Creative Media</div>
+            <div class="job-company-text">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <strong>University of Lower Silesia DSW</strong> · Wrocław, Poland
+            </div>
+          </div>
+          <span class="job-date-badge">2020 – Present</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Teach VFX, 3D lighting, rendering, and animation workflows to undergraduate media students</li>
+          <li>Train students in industry-standard production pipelines: compositing, editing, and digital content creation</li>
+          <li>Mentor collaborative student projects simulating real-world remote media production environments</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-top">
+          <div>
+            <div class="job-title-text">3D Generalist / VFX Artist</div>
+            <div class="job-company-text">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              <strong>Kizny Visuals</strong> · Wrocław, Poland
+            </div>
+          </div>
+          <span class="job-date-badge">2023</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Created 3D assets and CG visual content for commercial advertising campaigns</li>
+          <li>Integrated CG elements into live-action footage using advanced compositing techniques</li>
+          <li>Collaborated with creative directors to meet quality and deadline requirements</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-top">
+          <div>
+            <div class="job-title-text">VFX Artist</div>
+            <div class="job-company-text">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <strong>Greymatter VFX</strong> · Mumbai, India
+            </div>
+          </div>
+          <span class="job-date-badge">2015 – 2017</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Produced visual effects for television commercials and broadcast productions in a fast-paced studio environment</li>
+          <li>Performed compositing, keying, rotoscoping, and motion graphics delivery under strict broadcast deadlines</li>
+          <li>Gained foundational experience in international production pipelines and client-facing VFX delivery</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════
+         TECHNICAL TOOLS
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-tools" data-section="tools">
+      <h2 class="section-title">Technical Tools &amp; Software</h2>
+      <table class="tools-table">
+        <tbody>
+          <tr>
+            <td>Compositing &amp; VFX</td>
+            <td class="tool-val"><strong>Nuke</strong> · <strong>Adobe After Effects</strong> · <strong>DaVinci Resolve</strong></td>
+          </tr>
+          <tr>
+            <td>3D &amp; Rendering</td>
+            <td class="tool-val"><strong>Maya</strong> · <strong>Cinema 4D</strong> · <strong>Houdini</strong> · <strong>Redshift</strong> · <strong>Unreal Engine</strong></td>
+          </tr>
+          <tr>
+            <td>Design &amp; Editing</td>
+            <td class="tool-val"><strong>Photoshop</strong> · <strong>Illustrator</strong> · <strong>Premiere Pro</strong></td>
+          </tr>
+          <tr>
+            <td>Production Mgmt</td>
+            <td class="tool-val"><strong>ShotGrid</strong> · <strong>Frame.io</strong> · <strong>Google Workspace</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         AI TOOLS
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-ai" data-section="ai">
+      <h2 class="section-title">AI Tools &amp; Generative Workflow Experience</h2>
+      <div class="ai-grid">
+        <div class="ai-chip">Runway ML</div>
+        <div class="ai-chip">HeyGen</div>
+        <div class="ai-chip">ElevenLabs</div>
+        <div class="ai-chip">Midjourney</div>
+        <div class="ai-chip">Stable Diffusion</div>
+        <div class="ai-chip">ComfyUI</div>
+        <div class="ai-chip">Generative Video &amp; Avatar Tools</div>
+        <div class="ai-chip">AI Pipeline Automation</div>
+        <div class="ai-chip">Prompt Engineering</div>
+        <div class="ai-chip">AI-Assisted Compositing</div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         EDUCATION
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-education" data-section="education">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-cards">
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor's Degree — Creative Media</div>
+          <div class="edu-school">University of Lower Silesia · Wrocław, Poland</div>
+          <span class="edu-loc">🇵🇱 Poland</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Visual Effects &amp; Graphics Design</div>
+          <div class="edu-school">FX School · Mumbai, India</div>
+          <span class="edu-loc">🇮🇳 India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         LANGUAGES
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-languages" data-section="languages">
+      <h2 class="section-title">Languages</h2>
+      <div class="lang-grid">
+        <div class="lang-card primary-lang">
+          <div class="lang-name">English</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-dots">
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Hindi</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-dots">
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot" data-fill></div>
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Polish</div>
+          <div class="lang-level">Basic</div>
+          <div class="lang-dots">
+            <div class="lang-dot" data-fill></div>
+            <div class="lang-dot"></div>
+            <div class="lang-dot"></div>
+            <div class="lang-dot"></div>
+            <div class="lang-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PORTFOLIO
+    ═══════════════════════════════════════════ -->
+    <section class="section-card" id="section-portfolio" data-section="portfolio">
+      <h2 class="section-title">Portfolio &amp; Showreel</h2>
+      <div class="portfolio-btns">
+
+        <a href="https://vimeo.com/1048543687" target="_blank" rel="noopener" class="portfolio-btn portfolio-btn-vimeo">
+          <div class="portfolio-btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="white" stroke="none"/></svg>
+          </div>
+          <div>
+            Vimeo Showreel
+            <span class="portfolio-btn-text">vimeo.com/1048543687</span>
+          </div>
+          <svg class="portfolio-btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="https://www.behance.net/gaifsportee" target="_blank" rel="noopener" class="portfolio-btn portfolio-btn-behance">
+          <div class="portfolio-btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="2" y="7" width="9" height="10" rx="2"/><rect x="13" y="7" width="9" height="10" rx="2"/></svg>
+          </div>
+          <div>
+            Behance Portfolio
+            <span class="portfolio-btn-text">behance.net/gaifsportee</span>
+          </div>
+          <svg class="portfolio-btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         LEGAL
+    ═══════════════════════════════════════════ -->
+    <div class="legal-block">
+      Wyrażam zgodę na przetwarzanie moich danych osobowych przez Simpliteca.com Paweł Moczulski z siedzibą Warszawie (ul. Obrońców Tobruku 18c/25, kod: 01-494) dla potrzeb niezbędnych do realizacji obecnego procesu rekrutacyjnego, zgodnie z postanowieniami: Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE oraz Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych.
+    </div>
+
+  </div><!-- /wrapper -->
+
+  <!-- PRINT FAB -->
+  <button class="print-fab" id="print-btn" aria-label="Download / Print CV">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download CV
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
