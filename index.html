@@ -50,7 +50,7 @@
   @keyframes blink{ 50%{ opacity:.3; } }
   /* HERO — showreel as a faded program view, timeline + nodes, as if working in it */
   .hero-bg{ position:absolute; inset:0; z-index:0; background:#14110d; }
-  .hero-bg video{ width:100%; height:100%; object-fit:cover; display:block; opacity:.52; filter:contrast(1.05) saturate(1.05); }
+  .hero-bg video{ width:100%; height:100%; object-fit:cover; display:block; opacity:.9; filter:contrast(1.05) saturate(1.05); will-change:opacity; }
   .hero-scrim{ position:absolute; inset:0; background:linear-gradient(90deg, var(--paper) 1%, rgba(242,238,226,.8) 25%, rgba(242,238,226,.16) 56%, rgba(242,238,226,.3) 100%), linear-gradient(0deg, var(--paper) 1%, transparent 18%); }
   .hero-chrome{ position:absolute; inset:0; z-index:1; pointer-events:none; }
   .hero-badge{ position:absolute; left:var(--pad); top:92px; font-family:var(--fm); font-size:.56rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink2); display:flex; align-items:center; gap:.4rem; background:rgba(247,244,236,.72); padding:.28rem .55rem; border:1.5px solid var(--ink); }
@@ -64,7 +64,7 @@
   .hero-tl-head{ position:absolute; top:-3px; bottom:-3px; width:2px; background:var(--red); left:0; z-index:2; box-shadow:0 0 8px rgba(229,64,42,.8); will-change:left; }
   .hero-tl-head::before{ content:""; position:absolute; top:-1px; left:-4px; border:5px solid transparent; border-top-color:var(--red); }
   .hero-copy{ position:relative; z-index:2; max-width:640px; }
-  @media (max-width:920px){ .hero-nodes{ display:none; } .hero-bg video{ opacity:.4; } .hero-scrim{ background:linear-gradient(0deg, var(--paper) 5%, rgba(242,238,226,.66) 46%, rgba(242,238,226,.42)); } .hero-badge{ top:76px; } }
+  @media (max-width:920px){ .hero-nodes{ display:none; } .hero-bg video{ opacity:.7; } .hero-scrim{ background:linear-gradient(0deg, var(--paper) 5%, rgba(242,238,226,.6) 48%, rgba(242,238,226,.34)); } .hero-badge{ top:76px; } }
 
   .logos{ border-block:2px solid var(--ink); background:var(--paper2); } .logos .wrap{ display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1.8rem; padding-block:1.3rem; } .logos .lbl{ font-family:var(--fm); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink2); margin-right:.4rem; } .logos .lg{ font-family:var(--fd); font-weight:700; font-size:clamp(.95rem,1.8vw,1.3rem); text-transform:uppercase; color:var(--ink); } .logos .dotsep{ width:6px; height:6px; background:var(--red); transform:rotate(45deg); }
 
@@ -124,10 +124,10 @@
   .chart-card{ border:2px solid var(--ink); border-radius:4px; background:var(--card); box-shadow:6px 6px 0 var(--ink); overflow:hidden; }
   .chart-top{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.2rem; border-bottom:2px solid var(--ink); background:var(--paper2); flex-wrap:wrap; } .chart-top .ctl{ font-family:var(--fk); font-weight:700; text-transform:uppercase; font-size:.9rem; } .metric-btns{ display:flex; gap:.4rem; flex-wrap:wrap; } .mbtn{ font-family:var(--fk); font-weight:600; text-transform:uppercase; font-size:.72rem; cursor:pointer; border:2px solid var(--ink); background:var(--paper); color:var(--ink); padding:.4rem .7rem; border-radius:2px; box-shadow:2px 2px 0 var(--tone); } .mbtn.active{ background:var(--ink); color:var(--paper); box-shadow:2px 2px 0 var(--red); }
   .chart-body{ padding:1.8rem 1.2rem 1rem; } .chart-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; height:280px; align-items:end; }
-  .col{ position:relative; display:flex; flex-direction:column; justify-content:flex-end; height:100%; } .col .barfill{ position:relative; width:100%; background:linear-gradient(180deg,var(--red),var(--red-d)); border:2px solid var(--ink); border-bottom:none; height:0; transition:height .9s var(--ease); min-height:3px; } .col.opt .barfill{ background:repeating-linear-gradient(45deg,var(--ind) 0 8px, #33425f 8px 16px); }
+  .col{ position:relative; display:flex; flex-direction:column; justify-content:flex-end; height:100%; } .col .barfill{ position:relative; width:100%; background:linear-gradient(180deg,var(--red),var(--red-d)); border:2px solid var(--ink); border-bottom:none; height:0; transition:height .9s var(--ease); min-height:3px; } .col.opt .barfill{ background:repeating-linear-gradient(45deg,var(--grn) 0 8px, #2fae7f 8px 16px); }
   .col .val{ position:absolute; top:-1.6rem; left:0; right:0; text-align:center; font-family:var(--fd); font-weight:800; font-size:1rem; opacity:0; transition:opacity .5s .5s; } .col.shown .val{ opacity:1; }
   .col .xl{ margin-top:.6rem; text-align:center; } .col .xl b{ font-family:var(--fk); font-weight:700; text-transform:uppercase; font-size:.76rem; display:block; } .col .xl span{ font-family:var(--fm); font-size:.56rem; color:var(--ink2); text-transform:uppercase; }
-  .col.opt::before{ content:"Sep 11 · fixed"; position:absolute; top:-2.7rem; left:50%; transform:translateX(-50%); font-family:var(--fm); font-size:.54rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ind); white-space:nowrap; background:var(--paper); border:1.5px solid var(--ind); padding:.15rem .4rem; border-radius:3px; }
+  .col.opt::before{ content:"Sep 11 · fixed"; position:absolute; top:-2.7rem; left:50%; transform:translateX(-50%); font-family:var(--fm); font-size:.54rem; text-transform:uppercase; letter-spacing:.08em; color:var(--grn); white-space:nowrap; background:var(--paper); border:1.5px solid var(--grn); padding:.15rem .4rem; border-radius:3px; }
   .chart-note{ padding:1rem 1.2rem; border-top:2px solid var(--ink); background:var(--paper2); font-family:var(--fm); font-size:.62rem; color:var(--ink2); line-height:1.7; text-transform:uppercase; letter-spacing:.03em; }
   .cs-two{ display:grid; grid-template-columns:1.2fr .8fr; gap:1.4rem; margin-top:1.8rem; } @media (max-width:820px){ .cs-two{ grid-template-columns:1fr; } }
   .cs-insight{ border:2px solid var(--ink); border-left-width:6px; border-left-color:var(--red); border-radius:4px; padding:1.4rem 1.6rem; box-shadow:6px 6px 0 var(--ink); background:var(--card); } .cs-insight b{ font-family:var(--fd); font-weight:900; font-size:clamp(1.2rem,3vw,1.7rem); text-transform:uppercase; display:block; } .cs-insight p{ margin-top:.6rem; color:var(--ink2); font-size:.92rem; }
@@ -223,11 +223,11 @@
 
 <header class="nav" id="nav"><div class="wrap">
   <a class="brand" href="#top"><span class="m"></span>marktOS</a>
-  <nav class="nav-links"><a data-scroll="#map">Work</a><a href="about.html">About</a><a data-scroll="#case">Case Study</a><a data-scroll="#reels">Reels</a><a data-scroll="#gallery">Gallery</a><a data-scroll="#contact">Contact</a></nav>
+  <nav class="nav-links"><a data-scroll="#map">Work</a><a href="about.html">About</a><a data-scroll="#case">Case Study</a><a data-scroll="#gallery">Gallery</a><a data-scroll="#contact">Contact</a></nav>
   <button class="nav-cta" data-form>Start a project</button>
   <button class="hamburger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </div></header>
-<div class="mobile-menu" id="mobileMenu"><a data-scroll="#map"><span>01</span>Work</a><a data-scroll="#app"><span>02</span>marktOS App</a><a data-scroll="#case"><span>03</span>Case Study</a><a data-scroll="#reels"><span>04</span>Reels</a><a data-scroll="#gallery"><span>05</span>Gallery</a><a data-scroll="#contact"><span>06</span>Contact</a></div>
+<div class="mobile-menu" id="mobileMenu"><a data-scroll="#map"><span>01</span>Work</a><a data-scroll="#app"><span>02</span>marktOS App</a><a data-scroll="#case"><span>03</span>Case Study</a><a data-scroll="#gallery"><span>04</span>Gallery</a><a data-scroll="#contact"><span>05</span>Contact</a></div>
 
 <main id="top">
   <section class="hero" id="hero">
@@ -252,7 +252,7 @@
       <h1 class="reveal d1">We build brands<br><em>frame</em> by <span class="hollow">frame.</span></h1>
       <div class="who reveal d2"><span class="dot"></span><b>Fazal Khan</b> · marktOS studio · Wrocław</div>
       <p class="lead reveal d2">Ten years of visual effects, motion and content. From the first idea to the final grade, mapped and delivered as one system.</p>
-      <div class="row reveal d3"><button class="btn" data-scroll="#map">Explore the map <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="btn ghost" data-scroll="#reels">Watch the reel</button></div>
+      <div class="row reveal d3"><button class="btn" data-scroll="#map">Explore the map <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="btn ghost" data-scroll="#gallery">See the work</button></div>
       <div class="stats reveal d3"><div class="s"><div class="n">10<em>+</em></div><div class="l">Years VFX</div></div><div class="s"><div class="n">15</div><div class="l">Projects</div></div><div class="s"><div class="n">5</div><div class="l">Disciplines</div></div></div>
     </div>
   </section>
@@ -318,21 +318,8 @@
     </div>
   </section>
 
-  <section class="band" id="reels">
-    <div class="wrap">
-      <div class="sec-head reveal"><div class="tag"><span class="kick">Reels &amp; film</span><span class="ln2"></span></div><h2>Vertical, <em>built for social.</em></h2><p>The full 16:9 showreel plays up top. Here are the short-form 9:16 cuts, real client work.</p></div>
-      <div class="reels reveal d2">
-        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_weekend" muted loop playsinline preload="metadata" poster="media/swagath_weekend.jpg"><source src="media/swagath_weekend.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Weekend</b></div></div>
-        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_faluda" muted loop playsinline preload="metadata" poster="media/swagath_faluda.jpg"><source src="media/swagath_faluda.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Faluda</b></div></div>
-        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_drink" muted loop playsinline preload="metadata" poster="media/swagath_drink.jpg"><source src="media/swagath_drink.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Drink</b></div></div>
-        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_latino2" muted loop playsinline preload="metadata" poster="media/latino_v02.jpg"><source src="media/latino_v02.mp4" type="video/mp4"></video></div><div class="cap"><b>Latino Bar · 01</b></div></div>
-        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_latino4" muted loop playsinline preload="metadata" poster="media/latino_v04.jpg"><source src="media/latino_v04.mp4" type="video/mp4"></video></div><div class="cap"><b>Latino Bar · 02</b></div></div>
-      </div>
-    </div>
-  </section>
-
   <section class="band" id="gallery">
-    <div class="wrap"><div class="sec-head reveal"><div class="tag"><span class="kick">Stills &amp; frames</span><span class="ln2"></span></div><h2>Work, <em>by project.</em></h2><p>Real frames and photography, kept in their own project sets. Filter to one client, or swipe each row on mobile.</p></div>
+    <div class="wrap"><div class="sec-head reveal"><div class="tag"><span class="kick">The work</span><span class="ln2"></span></div><h2>Reels, breakdowns <em>&amp; stills.</em></h2><p>Every project in one place, grouped by client. Filter to one, or swipe each row on mobile.</p></div>
       <div class="gal-filter reveal d1" id="galFilter"></div>
       <div class="gal-groups reveal d1" id="galGroups"></div>
     </div>
@@ -475,7 +462,7 @@
       body='<div class="txt">'+p.text.map(function(t){return '<p>'+t+'</p>';}).join('')+chips+'<ul class="tags">'+p.tags.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div><div class="visual">'+tabs+'<div id="wiperMount"></div><p style="font-family:var(--fm);font-size:.6rem;text-transform:uppercase;color:var(--ink2);margin-top:.7rem;letter-spacing:.06em">Placeholder frames · swap in the real shot</p></div>';
     } else {
       head='<div class="detail-head"><span class="num">'+p.num+'</span><div><h3>'+p.title+'</h3><div class="role">'+p.role+'</div></div></div>';
-      var vis; if(p.video==='reels') vis='<div class="placeholder"><div><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><p>See it in Reels</p><button class="btn sm" data-goto="#reels" style="margin-top:.6rem">Go to reels</button></div></div>';
+      var vis; if(p.video==='reels') vis='<div class="placeholder"><div><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><p>Watch it in the gallery</p><button class="btn sm" data-goto="#gallery" style="margin-top:.6rem">Open gallery</button></div></div>';
       else if(p.caseStudy) vis='<div class="placeholder"><div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><p>Live Google Ads case study</p><button class="btn sm" data-goto="#case" style="margin-top:.6rem">View case study</button></div></div>';
       else if(p.goto) vis='<div class="placeholder"><div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg></div><p>marktOS product</p><button class="btn sm" data-goto="'+p.goto+'" style="margin-top:.6rem">Open the app</button></div></div>';
       else if(p.gallery) vis='<div class="placeholder"><div><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><p>Watch the cuts in the gallery</p><button class="btn sm" data-goto="#gallery" style="margin-top:.6rem">Open gallery</button></div></div>';
@@ -544,28 +531,22 @@
 
   /* gallery — grouped by project, with a client filter. mode: grid (landscape, 2-up) | strip (vertical scroll row) | feature (one big landscape) */
   var GROUPS=[
-    {id:'swagath',name:'SWAGATH',short:'SWAGATH',tag:'Restaurant · food photography',mode:'grid',items:[
-      {t:'Thali',k:'Photo',img:'media/food_1.jpg',ar:'3/2',span:true},
-      {t:'Spread',k:'Photo',img:'media/food_2.jpg',ar:'3/2',span:true},
-      {t:'Plated',k:'Photo',img:'media/food_4.jpg',ar:'3/2',span:true},
-      {t:'Table',k:'Photo',img:'media/food_6.jpg',ar:'3/2',span:true}
-    ]},
-    {id:'catalice',name:'Cat&Alice · Wrocław',short:'Cat&Alice',tag:'Social · 3D + 2D + live',mode:'strip',items:[
-      {t:'Promo',k:'Video',vid:'media/catalice_promo.mp4',img:'media/catalice_promo.jpg',ar:'9/16'},
-      {t:'Coffee cup breakdown',k:'VFX',vid:'media/catalice_breakdown.mp4',img:'media/catalice_breakdown.jpg',ar:'9/16'},
-      {t:'Coffee b-roll',k:'Video',vid:'media/catalice_broll.mp4',img:'media/catalice_broll.jpg',ar:'9/16'},
-      {t:'Animated cat',k:'3D',vid:'media/catalice_cat.mp4',img:'media/catalice_cat.jpg',ar:'9/16'}
-    ]},
-    {id:'meeet',name:'Meeet Events',short:'Meeet',tag:'Events · content & coverage',mode:'strip',items:[
-      {t:'Antidotum · Halloween',k:'Video',vid:'media/meeet_hw1.mp4',img:'media/meeet_hw1.jpg',ar:'9/16'},
-      {t:'Antidotum · Halloween',k:'Video',vid:'media/meeet_hw2.mp4',img:'media/meeet_hw2.jpg',ar:'9/16'}
-    ]},
     {id:'opera',name:'Opera Commercial',short:'Opera',tag:'VFX · compositing, lighting & rendering',mode:'grid',items:[
       {t:'Opera · Desktop (48s, EN)',k:'VFX',vid:'media/opera_desktop.mp4',img:'media/opera_desktop.jpg',ar:'16/9',span:true},
       {t:'Opera · Mobile (30s)',k:'VFX',vid:'media/opera_mobile.mp4',img:'media/opera_mobile.jpg',ar:'16/9',span:true}
     ]},
     {id:'iskra',name:'Iskra',short:'Iskra',tag:'VFX · conforming & projections',mode:'feature',items:[
       {t:'Iskra · Hologram',k:'VFX',vid:'media/iskra.mp4',img:'media/iskra.jpg',ar:'16/9',span:true}
+    ]},
+    {id:'catalice',name:'Cat&Alice · Wrocław',short:'Cat&Alice',tag:'Social · 3D + 2D + live',mode:'strip',items:[
+      {t:'Promo',k:'Reel',vid:'media/catalice_promo.mp4',img:'media/catalice_promo.jpg',ar:'9/16'},
+      {t:'Coffee cup breakdown',k:'VFX',vid:'media/catalice_breakdown.mp4',img:'media/catalice_breakdown.jpg',ar:'9/16'},
+      {t:'Coffee b-roll',k:'Reel',vid:'media/catalice_broll.mp4',img:'media/catalice_broll.jpg',ar:'9/16'},
+      {t:'Animated cat',k:'3D',vid:'media/catalice_cat.mp4',img:'media/catalice_cat.jpg',ar:'9/16'}
+    ]},
+    {id:'meeet',name:'Meeet Events',short:'Meeet',tag:'Events · content & coverage',mode:'strip',items:[
+      {t:'Antidotum · Halloween',k:'Reel',vid:'media/meeet_hw1.mp4',img:'media/meeet_hw1.jpg',ar:'9/16'},
+      {t:'Antidotum · Halloween',k:'Reel',vid:'media/meeet_hw2.mp4',img:'media/meeet_hw2.jpg',ar:'9/16'}
     ]},
     {id:'gosia',name:'Gosia · Personal Trainer',short:'Gosia',tag:'Fitness · photoshoot & brand',mode:'strip',items:[
       {t:'Gosia',k:'Photo',img:'media/gosia_01.jpg',ar:'9/16'},
@@ -574,9 +555,19 @@
       {t:'Gosia',k:'Photo',img:'media/gosia_04.jpg',ar:'9/16'},
       {t:'Gosia',k:'Photo',img:'media/gosia_05.jpg',ar:'9/16'}
     ]},
+    {id:'swagath',name:'SWAGATH',short:'SWAGATH',tag:'Restaurant · social reels & food',mode:'grid',items:[
+      {t:'Thali',k:'Photo',img:'media/food_1.jpg',ar:'3/2',span:true},
+      {t:'Spread',k:'Photo',img:'media/food_2.jpg',ar:'3/2',span:true},
+      {t:'Plated',k:'Photo',img:'media/food_4.jpg',ar:'3/2',span:true},
+      {t:'Table',k:'Photo',img:'media/food_6.jpg',ar:'3/2',span:true},
+      {t:'Dish',k:'Photo',img:'media/food_5.jpg',ar:'3/4'},
+      {t:'Weekend',k:'Reel',vid:'media/swagath_weekend.mp4',img:'media/swagath_weekend.jpg',ar:'9/16'},
+      {t:'Faluda',k:'Reel',vid:'media/swagath_faluda.mp4',img:'media/swagath_faluda.jpg',ar:'9/16'},
+      {t:'Drink',k:'Reel',vid:'media/swagath_drink.mp4',img:'media/swagath_drink.jpg',ar:'9/16'}
+    ]},
     {id:'latino',name:'Latino Bar',short:'Latino Bar',tag:'Nightlife · short-form',mode:'strip',items:[
-      {t:'Latino Bar',k:'Frame',img:'media/latino_v02.jpg',ar:'9/16'},
-      {t:'Latino Bar',k:'Frame',img:'media/latino_v04.jpg',ar:'9/16'}
+      {t:'Latino Bar',k:'Reel',vid:'media/latino_v02.mp4',img:'media/latino_v02.jpg',ar:'9/16'},
+      {t:'Latino Bar',k:'Reel',vid:'media/latino_v04.mp4',img:'media/latino_v04.jpg',ar:'9/16'}
     ]}
   ];
   var galGroups=document.getElementById('galGroups'), galFilter=document.getElementById('galFilter');
@@ -587,8 +578,8 @@
     var nVid=gr.items.filter(function(x){return x.vid;}).length, count=gr.items.length+' '+(nVid?(nVid===gr.items.length?'clips':'items'):'frames');
     sec.innerHTML='<div class="pgroup-head"><h3>'+gr.name+'</h3><span class="pk">'+gr.tag+'</span><span class="pc">'+count+'</span></div><div class="'+wrapCls+'">'+gr.items.map(galCard).join('')+'</div>'; galGroups.appendChild(sec); });
   if(window.IntersectionObserver && typeof vio!=='undefined' && vio){ document.querySelectorAll('#galGroups video[loop]').forEach(function(v){ vio.observe(v); }); }
-  if(galFilter){ var filters=[{id:'all',n:'All work'}].concat(GROUPS.map(function(g){ return {id:g.id,n:g.short||g.name}; }));
-    galFilter.innerHTML=filters.map(function(f,i){ return '<button class="gfchip'+(i===0?' on':'')+'" data-f="'+f.id+'">'+f.n+'</button>'; }).join('');
+  if(galFilter){ var filters=GROUPS.map(function(g){ return {id:g.id,n:g.short||g.name}; }).concat([{id:'all',n:'All work'}]);
+    galFilter.innerHTML=filters.map(function(f){ return '<button class="gfchip'+(f.id==='all'?' on':'')+'" data-f="'+f.id+'">'+f.n+'</button>'; }).join('');
     galFilter.addEventListener('click',function(e){ var b=e.target.closest('.gfchip'); if(!b) return; var f=b.dataset.f; galFilter.querySelectorAll('.gfchip').forEach(function(x){ x.classList.toggle('on',x===b); }); galGroups.querySelectorAll('.pgroup').forEach(function(s){ s.classList.toggle('hide', f!=='all' && s.dataset.id!==f); }); }); }
 
   /* ===== MODAL (dynamic) ===== */
@@ -620,8 +611,12 @@
 /* Hero timeline playhead — synced to the showreel video */
 (function(){
   var v=document.getElementById('v_heroreel'), head=document.getElementById('heroHead'); if(!v||!head) return;
-  var raf;
-  function upd(){ if(v.duration && !isNaN(v.duration)){ head.style.left=((v.currentTime/v.duration)*100).toFixed(2)+'%'; } raf=requestAnimationFrame(upd); }
+  var raf; function cl(x){ return x<0?0:x>1?1:x; }
+  function upd(){
+    if(v.duration && !isNaN(v.duration)){ head.style.left=((v.currentTime/v.duration)*100).toFixed(2)+'%'; }
+    var base=innerWidth<=920?0.7:0.9, p=cl(scrollY/(innerHeight*0.92));
+    v.style.opacity=(base-(base-0.1)*p).toFixed(3);
+    raf=requestAnimationFrame(upd); }
   raf=requestAnimationFrame(upd);
   document.addEventListener('visibilitychange',function(){ if(document.hidden){ if(raf)cancelAnimationFrame(raf); raf=null; } else if(!raf){ raf=requestAnimationFrame(upd); } });
 })();
