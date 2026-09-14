@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="Fazal Khan - Technical Director & VFX Artist">
-<meta property="og:description" content="VFX artist and technical director in Wroclaw. Work map, VFX breakdowns, a real Google Ads case study, reels and gallery.">
+<meta property="og:description" content="VFX artist and technical director in Wroclaw. Work map, VFX breakdowns, a Google Ads case study, reels and gallery.">
 <meta property="og:type" content="website">
 <title>Fazal Khan · Technical Director</title>
 <meta name="description" content="Fazal Khan, VFX artist and technical director in Wrocław. Interactive ink-on-paper portfolio: work map, marktOS AI app, a real Google Ads case study, reels and gallery." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;500;600&family=Noto+Sans+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@500;700&display=swap">
 <style>
   :root{
     --paper:#F2EEE2; --paper2:#EAE4D4; --card:#F7F4EC; --ink:#171310; --ink2:#453D33; --tone:#C7C0AE;
     --red:#E5402A; --red-d:#C7331F; --ind:#26324F; --grn:#1F8F5F; --amb:#D98A2B;
     --maxw:1280px; --pad:clamp(1.15rem,4vw,3.4rem);
-    --fd:"Archivo",system-ui,sans-serif; --fb:"Sora",system-ui,sans-serif; --fm:"JetBrains Mono",monospace; --fk:"Chakra Petch",sans-serif; --fj:"Noto Sans JP",sans-serif;
+    --fd:"Bricolage Grotesque",system-ui,sans-serif; --fb:"Hanken Grotesk",system-ui,sans-serif; --fm:"Space Mono",monospace; --fk:"Bricolage Grotesque",sans-serif; --fj:"Noto Sans JP",sans-serif;
     --ease:cubic-bezier(0.16,1,0.3,1); --spring:cubic-bezier(.34,1.56,.64,1);
   }
   *{ box-sizing:border-box; }
@@ -161,6 +161,17 @@
   .lb .lbn{ position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border:2px solid var(--paper); background:rgba(0,0,0,.3); color:var(--paper); border-radius:3px; cursor:pointer; display:grid; place-items:center; } .lb .lbn svg{ width:22px; height:22px; } .lb .lbn.prev{ left:18px; } .lb .lbn.next{ right:18px; } @media (max-width:600px){ .lb .lbn{ display:none; } }
   .exp{ position:relative; } .exp-item{ position:relative; padding:0 0 1.7rem 1.6rem; border-left:2px solid var(--ink); } .exp-item:last-child{ border-left-color:transparent; } .exp-item::before{ content:""; position:absolute; left:-8px; top:.3rem; width:14px; height:14px; border-radius:50%; background:var(--red); border:2px solid var(--ink); box-shadow:0 0 0 4px var(--paper); }
   .exp-item .er{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; } .exp-item h3{ font-size:1.2rem; text-transform:uppercase; } .exp-item .co{ font-family:var(--fk); font-weight:700; color:var(--red); text-transform:uppercase; font-size:.82rem; margin-top:.2rem; } .exp-item .dt{ font-family:var(--fm); font-size:.66rem; color:var(--ink2); text-transform:uppercase; } .exp-item p{ color:var(--ink2); font-size:.9rem; margin-top:.5rem; max-width:66ch; }
+  .films.single{ grid-template-columns:minmax(0,760px); justify-content:center; }
+  .vfx-stage .side.wbefore,.vfx-stage .side.wafter{ background-size:cover; background-position:center; display:block; }
+  .map-mobile{ display:none; } @media (max-width:800px){ .map-stage{ display:none; } .map-mobile{ display:block; } }
+  .mm-disc{ border-bottom:2px solid var(--ink); } .mm-disc:last-child{ border-bottom:none; }
+  .mm-head{ width:100%; text-align:left; background:var(--ind); color:var(--paper); border:none; padding:.95rem 1.1rem; font-family:var(--fk); font-weight:700; text-transform:uppercase; font-size:.95rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+  .mm-disc.open .mm-head{ background:var(--red); } .mm-head .mm-c{ font-family:var(--fm); font-size:.72rem; opacity:.85; }
+  .mm-projs{ display:none; flex-direction:column; } .mm-disc.open .mm-projs{ display:flex; }
+  .mm-proj{ text-align:left; background:var(--paper); color:var(--ink); border:none; border-top:2px solid var(--ink); padding:.85rem 1.1rem; font-family:var(--fk); font-weight:600; text-transform:uppercase; font-size:.85rem; cursor:pointer; display:flex; align-items:center; gap:.5rem; } .mm-proj .vfx{ font-family:var(--fm); font-size:.5rem; background:var(--ink); color:var(--paper); padding:.05rem .3rem; border-radius:2px; }
+  .about-facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink); border:2px solid var(--ink); border-radius:4px; overflow:hidden; box-shadow:6px 6px 0 var(--ink); margin-bottom:2rem; } @media (max-width:720px){ .about-facts{ grid-template-columns:1fr; } }
+  .af{ background:var(--card); padding:1.1rem 1.2rem; } .af .afk{ font-family:var(--fm); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--red); margin-bottom:.5rem; } .af .afv{ font-size:.86rem; color:var(--ink2); margin-top:.3rem; }
+  @media (max-width:560px){ .chart-grid{ gap:.5rem; } .col .val{ font-size:.72rem; } .col .xl b{ font-size:.62rem; } .col .xl span{ font-size:.5rem; } .col.opt::before{ font-size:.48rem; } }
 </style>
 
 
@@ -172,7 +183,7 @@
 
 <header class="nav" id="nav"><div class="wrap">
   <a class="brand" href="#top"><span class="m"></span>marktOS</a>
-  <nav class="nav-links"><a data-scroll="#map">Work</a><a data-scroll="#experience">Career</a><a data-scroll="#case">Case Study</a><a data-scroll="#reels">Reels</a><a data-scroll="#gallery">Gallery</a><a data-scroll="#contact">Contact</a></nav>
+  <nav class="nav-links"><a data-scroll="#map">Work</a><a data-scroll="#experience">About</a><a data-scroll="#case">Case Study</a><a data-scroll="#reels">Reels</a><a data-scroll="#gallery">Gallery</a><a data-scroll="#contact">Contact</a></nav>
   <button class="nav-cta" data-form>Start a project</button>
   <button class="hamburger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </div></header>
@@ -184,9 +195,9 @@
       <div class="sig reveal"><span class="en">Technical Director · VFX Artist</span></div>
       <h1 class="reveal d1">We build brands<br><em>frame</em> by <span class="hollow">frame.</span></h1>
       <div class="who reveal d2"><span class="dot"></span><b>Fazal Khan</b> · marktOS studio · Wrocław</div>
-      <p class="lead reveal d2">Seven years of visual effects, motion, and content. From the first idea to the final grade, mapped and delivered as one system.</p>
+      <p class="lead reveal d2">Over ten years of visual effects, motion, and content. From the first idea to the final grade, mapped and delivered as one system.</p>
       <div class="row reveal d3"><button class="btn" data-scroll="#map">Explore the map <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a class="btn ghost" href="https://vimeo.com/1048543687" target="_blank" rel="noopener">Watch showreel</a></div>
-      <div class="stats reveal d3"><div class="s"><div class="n">7<em>+</em></div><div class="l">Years VFX</div></div><div class="s"><div class="n">15</div><div class="l">Projects</div></div><div class="s"><div class="n">5</div><div class="l">Disciplines</div></div></div>
+      <div class="stats reveal d3"><div class="s"><div class="n">10<em>+</em></div><div class="l">Years VFX</div></div><div class="s"><div class="n">15</div><div class="l">Projects</div></div><div class="s"><div class="n">5</div><div class="l">Disciplines</div></div></div>
     </div>
     <div class="hero-3dslot" aria-hidden="true"></div>
   </section>
@@ -199,14 +210,19 @@
   <section class="band" id="map">
     <div class="wrap">
       <div class="sec-head reveal"><div class="tag"><span class="kick">The work map</span><span class="ln2"></span></div><h2>Every project starts <em>with me.</em></h2><p>From Fazal at the root, out to each discipline, out to the real clients. Tap a discipline to branch. Hover a project to fan out what I did, click to open it.</p></div>
-      <div class="map-wrap reveal d1"><div class="map-bar"><span class="dot"></span><span class="t">work_map.nk</span><span class="meta">ROOT → DISCIPLINE → PROJECT</span></div><div class="map-stage" id="mapStage"><svg class="wires" id="wires"></svg></div><div class="map-hint" id="mapHint">Tap a discipline · hover a project for the radial menu · click to open</div></div>
+      <div class="map-wrap reveal d1"><div class="map-bar"><span class="dot"></span><span class="t">work_map.nk</span><span class="meta">ROOT → DISCIPLINE → PROJECT</span></div><div class="map-stage" id="mapStage"><svg class="wires" id="wires"></svg></div><div class="map-mobile" id="mapMobile"></div><div class="map-hint" id="mapHint">Tap a discipline · hover a project for the radial menu · click to open</div></div>
       <div class="detail" id="detail" hidden></div>
     </div>
   </section>
 
   <section class="band" id="experience">
     <div class="wrap">
-      <div class="sec-head reveal"><div class="tag"><span class="kick">Career · Studio experience</span><span class="ln2"></span></div><h2>Seven years <em>behind the comp.</em></h2><p>Before the studio, a professional VFX career: conforming and compositing for commercials and broadcast, and teaching it at university.</p></div>
+      <div class="sec-head reveal"><div class="tag"><span class="kick">About · Career</span><span class="ln2"></span></div><h2>Ten years <em>behind the comp.</em></h2><p>A creative media professional with over ten years in VFX, post-production, and AI-assisted video, across commercial, broadcast, and digital, plus university teaching.</p></div>
+      <div class="about-facts reveal d1">
+        <div class="af"><div class="afk">Education</div><div class="afv">BA Creative Media, University of Lower Silesia (DSW), Wrocław</div><div class="afv">VFX &amp; Graphics Design, FX School, Mumbai</div></div>
+        <div class="af"><div class="afk">Languages</div><div class="afv">English, native</div><div class="afv">Hindi, native</div><div class="afv">Polish, basic</div></div>
+        <div class="af"><div class="afk">AI &amp; generative</div><div class="afv">Runway, HeyGen, ElevenLabs, Midjourney, Stable Diffusion, ComfyUI</div></div>
+      </div>
       <div class="exp reveal d1">
         <div class="exp-item"><div class="er"><h3>Conforming &amp; Compositing Artist</h3><span class="dt">2020 – 2025</span></div><div class="co">JUICE · Wrocław</div><p>Conforming for high-resolution post pipelines: chroma key, wire removal, motion tracking, and clean plates. AI-assisted face-swap, de-aging, and generative effects, coordinated across departments via ShotGrid.</p></div>
         <div class="exp-item"><div class="er"><h3>Academic Tutor · Creative Media</h3><span class="dt">2020 – present</span></div><div class="co">University of Lower Silesia (DSW) · Wrocław</div><p>Teaching VFX, 3D lighting, rendering, and animation to undergraduates, and mentoring collaborative student productions on industry pipelines.</p></div>
@@ -272,12 +288,12 @@
   <section class="band" id="reels">
     <div class="wrap">
       <div class="sec-head reveal"><div class="tag"><span class="kick">Reels &amp; film</span><span class="ln2"></span></div><h2>Motion, <em>two ways.</em></h2><p>Cinematic 16:9 for commercials and brand films. Vertical 9:16 for social. Real clips.</p></div>
-      <div class="films reveal d1">
-        <div class="film"><div class="scr"><span class="vtag">16:9 · Showreel</span><video loop muted autoplay id="v_showreel" playsinline preload="metadata" poster="media/showreel.jpg"><source src="media/showreel.mp4" type="video/mp4"></video></div><div class="cap"><b>Showreel 2025</b><span>VFX · motion · content</span></div></div>
-        <div class="film"><div class="scr"><span class="vtag">16:9 · Reel</span><video loop muted autoplay id="v_weekend" playsinline preload="metadata" poster="media/swagath_weekend.jpg"><source src="media/swagath_weekend.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Weekend</b><span>Food promo</span></div></div>
-        <div class="film"><div class="scr"><span class="vtag">16:9 · Reel</span><video loop muted autoplay id="v_faluda" playsinline preload="metadata" poster="media/swagath_faluda.jpg"><source src="media/swagath_faluda.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Faluda</b><span>Product film</span></div></div>
+      <div class="films single reveal d1">
+        <div class="film"><div class="scr"><span class="vtag">16:9 · Showreel</span><video loop muted autoplay id="v_showreel" playsinline preload="metadata" poster="media/showreel.jpg"><source src="media/showreel.mp4" type="video/mp4"></video></div><div class="cap"><b>Showreel</b><span>VFX · motion · content</span></div></div>
       </div>
       <div class="reels reveal d2">
+        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_weekend" muted loop playsinline preload="metadata" poster="media/swagath_weekend.jpg"><source src="media/swagath_weekend.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Weekend</b></div></div>
+        <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_faluda" muted loop playsinline preload="metadata" poster="media/swagath_faluda.jpg"><source src="media/swagath_faluda.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Faluda</b></div></div>
         <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_drink" muted loop playsinline preload="metadata" poster="media/swagath_drink.jpg"><source src="media/swagath_drink.mp4" type="video/mp4"></video></div><div class="cap"><b>SWAGATH · Drink</b></div></div>
         <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_latino2" muted loop playsinline preload="metadata" poster="media/latino_v02.jpg"><source src="media/latino_v02.mp4" type="video/mp4"></video></div><div class="cap"><b>Latino Bar · 01</b></div></div>
         <div class="reel"><div class="scr"><span class="vtag">9:16</span><video autoplay id="v_latino4" muted loop playsinline preload="metadata" poster="media/latino_v04.jpg"><source src="media/latino_v04.mp4" type="video/mp4"></video></div><div class="cap"><b>Latino Bar · 02</b></div></div>
@@ -338,7 +354,7 @@
   var PROJ=[
     {id:'face',disc:['vfx'],num:'01',title:'Breakdown',role:'VFX · Before / after',vfx:'both',radial:['Nuke','After Effects','Photoshop','DaVinci'],text:["Plate prep, tracking, and compositing so a replaced face holds up on light, skin, and edges.","Drag the handle to see before and after. Switch tabs between a face swap and a green-screen composite."],tags:['Face swap','Tracking','Comp']},
     {id:'opera',disc:['vfx'],num:'02',title:'Opera Commercial',role:'VFX · Before / after',vfx:'comp',radial:['Nuke','After Effects','Cinema 4D','DaVinci'],text:["A commercial spot: concept, shoot support, visual effects, and finishing. Clean keys and composites cut to a broadcast-grade result."],tags:['Commercial','Keying','Finishing']},
-    {id:'reel',disc:['vfx'],num:'03',title:'Showreel 2025',role:'VFX · Motion',vfx:false,radial:['After Effects','Cinema 4D','DaVinci'],text:["A cut of recent visual effects, motion, and content work."],tags:['Showreel','VFX','Motion'],video:'reels'},
+    {id:'reel',disc:['vfx'],num:'03',title:'Showreel',role:'VFX · Motion',vfx:false,radial:['After Effects','Cinema 4D','DaVinci'],text:["A cut of recent visual effects, motion, and content work."],tags:['Showreel','VFX','Motion'],video:'reels'},
     {id:'iskra',disc:['vfx'],num:'04',title:'Iskra',role:'VFX · Conforming · Projections',vfx:false,radial:['Maya','After Effects','Conforming','Projections'],text:["VFX on Iskra: conforming the shots and building projections in Maya and After Effects.","Camera-projected environments and finishing, matched and conformed to the edit."],tags:['Conforming','Projections','Maya']},
     {id:'catalice',disc:['content'],num:'04',title:'Cat&Alice Wrocław',role:'Social · Video + Photo',vfx:false,radial:['3D animation','2D + live','Instagram','Menu','Posters','Photos'],text:["Instagram content combining 3D animation, 2D, and real life. Plus menu, posters, and photography for a Wrocław venue."],tags:['3D + 2D','Menu','Posters','Photos']},
     {id:'latino',disc:['content','marketing'],num:'05',title:'Latino Bar Wrocław',role:'Content · Video',vfx:false,radial:['Short-form','Social','Promos'],text:["High-energy short-form content for a Wrocław bar, built for social."],tags:['Short-form','Nightlife','Social'],video:'reels'},
@@ -379,6 +395,15 @@
   DISC.forEach(function(d){ discEls[d.id]=mk('disc','disc-'+d.id,'<div class="nt">Discipline</div><div class="nn">'+d.n+'</div>'); });
   PROJ.forEach(function(p){ projEls[p.id]=mk('proj','proj-'+p.id,'<div class="nn">'+p.title+(p.vfx?'<span class="vfx">VFX</span>':'')+'</div>'); });
   function isMobile(){ return stage.clientWidth<800; }
+  (function(){ var mm=document.getElementById('mapMobile'); if(!mm) return;
+    DISC.forEach(function(d){ var projs=PROJ.filter(function(p){return p.disc.indexOf(d.id)>=0;});
+      var sec=document.createElement('div'); sec.className='mm-disc';
+      var head=document.createElement('button'); head.className='mm-head'; head.innerHTML=d.n+'<span class="mm-c">'+projs.length+'</span>';
+      var pc=document.createElement('div'); pc.className='mm-projs';
+      projs.forEach(function(p){ var b=document.createElement('button'); b.className='mm-proj'; b.innerHTML=p.title+(p.vfx?' <span class="vfx">VFX</span>':''); b.addEventListener('click',function(){ openProject(p.id,true); }); pc.appendChild(b); });
+      head.addEventListener('click',function(){ sec.classList.toggle('open'); });
+      sec.appendChild(head); sec.appendChild(pc); mm.appendChild(sec); });
+    if(mm.firstChild) mm.firstChild.classList.add('open'); })();
   function activeProjs(){ return PROJ.filter(function(p){ return p.disc.indexOf(activeDisc)>=0; }); }
   function positions(){ var w=stage.clientWidth,h=stage.clientHeight,pos={},arr=activeProjs();
     if(!isMobile()){ pos['root']={x:.10*w,y:.5*h}; DISC.forEach(function(d,i){ pos['disc-'+d.id]={x:.36*w,y:(i+.5)/DISC.length*h}; }); arr.forEach(function(p,i){ pos['proj-'+p.id]={x:.74*w,y:(i+.5)/arr.length*(h*.88)+h*.06}; }); }
@@ -431,11 +456,12 @@
   function _wmv(e){ if(!wiperDrag||!wiperSet) return; var pt=e.touches?e.touches[0]:e; wiperSet(pt.clientX); }
   addEventListener('mousemove',_wmv); addEventListener('touchmove',_wmv,{passive:false}); addEventListener('mouseup',function(){wiperDrag=false;}); addEventListener('touchend',function(){wiperDrag=false;});
   function mountWiper(kind){ var mount=document.getElementById('wiperMount'); if(!mount) return;
-    var before=kind==='swap'?'plate':'green', lL=kind==='swap'?'Before':'Before · green screen', lR=kind==='swap'?'After · AI swap':'After · final comp', aCls=kind==='swap'?'ba-after swap':'ba-after';
-    mount.innerHTML='<div class="vfx-stage"><div class="side ba-before '+before+'"><div class="subj"></div></div><div class="side '+aCls+'"><div class="subj"></div></div><span class="lab l">'+lL+'</span><span class="lab r">'+lR+'</span><div class="handle"><span class="grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span></div></div>';
-    var st=mount.querySelector('.vfx-stage'), af=mount.querySelectorAll('.side')[1], h=mount.querySelector('.handle');
+    var b=kind==='swap'?'media/ai_before.jpg':'media/vfx_before.jpg', a=kind==='swap'?'media/ai_after.jpg':'media/vfx_after.jpg';
+    var lL=kind==='swap'?'Before':'Before · green screen', lR=kind==='swap'?'After · AI face swap':'After · final comp';
+    mount.innerHTML='<div class="vfx-stage"><div class="side wbefore" style="background-image:url('+b+')"></div><div class="side wafter" style="background-image:url('+a+')"></div><span class="lab l">'+lL+'</span><span class="lab r">'+lR+'</span><div class="handle"><span class="grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span></div></div>';
+    var st=mount.querySelector('.vfx-stage'), af=mount.querySelector('.wafter'), h=mount.querySelector('.handle');
     function set(px){ var r=st.getBoundingClientRect(); var pct=Math.max(0,Math.min(100,(px-r.left)/r.width*100)); h.style.left=pct+'%'; af.style.clipPath='inset(0 0 0 '+pct+'%)'; }
-    requestAnimationFrame(function(){ var r=st.getBoundingClientRect(); set(r.left+r.width*0.5); });
+    requestAnimationFrame(function(){ var r=st.getBoundingClientRect(); set(r.left+r.width*0.4); });
     wiperSet=set; function dn(e){ wiperDrag=true; set((e.touches?e.touches[0]:e).clientX); e.preventDefault(); }
     st.addEventListener('mousedown',dn); st.addEventListener('touchstart',dn,{passive:false});
   }
@@ -477,7 +503,7 @@
   if('IntersectionObserver' in window){ var vio=new IntersectionObserver(function(en){ en.forEach(function(e){ var v=e.target; if(e.isIntersecting){ if(v.hasAttribute('loop')) v.play().catch(function(){}); } else v.pause(); }); },{threshold:.35}); document.querySelectorAll('video[loop]').forEach(function(v){ vio.observe(v); }); }
 
   /* gallery */
-  var GAL=[{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_02.jpg'},{t:'SWAGATH · Faluda',k:'Frame',img:'media/swagath_faluda.jpg'},{t:'Latino Bar',k:'Frame',img:'media/latino_v02.jpg'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_04.jpg'},{t:'SWAGATH · Drink',k:'Frame',img:'media/swagath_drink.jpg'},{t:'House of Spices',k:'Menu',c:'3a2222,5a3232',ar:'4/5'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_01.jpg'},{t:'Showreel',k:'Frame',img:'media/showreel.jpg'},{t:'Wera · Psycholog',k:'Poster',c:'2a2430,4a3a4a',ar:'9/16'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_05.jpg'},{t:'SWAGATH · Weekend',k:'Frame',img:'media/swagath_weekend.jpg'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_03.jpg'},{t:'Latino Bar',k:'Frame',img:'media/latino_v04.jpg'},{t:'K-Skool',k:'Campaign',c:'2f2f24,4a4a34',ar:'4/5'}];
+  var GAL=[{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_02.jpg'},{t:'SWAGATH · Faluda',k:'Frame',img:'media/swagath_faluda.jpg'},{t:'SWAGATH · Food',k:'Photo',img:'media/food_1.jpg'},{t:'SWAGATH · Food',k:'Photo',img:'media/food_4.jpg'},{t:'Latino Bar',k:'Frame',img:'media/latino_v02.jpg'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_04.jpg'},{t:'SWAGATH · Drink',k:'Frame',img:'media/swagath_drink.jpg'},{t:'House of Spices',k:'Menu',c:'3a2222,5a3232',ar:'4/5'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_01.jpg'},{t:'Showreel',k:'Frame',img:'media/showreel.jpg'},{t:'Wera · Psycholog',k:'Poster',c:'2a2430,4a3a4a',ar:'9/16'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_05.jpg'},{t:'SWAGATH · Weekend',k:'Frame',img:'media/swagath_weekend.jpg'},{t:'SWAGATH · Food',k:'Photo',img:'media/food_2.jpg'},{t:'SWAGATH · Food',k:'Photo',img:'media/food_5.jpg'},{t:'SWAGATH · Food',k:'Photo',img:'media/food_6.jpg'},{t:'Gosia · Trainer',k:'Photo',img:'media/gosia_03.jpg'},{t:'Latino Bar',k:'Frame',img:'media/latino_v04.jpg'},{t:'K-Skool',k:'Campaign',c:'2f2f24,4a4a34',ar:'4/5'}];
   var gal=document.getElementById('gal');
   GAL.forEach(function(g){ var el=document.createElement('div'); el.className='gcard'; var media=g.img?'<img src="'+g.img+'" alt="'+g.t+'">':('<div class="pl" style="--c1:#'+g.c.split(',')[0]+';--c2:#'+g.c.split(',')[1]+';--ar:'+(g.ar||'4/5')+'"></div>'); el.innerHTML='<div class="im"><span class="tagp">'+g.k+'</span>'+media+'</div><div class="cap"><b>'+g.t+'</b><span>'+g.k+'</span></div>'; gal.appendChild(el); });
 
@@ -516,9 +542,10 @@
   var scene=new THREE.Scene(); var camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,0.1,100); camera.position.z=6;
   var grp=new THREE.Group(); scene.add(grp);
   var mat=new THREE.MeshBasicMaterial({color:0x171310,wireframe:true,transparent:true,opacity:0.5});
-  grp.add(new THREE.Mesh(new THREE.TorusKnotGeometry(1.3,0.34,150,20,2,3),mat));
-  var rmat=new THREE.MeshBasicMaterial({color:0xE5402A,wireframe:true,transparent:true,opacity:0.22});
-  var ring=new THREE.Mesh(new THREE.TorusGeometry(2.15,0.02,8,90),rmat); grp.add(ring);
+  var rmat=new THREE.MeshBasicMaterial({color:0xE5402A,wireframe:true,transparent:true,opacity:0.34});
+  var HTS=[0.55,0.85,0.7,1.15,1.0,1.5,1.35,2.0], bars=[];
+  HTS.forEach(function(h,i){ var m=new THREE.Mesh(new THREE.BoxGeometry(0.34,h,0.34), i>=HTS.length-2?rmat:mat); m.position.x=(i-(HTS.length-1)/2)*0.52; m.userData.h=h; bars.push(m); grp.add(m); });
+  function layoutBars(g){ bars.forEach(function(m){ var hh=m.userData.h*(0.35+0.65*g); m.scale.y=hh/m.userData.h; m.position.y=hh/2-1.0; }); } layoutBars(0.5);
   var mob=false; function place(){ mob=innerWidth<=900; grp.scale.setScalar(mob?0.64:1); grp.position.x=mob?0:2.1; grp.position.y=mob?1.85:0.2; }
   var mx=0,my=0,tmx=0,tmy=0,sc=0;
   function resize(){ renderer.setSize(innerWidth,innerHeight,false); camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); place(); }
@@ -526,9 +553,10 @@
   if(!reduce) addEventListener('pointermove',function(e){ tmx=(e.clientX/innerWidth-.5); tmy=(e.clientY/innerHeight-.5); },{passive:true});
   addEventListener('scroll',function(){ sc=scrollY; },{passive:true});
   var t0=performance.now(), raf;
-  function frame(now){ var t=(now-t0)/1000; mx+=(tmx-mx)*.05; my+=(tmy-my)*.05;
-    grp.rotation.y=t*0.16+mx*0.9+sc*0.0011; grp.rotation.x=0.3+my*0.5+sc*0.0005; ring.rotation.z=t*0.1;
-    var base=mob?0.2:0.45; var fade=Math.max(mob?0.08:0.1, base-sc/1100*(base-0.08)); mat.opacity=fade; rmat.opacity=fade*0.4;
+  function frame(now){ mx+=(tmx-mx)*.06; my+=(tmy-my)*.06;
+    grp.rotation.y=-0.6+mx*0.8+sc*0.0011; grp.rotation.x=0.12+my*0.45;
+    layoutBars(Math.min(1,0.45+sc/900));
+    var base=mob?0.22:0.5; var fade=Math.max(mob?0.1:0.13, base-sc/1500*(base-0.1)); mat.opacity=fade; rmat.opacity=Math.min(0.55,fade*1.15);
     renderer.render(scene,camera); raf=requestAnimationFrame(frame); }
   if(reduce){ grp.rotation.set(0.3,0.5,0); renderer.render(scene,camera); }
   else { raf=requestAnimationFrame(frame); document.addEventListener('visibilitychange',function(){ if(document.hidden){ if(raf)cancelAnimationFrame(raf); raf=null; } else if(!raf){ raf=requestAnimationFrame(frame); } }); }
