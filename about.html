@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Fazal Khan</title>
+<meta name="description" content="Fazal Khan — technical director and VFX artist in Wrocław. Career, education, and craft." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@500;700&display=swap">
+<style>
+  :root{ --paper:#F2EEE2; --paper2:#EAE4D4; --card:#F7F4EC; --ink:#171310; --ink2:#453D33; --tone:#C7C0AE; --red:#E5402A; --ind:#26324F;
+    --pad:clamp(1.15rem,4vw,3.4rem); --fd:"Bricolage Grotesque",system-ui,sans-serif; --fb:"Hanken Grotesk",system-ui,sans-serif; --fm:"Space Mono",monospace; --fk:"Bricolage Grotesque",sans-serif; }
+  *{ box-sizing:border-box; } html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--fb); font-size:1.02rem; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  body::before{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.4; background-image:radial-gradient(var(--tone) 1px, transparent 1.5px); background-size:9px 9px; -webkit-mask-image:linear-gradient(160deg,transparent 30%,#000 120%); mask-image:linear-gradient(160deg,transparent 30%,#000 120%); }
+  h1,h2,h3{ margin:0; font-family:var(--fd); font-weight:800; line-height:1; letter-spacing:-0.02em; text-transform:uppercase; }
+  a{ color:inherit; } .wrap{ width:100%; max-width:1080px; margin-inline:auto; padding-inline:var(--pad); position:relative; z-index:2; }
+  .mono{ font-family:var(--fm); }
+  header{ position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:2px solid var(--ink); }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand{ display:flex; align-items:center; gap:.6rem; font-family:var(--fd); font-weight:800; text-transform:uppercase; }
+  .brand .m{ width:24px; height:24px; border:2px solid var(--ink); border-radius:3px; background:var(--red); display:grid; place-items:center; } .brand .m::after{ content:""; width:8px; height:8px; background:var(--paper); }
+  .back{ font-family:var(--fk); font-weight:700; text-transform:uppercase; font-size:.8rem; border:2px solid var(--ink); background:var(--ink); color:var(--paper); padding:.5rem 1rem; border-radius:2px; box-shadow:3px 3px 0 var(--red); text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; transition:transform .14s,box-shadow .2s; }
+  .back:hover{ transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--red); } .back svg{ width:16px; height:16px; }
+  .hero{ padding:clamp(3rem,8vh,6rem) 0 clamp(2rem,5vh,3.5rem); }
+  .hero .kick{ font-family:var(--fm); font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--red); }
+  .hero h1{ font-size:clamp(2.6rem,8vw,5.5rem); margin-top:1rem; line-height:.92; } .hero h1 em{ font-style:normal; color:var(--red); }
+  .hero .role{ margin-top:1rem; font-family:var(--fk); font-weight:600; text-transform:uppercase; letter-spacing:.02em; color:var(--ink2); }
+  .hero p{ margin-top:1.4rem; max-width:60ch; font-size:1.08rem; color:var(--ink2); }
+  .hero .contact{ margin-top:2rem; display:flex; flex-wrap:wrap; gap:.7rem; }
+  .cbtn{ font-family:var(--fk); font-weight:700; text-transform:uppercase; font-size:.85rem; border:2px solid var(--ink); background:var(--paper); color:var(--ink); padding:.6rem 1.1rem; border-radius:2px; box-shadow:4px 4px 0 var(--ink); text-decoration:none; transition:transform .14s,box-shadow .2s; }
+  .cbtn.solid{ background:var(--ink); color:var(--paper); box-shadow:4px 4px 0 var(--red); } .cbtn:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--red); }
+  section.band{ padding-block:clamp(2.5rem,6vh,4.5rem); position:relative; z-index:2; }
+  .sh{ display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem; } .sh h2{ font-size:clamp(1.6rem,4vw,2.6rem); } .sh .ln{ flex:1; height:2px; background:var(--ink); opacity:.18; }
+  .exp{ } .exp-item{ position:relative; padding:0 0 1.9rem 1.7rem; border-left:2px solid var(--ink); } .exp-item:last-child{ border-left-color:transparent; padding-bottom:0; }
+  .exp-item::before{ content:""; position:absolute; left:-9px; top:.25rem; width:15px; height:15px; border-radius:50%; background:var(--red); border:2px solid var(--ink); box-shadow:0 0 0 4px var(--paper); }
+  .exp-item .er{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; } .exp-item h3{ font-size:1.3rem; } .exp-item .co{ font-family:var(--fk); font-weight:700; color:var(--red); text-transform:uppercase; font-size:.85rem; margin-top:.25rem; } .exp-item .dt{ font-family:var(--fm); font-size:.68rem; color:var(--ink2); text-transform:uppercase; }
+  .exp-item ul{ margin:.7rem 0 0; padding-left:1.1rem; color:var(--ink2); font-size:.92rem; } .exp-item li{ margin-bottom:.35rem; } .exp-item li::marker{ color:var(--red); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; } @media (max-width:720px){ .grid2{ grid-template-columns:1fr; } }
+  .facts{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--ink); border:2px solid var(--ink); border-radius:4px; overflow:hidden; box-shadow:6px 6px 0 var(--ink); } @media (max-width:560px){ .facts{ grid-template-columns:1fr; } }
+  .fc{ background:var(--card); padding:1.2rem 1.3rem; } .fc .fk{ font-family:var(--fm); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--red); margin-bottom:.6rem; } .fc .fv{ font-size:.9rem; color:var(--ink2); margin-top:.3rem; }
+  .skills{ display:flex; flex-wrap:wrap; gap:.5rem; } .skills span{ font-family:var(--fk); font-weight:600; font-size:.8rem; text-transform:uppercase; border:2px solid var(--ink); border-radius:2px; padding:.35rem .7rem; background:var(--card); }
+  .sub{ font-family:var(--fm); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--red); margin:1.4rem 0 .7rem; }
+  footer{ border-top:2px solid var(--ink); padding-block:2rem; position:relative; z-index:2; } footer .wrap{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; } footer .cr{ font-family:var(--fm); font-size:.7rem; color:var(--ink2); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./"><span class="m"></span>marktOS</a>
+  <a class="back" href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Portfolio</a>
+</div></header>
+
+<main>
+  <section class="hero"><div class="wrap">
+    <div class="kick">About · Fazal Khan</div>
+    <h1>Ten years <em>behind the comp.</em></h1>
+    <div class="role">Technical Director · VFX Artist · Wrocław, Poland</div>
+    <p>A creative media professional with over ten years in VFX, post-production, and AI-assisted video. Compositing, motion design, and generative AI across commercial, broadcast, and digital platforms, plus university-level teaching. Focused on scaling creative output with generative AI, and building marketing that actually moves the numbers through the marktOS studio.</p>
+    <div class="contact">
+      <a class="cbtn solid" href="mailto:fazalkhan.4426@gmail.com">fazalkhan.4426@gmail.com</a>
+      <a class="cbtn" href="tel:+48721453840">+48 721 453 840</a>
+      <a class="cbtn" href="https://vimeo.com/1048543687" target="_blank" rel="noopener">Showreel</a>
+      <a class="cbtn" href="https://www.behance.net/gaifsportee" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <div class="sh"><h2>Experience</h2><span class="ln"></span></div>
+    <div class="exp">
+      <div class="exp-item"><div class="er"><h3>Conforming &amp; Compositing Artist</h3><span class="dt">2020 – 2025</span></div><div class="co">JUICE · Wrocław</div>
+        <ul><li>Managed conforming workflows for high-resolution post-production pipelines</li><li>Advanced compositing: chroma keying, wire removal, motion tracking, clean-plate creation</li><li>AI-assisted work: face replacement, de-aging, and generative video effects</li><li>Cross-departmental coordination via ShotGrid with editors, colorists, and producers</li></ul></div>
+      <div class="exp-item"><div class="er"><h3>Academic Tutor · Creative Media</h3><span class="dt">2020 – present</span></div><div class="co">University of Lower Silesia (DSW) · Wrocław</div>
+        <ul><li>Teaching VFX, 3D lighting, rendering, and animation to undergraduates</li><li>Industry-standard pipelines: compositing, editing, and digital content</li><li>Mentoring collaborative projects that simulate real production environments</li></ul></div>
+      <div class="exp-item"><div class="er"><h3>3D Generalist / VFX Artist</h3><span class="dt">2023</span></div><div class="co">Kizny Visuals · Wrocław</div>
+        <ul><li>3D assets and CG content for commercial advertising campaigns</li><li>CG-to-live-action integration via advanced compositing</li></ul></div>
+      <div class="exp-item"><div class="er"><h3>VFX Artist</h3><span class="dt">2015 – 2017</span></div><div class="co">Greymatter VFX · Mumbai</div>
+        <ul><li>Visual effects for television commercials and broadcast productions</li><li>Compositing, keying, rotoscoping, and motion graphics under broadcast deadlines</li></ul></div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <div class="sh"><h2>Craft &amp; tools</h2><span class="ln"></span></div>
+    <div class="sub">Compositing &amp; VFX</div>
+    <div class="skills"><span>Nuke</span><span>After Effects</span><span>DaVinci Resolve</span><span>Keying</span><span>Roto</span><span>Tracking</span><span>Clean plates</span></div>
+    <div class="sub">3D &amp; rendering</div>
+    <div class="skills"><span>Maya</span><span>Cinema 4D</span><span>Houdini</span><span>Redshift</span><span>Unreal Engine</span></div>
+    <div class="sub">Design &amp; editing</div>
+    <div class="skills"><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span></div>
+    <div class="sub">AI &amp; generative</div>
+    <div class="skills"><span>Runway ML</span><span>HeyGen</span><span>ElevenLabs</span><span>Midjourney</span><span>Stable Diffusion</span><span>ComfyUI</span></div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <div class="sh"><h2>Education &amp; languages</h2><span class="ln"></span></div>
+    <div class="facts">
+      <div class="fc"><div class="fk">Education</div><div class="fv">BA, Creative Media — University of Lower Silesia (DSW), Wrocław</div><div class="fv">Visual Effects &amp; Graphics Design — FX School, Mumbai</div></div>
+      <div class="fc"><div class="fk">Languages</div><div class="fv">English — native</div><div class="fv">Hindi — native</div><div class="fv">Polish — basic</div></div>
+      <div class="fc"><div class="fk">Based in</div><div class="fv">Wrocław, Poland · open to remote</div></div>
+      <div class="fc"><div class="fk">Focus</div><div class="fv">VFX, post-production, and scaling creative output with generative AI</div></div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap" style="text-align:center">
+    <div class="sh" style="justify-content:center"><h2>Let's work together</h2></div>
+    <div class="contact" style="justify-content:center">
+      <a class="cbtn solid" href="mailto:fazalkhan.4426@gmail.com">Email me</a>
+      <a class="cbtn" href="./">See the portfolio</a>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap"><span class="brand"><span class="m"></span>marktOS</span><span class="cr" id="cr">© Fazal Khan · marktOS</span></div></footer>
+<script>try{document.getElementById('cr').textContent='© '+new Date().getFullYear()+' Fazal Khan · marktOS';}catch(e){}</script>
+</body>
+</html>
