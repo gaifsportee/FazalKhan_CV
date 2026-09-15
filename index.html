@@ -228,7 +228,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 </style>
 
 <style id="fazal-tech-theme">
-.tech-skin{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden;opacity:.72;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.tech-skin{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.72;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .tech-skin__timeline{position:absolute;left:4vw;right:4vw;bottom:2.5vh;height:18px;display:flex;align-items:center;gap:10px;font-size:8px;letter-spacing:.12em;opacity:.34}
 .tech-skin__timeline i{height:1px;flex:1;background:currentColor;position:relative}
 .tech-skin__timeline i:after{content:"";position:absolute;left:42%;top:-5px;width:1px;height:11px;background:currentColor}
@@ -658,7 +658,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 /* category cards */
 .cat-card{cursor:default}
 .cat-desc{color:#9a9a9a;font-size:clamp(12px,1.3vw,15px);line-height:1.5;margin-top:12px;max-width:520px}
-.cat-media{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;height:clamp(230px,34vh,380px)}
+.cat-media{display:grid;grid-template-columns:repeat(var(--cols,4),1fr);grid-auto-rows:clamp(150px,20vh,230px);gap:12px}
 .cat-tile{position:relative;overflow:hidden;background:#111;border:1px solid #222}
 .cat-tile img,.cat-tile video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
 .cat-tile:hover img,.cat-tile:hover video{transform:scale(1.06)}
@@ -721,7 +721,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .pv-tk{position:absolute;left:4px;bottom:4px;color:#fff;background:#000a;padding:2px 5px;font-size:7px;letter-spacing:.08em;pointer-events:none}
 
 /* ===== VFX-tool background motifs (faint global HUD) ===== */
-.toolbg{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.toolbg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .toolbg .tb{position:absolute;opacity:.08}
 .toolbg svg{display:block;width:100%;height:100%;overflow:visible;fill:none;stroke:currentColor;stroke-width:1}
 .toolbg .lbl{font:7px var(--mono);letter-spacing:.18em;fill:currentColor;stroke:none}
@@ -733,6 +733,37 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .tb-ae{right:1.6vw;bottom:8vh;width:min(320px,28vw);height:140px;color:#9aa6c4}
 @media(max-width:900px){.tb-maya,.tb-houdini{display:none}.tb-nuke{width:200px}.tb-ae{width:230px}}
 @media(prefers-reduced-motion:reduce){.toolbg{display:none}}
+</style>
+
+<style id="fazal-batch-fixes">
+/* ===== mobile menu (hamburger) ===== */
+.nav-burger{display:none;flex-direction:column;gap:5px;width:36px;height:36px;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;pointer-events:auto}
+.nav-burger span{display:block;width:22px;height:2px;background:currentColor;transition:.3s var(--ease)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:95;background:#070707f7;backdrop-filter:blur(14px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font:800 clamp(30px,9vw,52px)/1 var(--sans);letter-spacing:-.04em;color:var(--white);text-transform:uppercase}
+.mobile-menu a:hover,.mobile-menu a:active{color:var(--orange)}
+@media(max-width:800px){ .nav-burger{display:flex} }
+/* ===== mobile work-map: vertical node graph (spine + nodes + connectors), not a plain dropdown ===== */
+@media(max-width:800px){
+ .map-mobile{display:block;border:0;background:none;position:relative;padding-left:26px;margin-top:6px}
+ .map-mobile:before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:#2a2a2a}
+ .mm-disc{border:0;position:relative;margin-bottom:12px}
+ .mm-disc:before{content:"";position:absolute;left:-23px;top:24px;width:12px;height:12px;border-radius:50%;background:#0f0f0f;border:2px solid #555;z-index:2;transition:.3s var(--ease)}
+ .mm-disc.open:before{border-color:var(--orange);background:#2a1206;box-shadow:0 0 0 4px #d9572b18}
+ .mm-head{background:#0f0f0f;border:1px solid #333;box-shadow:6px 6px 0 #000;transition:.3s var(--ease)}
+ .mm-disc.open .mm-head{border-color:var(--orange)}
+ .mm-kids{background:transparent}
+ .mm-kids-inner{padding:6px 0 4px 12px}
+ .mm-proj{position:relative;border:1px solid #262626;border-left:0;background:#0c0c0c;margin:0 0 8px 16px;padding:13px 14px}
+ .mm-proj:last-child{margin-bottom:2px}
+ .mm-proj:before{content:"";position:absolute;left:-16px;top:50%;width:16px;height:1px;background:#3a3a3a}
+ .mm-proj:after{content:"";position:absolute;left:-19px;top:50%;width:6px;height:6px;border-radius:50%;background:#050505;border:1px solid #666;transform:translateY(-50%)}
+ .mm-proj:hover:after,.mm-proj:active:after{border-color:var(--orange);background:#2a1206}
+}
 </style>
 
 </head>
@@ -793,7 +824,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  <div class="nav-links">
   <a href="#gallery">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
  </div>
+ <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+ <a href="#gallery">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -814,26 +849,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <video class="hero-showreel-video"
              src="media/showreel.mp4" poster="media/showreel.jpg"
              autoplay muted loop playsinline preload="metadata"></video>
-
-      <!-- Roto mask: oval bezier, SUBTRACT matte (outside darkened), dotted outline -->
-      <div class="showreel-faded-mask" aria-hidden="true">
-        <svg viewBox="0 0 1000 560" preserveAspectRatio="none">
-          <defs>
-            <path id="roShape" d="M500 66 C742 66 900 150 900 280 C900 410 742 494 500 494 C258 494 100 410 100 280 C100 150 258 66 500 66 Z"/>
-          </defs>
-          <!-- subtract matte: darken everything OUTSIDE the oval -->
-          <path d="M0 0 H1000 V560 H0 Z M500 66 C742 66 900 150 900 280 C900 410 742 494 500 494 C258 494 100 410 100 280 C100 150 258 66 500 66 Z"
-                fill="rgba(6,6,6,.5)" fill-rule="evenodd"/>
-          <!-- dotted mask outline + faint inner -->
-          <use href="#roShape" fill="none" stroke="rgba(255,255,255,.62)" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
-          <use href="#roShape" fill="none" stroke="rgba(217,87,43,.55)" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round"/>
-        </svg>
-        <span class="mask-node mn1"></span>
-        <span class="mask-node mn2"></span>
-        <span class="mask-node mn3"></span>
-        <span class="mask-node mn4"></span>
-        <span class="mask-tech-label">ROTO · SUBTRACT · FEATHER 4</span>
-      </div>
 
       <div class="viewer-readout viewer-left">VIEWER 01<br><small>SHOWREEL</small></div>
       <div class="viewer-readout viewer-right">00:00:18:12</div>
@@ -1757,19 +1772,21 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
         {vid:'media/meeet_hw1.mp4',img:'media/meeet_hw1.jpg'},{vid:'media/latino_v02.mp4',img:'media/latino_v02.jpg'}
       ]},
       {t:'Photography',d:'People, product and food, lit and directed on set.',media:[
-        {img:'media/gosia_01.jpg'},{img:'media/gosia_03.jpg'},{img:'media/food_1.jpg'},{img:'media/food_5.jpg'}
+        {img:'media/swagath_drink.jpg'},{img:'media/food_5.jpg'},{img:'media/gosia_03.jpg'},
+        {img:'media/gosia_04.jpg'},{img:'media/photo_07.png'},{img:'media/photo_04.png'}
       ]},
-      {t:'Design & Branding',d:'Menus, food styling and brand systems for restaurants.',media:[
-        {img:'media/food_2.jpg'},{img:'media/food_4.jpg'},{img:'media/food_6.jpg'},{vid:'media/swagath_faluda.mp4',img:'media/swagath_faluda.jpg'}
+      {t:'Design & Branding',d:'Identity, print and brand systems, from posters to visiting cards.',media:[
+        {img:'media/Wera_portrait.png'},{img:'media/wera_visiting_card.png'},{img:'media/gosia_02.jpg'},{img:'media/JackFruit_Biryani_poster.png'}
       ]}
     ];
     CATS.forEach(function(c,i){
       var tiles=c.media.map(function(m){ return '<div class="cat-tile">'+cell(m)+'</div>'; }).join('');
+      var cols=c.media.length<=4?c.media.length:3;
       var track=document.createElement('div'); track.className='gstack-track';
       track.innerHTML='<article class="gstack-card cat-card">'
         +'<div class="gstack-top"><span class="gstack-num">'+('0'+(i+1)).slice(-2)+'</span>'
         +'<div class="gstack-id"><span class="gstack-cat mono">CATEGORY / '+('0'+(i+1)).slice(-2)+'</span><h3>'+esc(c.t)+'</h3><p class="cat-desc">'+esc(c.d)+'</p></div></div>'
-        +'<div class="cat-media">'+tiles+'</div></article>';
+        +'<div class="cat-media" style="--cols:'+cols+'">'+tiles+'</div></article>';
       stack.appendChild(track);
       var card=track.querySelector('.gstack-card');
       card.addEventListener('mouseenter',function(){ card.querySelectorAll('video').forEach(function(v){ v.play().catch(function(){}); }); });
@@ -1787,18 +1804,19 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
         +'<div class="gbrow">'+CLIENTS.map(function(cl){ return '<button class="gbchip" type="button" data-proj="'+cl.id+'"><div class="gbthumb"><img src="'+cl.thumb+'" alt="'+esc(cl.name)+'" loading="lazy"></div><div class="gbname"><span>'+esc(cl.name)+'</span><span>↗</span></div></button>'; }).join('')+'</div>';
       bar.addEventListener('click',function(e){ var b=e.target.closest('.gbchip'); if(b) openProject(b.dataset.proj); });
     }
-    /* pin + fade: the pinned card stays in place and fades as the next card rises over it */
-    var tracks=[].slice.call(stack.querySelectorAll('.gstack-track'));
+    /* parallax stack: each pinned card scales down + dims as the next card scrolls up over it */
+    var tracks=[].slice.call(stack.querySelectorAll('.gstack-track')), n=tracks.length;
     function stackScroll(){
-      var mob=matchMedia('(max-width:800px)').matches, last=tracks.length-1;
+      var mob=matchMedia('(max-width:800px)').matches;
       tracks.forEach(function(tr,i){
         var card=tr.querySelector('.gstack-card'); if(!card) return;
-        if(mob||i===last){ card.style.opacity=''; card.style.filter=''; return; }
+        if(mob){ card.style.transform=''; card.style.filter=''; card.style.opacity=''; return; }
         var r=tr.getBoundingClientRect();
         var prog=Math.max(0,Math.min(1,-r.top/(tr.offsetHeight||1)));
-        var fade=Math.max(0,Math.min(1,(prog-0.45)/0.5));
-        card.style.opacity=(1-fade).toFixed(3);
-        card.style.filter='blur('+(fade*3).toFixed(1)+'px)';
+        var target=1-(n-1-i)*0.05;                 /* deeper cards settle smaller */
+        card.style.transform='scale('+(1-(1-target)*prog).toFixed(4)+')';
+        card.style.filter='brightness('+(1-prog*0.42).toFixed(3)+')';
+        card.style.opacity=(1-prog*0.12).toFixed(3);
       });
     }
     if(!reduce){ addEventListener('scroll',stackScroll,{passive:true}); addEventListener('resize',stackScroll,{passive:true}); stackScroll(); }
@@ -1883,6 +1901,11 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
 <script id="fazal-scroll-safety">
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  /* Mobile menu toggle */
+  var burger=document.getElementById('navBurger'), mmenu=document.getElementById('mobileMenu');
+  function setMenu(open){ if(!mmenu) return; mmenu.classList.toggle('open',open); if(burger){ burger.classList.toggle('open',open); burger.setAttribute('aria-expanded',open?'true':'false'); } mmenu.setAttribute('aria-hidden',open?'false':'true'); }
+  if(burger) burger.addEventListener('click',function(){ setMenu(!mmenu.classList.contains('open')); });
+  if(mmenu) mmenu.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
   /* Controlled, click-only smooth nav (no global scroll-behavior, no scrollIntoView) */
   var NAV_OFFSET=66;
   document.addEventListener('click',function(e){
@@ -1890,6 +1913,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     var id=a.getAttribute('href'); if(!id||id.length<2) return;
     var t=document.querySelector(id); if(!t) return;
     e.preventDefault();
+    setMenu(false);
     var y=t.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop)-NAV_OFFSET;
     window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
   });
@@ -1901,6 +1925,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
   ['#modal','#reelModal','.proj-modal'].forEach(function(sel){ var el=document.querySelector(sel); if(el) mo.observe(el,{attributes:true,attributeFilter:['class']}); });
   document.addEventListener('keydown',function(e){
     if(e.key!=='Escape') return;
+    if(mmenu&&mmenu.classList.contains('open')) setMenu(false);
     var open=openModals(); if(!open.length) return;
     open.forEach(function(m){ m.classList.remove('open'); });
     document.querySelectorAll('.proj-modal video,.reel-modal video').forEach(function(v){ try{v.pause();}catch(_){}});
