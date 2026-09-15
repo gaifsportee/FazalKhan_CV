@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fazal Khan — Creative Director / VFX / Technical Artist</title>
-<meta name="description" content="Fazal Khan — Creative Director, VFX artist and marketing strategist.">
+<title>Fazal Khan · Creative Director / VFX / Technical Artist</title>
+<meta name="description" content="Fazal Khan, Creative Director and VFX artist and marketing strategist.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:var(--black)}
+html{background:var(--black)}
 body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden}
 body.lock{overflow:hidden}
 a{color:inherit;text-decoration:none}
@@ -257,65 +257,11 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 </style>
 
 
-<style id="fazal-hero-showreel-v6">
-.hero-showreel-frame{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);
-  width:min(760px,62vw);height:min(620px,70vh);z-index:4;pointer-events:auto;
-}
-.hero-showreel-mask{
-  position:absolute;inset:5% 10% 18% 10%;overflow:hidden;
-  clip-path:polygon(8% 0,92% 0,100% 12%,96% 88%,82% 100%,12% 96%,0 84%,4% 12%);
-  background:#111;
-  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 100px rgba(0,0,0,.45);
-}
-.hero-showreel-video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) contrast(1.04)}
-.hero-mask-overlay{position:absolute;inset:0;border:1px solid rgba(255,255,255,.24)}
-.mask-corner{position:absolute;width:24px;height:24px;border-color:rgba(255,255,255,.65)}
-.mc1{left:3%;top:4%;border-left:1px solid;border-top:1px solid}
-.mc2{right:3%;top:4%;border-right:1px solid;border-top:1px solid}
-.mc3{right:3%;bottom:4%;border-right:1px solid;border-bottom:1px solid}
-.mc4{left:3%;bottom:4%;border-left:1px solid;border-bottom:1px solid}
-.mask-label{position:absolute;left:4%;bottom:5%;font:8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.15em;color:rgba(255,255,255,.7)}
-
-.hero-program-dialog{
-  position:absolute;left:0;right:0;bottom:0;height:31%;background:rgba(8,8,8,.94);
-  border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 50px rgba(0,0,0,.38);
-  font:8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:rgba(255,255,255,.72);
-  backdrop-filter:blur(8px);
-}
-.program-topbar{height:24px;display:flex;justify-content:space-between;align-items:center;padding:0 10px;border-bottom:1px solid rgba(255,255,255,.1)}
-.program-viewer{height:48%;position:relative;border-bottom:1px solid rgba(255,255,255,.1)}
-.viewer-meta{position:absolute;left:10px;top:8px}.viewer-timecode{position:absolute;right:10px;bottom:7px}
-.viewer-crosshair{position:absolute;left:50%;top:50%;width:30px;height:30px;transform:translate(-50%,-50%);opacity:.35}
-.viewer-crosshair:before,.viewer-crosshair:after{content:"";position:absolute;background:currentColor}
-.viewer-crosshair:before{width:30px;height:1px;top:15px}.viewer-crosshair:after{height:30px;width:1px;left:15px}
-.program-timeline{height:28%;padding:6px 10px}
-.timeline-ruler{display:flex;justify-content:space-between;opacity:.45;margin-bottom:5px}
-.timeline-track{height:20px;position:relative;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08)}
-.clip{position:absolute;top:3px;height:12px;padding:3px 5px;border:1px solid rgba(255,255,255,.18);font-style:normal;font-size:6px}
-.clip-a{left:1%;width:20%}.clip-b{left:22%;width:24%}.clip-c{left:47%;width:18%}.clip-d{left:66%;width:28%}
-.timeline-cursor{position:absolute;left:42%;top:-7px;width:1px;height:26px;background:currentColor;box-shadow:0 0 10px currentColor}
-.timeline-cursor:before{content:"";position:absolute;left:-4px;top:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor}
-
-@media(max-width:800px){
-  .hero-showreel-frame{width:94vw;height:68vh;top:48%}
-  .hero-showreel-mask{inset:4% 3% 25% 3%}
-  .hero-program-dialog{height:32%;font-size:7px}
-  .program-topbar span:nth-child(2){display:none}
-  .clip{font-size:5px}
-}
-@media(max-width:480px){
-  .hero-showreel-frame{height:62vh}
-  .hero-showreel-mask{inset:3% 0 29% 0}
-  .hero-program-dialog{height:34%}
-}
-</style>
-
 
 <style id="fazal-hero-program-v7">
 .hero-showreel-frame{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);
-  width:min(820px,68vw);z-index:4;pointer-events:auto;
+  width:min(820px,68vw);height:min(620px,70vh);z-index:4;pointer-events:auto;
 }
 .hero-program-window{
   position:relative;background:rgba(8,8,8,.94);
@@ -336,7 +282,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   position:relative;aspect-ratio:16/8.7;overflow:hidden;background:#0d0d0d;
   border-bottom:1px solid rgba(255,255,255,.1)
 }
-.hero-showreel-video{width:100%;height:100%;display:block;object-fit:cover}
+.hero-showreel-video{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.9) contrast(1.04)}
 .showreel-faded-mask{position:absolute;inset:0;pointer-events:none}
 .showreel-faded-mask svg{position:absolute;inset:0;width:100%;height:100%}
 .mask-node{
@@ -377,7 +323,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 .showreel-fullscreen-btn span{margin-right:5px}
 
 @media(max-width:800px){
-  .hero-showreel-frame{width:94vw;top:48%}
+  .hero-showreel-frame{width:94vw;height:68vh;top:48%}
   .program-titlebar{grid-template-columns:1fr auto;font-size:7px}
   .program-title-center{display:none}
   .program-title-right{display:none}
@@ -386,7 +332,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   .showreel-fullscreen-btn{left:8px;right:8px;bottom:8px;text-align:center}
 }
 @media(max-width:480px){
-  .hero-showreel-frame{width:96vw}
+  .hero-showreel-frame{width:96vw;height:62vh}
   .program-viewer{aspect-ratio:4/3}
   .mask-tech-label{font-size:6px}
   .viewer-left{left:8px;top:8px}.viewer-right{right:8px;bottom:8px}
@@ -658,6 +604,90 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 }
 </style>
 
+<style id="fazal-craft-surfaces">
+/* ===== browser surfaces themed from the palette (built, not assembled) ===== */
+html{color-scheme:dark}
+:root{scrollbar-color:#3a3a3a #0b0b0b}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#0b0b0b}
+::-webkit-scrollbar-thumb{background:#333;border:3px solid #0b0b0b}
+::-webkit-scrollbar-thumb:hover{background:var(--orange)}
+*{caret-color:var(--orange)}
+input,textarea,select{accent-color:var(--orange)}
+/* tabular figures for data/measurement */
+.mono,.phase-chart .val,.growth-metrics strong,.ba-cell .cv,.growth-metrics .from,#wtTC,.viewer-readout{font-variant-numeric:tabular-nums}
+/* keyboard focus: visible for keyboard, invisible for mouse */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,
+.gcard:focus-visible,.pv-thumb:focus-visible,.option:focus-visible,.vtab:focus-visible,.mbtn:focus-visible,
+.node-filter button:focus-visible,.lab-source button:focus-visible,.lab-presets button:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:1px}
+:focus:not(:focus-visible){outline:none}
+.nav-links a{text-underline-offset:4px}
+/* contrast lift for readable secondary text on dark (WCAG AA) */
+.system-desc{color:#8f8f8f}
+.gc-tag{color:#d0d0d0}
+.graph-node small,.pipe-node small,.node-readout{color:#8c8c8c}
+.node-readout b{color:var(--orange)}
+.node-lab-head p{color:#9a9a9a}
+/* orange labels on the light case section need a darker rust to clear 4.5:1 */
+.case .orange,.phase-chart .col.opt .xl b{color:#a5371a}
+/* procedural wireframe camera behind the contact CTA (img2threejs, code-only) */
+.contact{position:relative;overflow:hidden}
+.contact .container{position:relative;z-index:1}
+.cam3d{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;opacity:.34}
+@media(max-width:800px){.cam3d{opacity:.2}}
+@media(prefers-reduced-motion:reduce){.cam3d{opacity:.22}}
+/* ===== sticky-stacking gallery cards (mechanic borrowed, styled to this world) ===== */
+.gal-stack{position:relative}
+.gstack-track{height:clamp(560px,78vh,820px)}
+.gstack-track:last-child{height:auto;min-height:clamp(520px,70vh,760px)}
+.gstack-card{position:sticky;top:92px;transform-origin:center top;background:#0f0f0f;border:1px solid #333;box-shadow:14px 14px 0 #000;padding:clamp(18px,2.3vw,34px);overflow:hidden;cursor:pointer;will-change:transform,filter}
+.gstack-top{display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(14px,2vw,28px);margin-bottom:clamp(16px,2vw,26px)}
+.gstack-num{font:900 clamp(38px,6.5vw,104px)/.8 var(--sans);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px #3d3d3d;flex:none}
+.gstack-id{flex:1;min-width:0}
+.gstack-cat{color:var(--orange)}
+.gstack-id h3{font-size:clamp(24px,3.6vw,56px);letter-spacing:-.045em;font-weight:800;line-height:.86;margin-top:8px}
+.gstack-open{border:1px solid var(--line);background:transparent;color:#fff;padding:12px 17px;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.25s var(--ease);flex:none}
+.gstack-open:hover{border-color:var(--orange);background:#d9572b18;transform:translateY(-2px)}
+.gstack-media{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;height:clamp(280px,40vh,440px)}
+.gstack-media.solo{grid-template-columns:1fr}
+.gm-main{position:relative;overflow:hidden;background:#111;border:1px solid #222;height:100%}
+.gm-side{display:grid;gap:12px;grid-auto-rows:1fr;height:100%}
+.gm-side figure{position:relative;overflow:hidden;background:#111;border:1px solid #222;margin:0}
+.gm-main img,.gm-main video,.gm-side img,.gm-side video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.gstack-card:hover .gm-main img,.gstack-card:hover .gm-main video{transform:scale(1.04)}
+/* category cards */
+.cat-card{cursor:default}
+.cat-desc{color:#9a9a9a;font-size:clamp(12px,1.3vw,15px);line-height:1.5;margin-top:12px;max-width:520px}
+.cat-media{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;height:clamp(230px,34vh,380px)}
+.cat-tile{position:relative;overflow:hidden;background:#111;border:1px solid #222}
+.cat-tile img,.cat-tile video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.cat-tile:hover img,.cat-tile:hover video{transform:scale(1.06)}
+/* client bar */
+.gal-bar{margin-top:7vh;border-top:1px solid var(--line);padding-top:28px}
+.gal-bar-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.gbrow{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}
+.gbchip{flex:0 0 auto;width:158px;border:1px solid #333;background:#0f0f0f;padding:0;cursor:pointer;overflow:hidden;transition:.25s var(--ease);scroll-snap-align:start}
+.gbchip:hover{border-color:var(--orange);transform:translateY(-4px)}
+.gbthumb{aspect-ratio:16/10;overflow:hidden;background:#111}
+.gbthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.gbchip:hover .gbthumb img{transform:scale(1.06)}
+.gbname{padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#ccc}
+.gbchip:hover .gbname{color:#fff}
+@media(max-width:800px){
+ .gstack-track,.gstack-track:last-child{height:auto;min-height:0;margin-bottom:16px}
+ .gstack-card{position:static;transform:none!important;filter:none!important;opacity:1!important;box-shadow:8px 8px 0 #000}
+ .gstack-media,.gstack-media.solo{height:auto;grid-template-columns:1fr;gap:10px}
+ .gm-main{aspect-ratio:16/10}
+ .gm-side{grid-auto-rows:auto;grid-template-columns:1fr 1fr}
+ .gm-side figure{aspect-ratio:1/1}
+ .cat-media{height:auto;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:8px}
+ .cat-tile{aspect-ratio:1/1}
+ .gstack-num{font-size:15vw}
+ .gstack-id h3{font-size:8vw}
+ .gbchip{width:142px}
+}
+</style>
+
 <style id="fazal-redesign-additions-4">
 /* ===== scroll-telling: reveal + parallax helpers ===== */
 .r-up{opacity:0;transform:translateY(48px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
@@ -761,7 +791,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 <nav class="nav">
  <a class="nav-name" href="#top">FAZAL KHAN</a>
  <div class="nav-links">
-  <a href="#work">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
+  <a href="#gallery">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
  </div>
 </nav>
 
@@ -834,9 +864,6 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   </div>
 </div>
 
-  <div class="hero-word back">FAZAL</div>
-  <div class="hero-word mid">FAZAL</div>
-  <div class="hero-word front">FAZAL</div>
 
   
    <div class="scan"></div>
@@ -852,7 +879,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   <div class="hero-ui">
    <div class="hero-top">
     <div class="mono muted">CREATIVE DIRECTOR / VFX / MARKETING</div>
-    <strong>WROCŁAW — POLAND</strong>
+    <strong>WROCŁAW, POLAND</strong>
    </div>
    <div class="hero-bottom">
     <p>I create the image, build the system behind it, and care about what happens after it goes live.</p>
@@ -869,82 +896,29 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
  </div>
 </section>
 
-<div class="marquee"><div class="marquee-track">
- <span>VFX · CINEMATOGRAPHY · MOTION · PHOTOGRAPHY · BRAND · MARKETING · AI · STRATEGY · GROWTH ·</span>
- <span>VFX · CINEMATOGRAPHY · MOTION · PHOTOGRAPHY · BRAND · MARKETING · AI · STRATEGY · GROWTH ·</span>
-</div></div>
-
-<!-- INTRO / SERVICE PIPELINE -->
-<section class="intro" id="service">
- <div class="container">
-  <div class="pipeline-stage r-up">
-   <div class="pipe-toolbar">
-    <span class="mono" style="color:#777">service_pipeline.nk</span>
-    <span class="mono" id="pipeStatus" style="color:#777">CAMERA → MARKETING</span>
-   </div>
-   <div class="pipe-overlay">
-    <div class="mono muted">THE SERVICE</div>
-    <div class="intro-copy">I work somewhere between <em>image-making</em>, technology and <em>business.</em></div>
-    <div class="mono orange">ONE PIPELINE · CAMERA → MARKETING</div>
-   </div>
-   <div class="pipe-canvas" id="pipeCanvas"><svg id="pipeWires" preserveAspectRatio="none" aria-hidden="true"></svg></div>
-  </div>
- </div>
-</section>
-
-<!-- PRODUCTION SYSTEM -->
-
-
-<!-- WORK — program-window treatment -->
-<section class="work-intro" id="work">
- <div class="container">
-  <div class="mono muted">SELECTED WORK</div>
-  <div class="wt-window r-up">
-   <div class="wt-bar"><span class="wt-dots"><i></i><i></i><i></i></span><span class="mono">WORK_REEL.prproj</span><span class="mono">PROGRAM · 24 FPS</span></div>
-   <div class="wt-viewer">
-    <video class="wt-video" src="media/showreel.mp4" poster="media/showreel.jpg" autoplay muted loop playsinline preload="metadata"></video>
-    <div class="wt-scrim"></div>
-    <h2><span>THE</span><span class="outline">WORK</span><span>DOES</span><span>THE TALKING.</span></h2>
-    <div class="wt-badge mono">PROGRAM · RGB · <span id="wtTC">00:00</span></div>
-   </div>
-   <div class="wt-timeline">
-    <div class="wt-ruler"><span>00:00</span><span>00:10</span><span>00:20</span><span>00:30</span></div>
-    <div class="wt-track">
-     <i class="wt-clip" style="left:1%;width:16%">OPERA</i>
-     <i class="wt-clip" style="left:18%;width:13%">ISKRA</i>
-     <i class="wt-clip orange" style="left:32%;width:16%">CAT&amp;ALICE</i>
-     <i class="wt-clip" style="left:49%;width:14%">GOSIA</i>
-     <i class="wt-clip" style="left:64%;width:14%">MEEET</i>
-     <i class="wt-clip orange" style="left:79%;width:19%">LATINO</i>
-     <b class="wt-head" id="wtHead"></b>
-    </div>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- GALLERY — real projects, videos + photos -->
+<!-- GALLERY, real projects, videos + photos -->
 <section class="gallery" id="gallery">
  <div class="container">
   <div class="gal-head r-up">
    <div class="mono orange">THE GALLERY</div>
-   <div class="mono muted">HOVER TO PLAY · CLICK TO OPEN</div>
+   <div class="mono muted">SCROLL THE CATEGORIES · THEN PICK A CLIENT</div>
   </div>
-  <div class="gal-grid" id="galGrid"></div>
+  <div class="gal-stack" id="galStack"></div>
+  <div class="gal-bar" id="galBar"></div>
  </div>
 </section>
 
-<!-- WORK MAP — interactive node graph (root → discipline → real projects) -->
+<!-- WORK MAP, interactive node graph (root → discipline → real projects) -->
 <section class="node-lab" id="work-map">
  <div class="container">
   <div class="node-lab-head">
    <div><div class="mono orange">THE WORK MAP</div><h2>EVERY PROJECT<br>STARTS WITH ME.</h2></div>
-   <p>From Fazal at the root, out to each discipline, out to the real clients. <strong>Hover a discipline</strong> to branch the graph — hover a project for what I did, click to open it.</p>
+   <p>From Fazal at the root, out to each discipline, out to the real clients. <strong>Hover a discipline</strong> to branch the graph, hover a project for what I did, click to open it.</p>
   </div>
   <div class="node-filter" id="discFilter" role="tablist" aria-label="Disciplines"></div>
   <div class="node-workspace">
    <div class="node-toolbar">
-    <span class="mono" style="color:#777">work_map.nk</span>
+    <span class="mono" style="color:#8c8c8c">work_map.nk</span>
     <div class="tools"><span class="node-tool active">GRAPH</span><span class="node-tool" id="mapCount">14 NODES</span></div>
    </div>
    <div class="node-canvas" id="mapCanvas">
@@ -954,7 +928,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   </div>
   <div class="map-mobile" id="mapMobile" aria-label="Work map (list)"></div>
 
-  <!-- VFX BREAKDOWN — synced face-swap videos + compositing wiper (lives with the graph) -->
+  <!-- VFX BREAKDOWN, synced face-swap videos + compositing wiper (lives with the graph) -->
   <div class="vfx-breakdown">
    <div class="vfx-bd-head">
     <div><div class="mono orange">NODE OUTPUT · VFX</div><h3>DRAG THE BREAKDOWN.</h3></div>
@@ -1033,7 +1007,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
    <div class="sw-content-head r-up">
     <div class="mono orange">THE CONTENT</div>
     <h3>WHAT THE SYSTEM<br>ACTUALLY SHIPS.</h3>
-    <p>The growth above runs on real output — bilingual social reels and food photography, produced weekly.</p>
+    <p>The growth above runs on real output, bilingual social reels and food photography, produced weekly.</p>
    </div>
    <div class="sw-gallery stagger">
     <figure class="sw-cell wide"><img src="media/food_1.jpg" alt="Swagath thali" loading="lazy"><figcaption class="mono">THALI</figcaption></figure>
@@ -1069,13 +1043,13 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
  <div class="container about-grid">
   <div class="about-photo reveal">
    <video src="media/showreel.mp4" poster="media/showreel.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Showreel frames"></video>
-   <span class="about-photo-tag mono">SELECTED FRAMES · 2020–2026</span>
+   <span class="about-photo-tag mono">SELECTED FRAMES · 2020-2026</span>
   </div>
   <div class="about-copy reveal">
    <div class="mono muted">THE PERSON</div>
    <h2>FAZAL<br>KHAN</h2>
-   <p>Technical Director and creative lead of <strong>marktOS</strong> — a technical creative studio in Wrocław, Poland. Ten years working with images, across VFX, motion and content.</p>
-   <p>The work eventually led to a bigger question: what happens when the craft is wired to the strategy behind it? marktOS is the answer — one team that can make the image and run the system it lives in.</p>
+   <p>Technical Director and creative lead of <strong>marktOS</strong>, a technical creative studio in Wrocław, Poland. Ten years working with images, across VFX, motion and content.</p>
+   <p>The work eventually led to a bigger question: what happens when the craft is wired to the strategy behind it? marktOS is the answer, one team that can make the image and run the system it lives in.</p>
   </div>
  </div>
 </section>
@@ -1150,10 +1124,11 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+ <canvas class="cam3d" id="cam3d" aria-hidden="true"></canvas>
  <div class="container">
   <div class="mono orange r-up">LET'S MAKE SOMETHING</div>
   <h2 data-par="0.06">WHAT ARE<br><span>WE</span><br>MAKING?</h2>
-  <p class="contact-intro">Tell me what you're trying to create, fix, launch or improve. It can be a film, VFX shot, campaign, brand, content system — or something that doesn't fit neatly into a category.</p>
+  <p class="contact-intro">Tell me what you're trying to create, fix, launch or improve. It can be a film, VFX shot, campaign, brand, content system, or something that doesn't fit neatly into a category.</p>
   <div class="contact-actions">
    <button class="contact-btn primary" id="openForm">Start a project ↗</button>
    <a class="contact-btn" href="mailto:fazalkhan.4426@gmail.com">Email directly ↗</a>
@@ -1187,7 +1162,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
   <div class="form-head">
    <div class="mono orange">PROJECT INTAKE / 01</div>
    <h2>LET'S BUILD<br>SOMETHING.</h2>
-   <p>A short interactive brief. The goal is not to make you fill out a boring agency form — just give me enough context to understand the opportunity.</p>
+   <p>A short interactive brief. The goal is not to make you fill out a boring agency form, just give me enough context to understand the opportunity.</p>
   </div>
 
   <div class="form-progress" id="progress">
@@ -1226,10 +1201,10 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
     <div class="question">Tell me about it.</div>
     <div class="field"><label>Project / company</label><input name="company" placeholder="Who is this for?"></div>
     <div class="field"><label>Brief</label><textarea name="brief" placeholder="What are you trying to make, solve or achieve?"></textarea></div>
-    <div class="field"><label>Budget range — optional</label>
+    <div class="field"><label>Budget range, optional</label>
      <select name="budget">
       <option value="">Prefer not to say</option>
-      <option>Under €1,000</option><option>€1,000–€3,000</option><option>€3,000–€7,500</option><option>€7,500–€15,000</option><option>€15,000+</option>
+      <option>Under €1,000</option><option>€1,000-€3,000</option><option>€3,000-€7,500</option><option>€7,500-€15,000</option><option>€15,000+</option>
      </select>
     </div>
    </div>
@@ -1238,9 +1213,9 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
     <div class="question">Where should I reply?</div>
     <div class="field"><label>Your name *</label><input name="name" required placeholder="Your name"></div>
     <div class="field"><label>Email *</label><input name="email" type="email" required placeholder="you@company.com"></div>
-    <div class="field"><label>Phone / WhatsApp — optional</label><input name="phone" placeholder="+48 ..."></div>
+    <div class="field"><label>Phone / WhatsApp, optional</label><input name="phone" placeholder="+48 ..."></div>
     <div class="field"><label>Preferred timing</label>
-     <select name="timing"><option>As soon as possible</option><option>This month</option><option>Next 1–3 months</option><option>Just exploring</option></select>
+     <select name="timing"><option>As soon as possible</option><option>This month</option><option>Next 1-3 months</option><option>Just exploring</option></select>
     </div>
     <div class="form-consent">
       <input id="consent" type="checkbox" required>
@@ -1267,9 +1242,6 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 <script>
 /* HERO SCROLL */
 const hero=document.querySelector('.hero');
-const front=document.querySelector('.hero-word.front');
-const mid=document.querySelector('.hero-word.mid');
-const back=document.querySelector('.hero-word.back');
 const heroFrame=document.querySelector('.hero-showreel-frame');
 const left=document.querySelector('.side-left');
 const right=document.querySelector('.side-right');
@@ -1277,9 +1249,6 @@ const right=document.querySelector('.side-right');
 window.addEventListener('scroll',()=>{
  const r=hero.getBoundingClientRect();
  const p=Math.max(0,Math.min(1,-r.top/(hero.offsetHeight-innerHeight)));
- if(front) front.style.transform=`translateY(${20-p*130}px) scale(${1-p*.18})`;
- if(mid) mid.style.transform=`translateY(${p*80}px) scale(${1-p*.12})`;
- if(back) back.style.transform=`translateY(${-20+p*150}px) scale(${1-p*.08})`;
  if(heroFrame) heroFrame.style.transform=`translate(-50%,-48%) translateY(${p*-70}px) scale(${1-p*.12})`,heroFrame.style.opacity=1-p*.85;
  if(left){left.style.transform=`translateX(${p*120}px)`;left.style.opacity=.18+p*.82;}
  if(right){right.style.transform=`translateX(${-p*120}px)`;right.style.opacity=.18+p*.82;}
@@ -1368,7 +1337,7 @@ Phone / WhatsApp: ${data.phone||''}
 
 Sent through the Fazal Khan portfolio.`;
 
- const subject=`Project inquiry — ${data.company||data.name||'New project'}`;
+ const subject=`Project inquiry, ${data.company||data.name||'New project'}`;
  window.location.href=`mailto:fazalkhan.4426@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
  form.style.display='none';
@@ -1460,12 +1429,12 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     {id:'iskra',disc:['vfx'],num:'04',title:'Iskra',role:'VFX · Conforming · Projections',vfx:true,radial:['Maya','After Effects','Conforming','Projections'],tags:['Conforming','Projections','Maya'],text:["Conforming the shots and building camera-projected environments in Maya and After Effects, matched to the edit."]},
     {id:'catalice',disc:['content'],num:'05',title:'Cat&Alice Wrocław',role:'Social · Video + Photo',vfx:false,radial:['3D animation','2D + live','Instagram','Menu','Posters','Photos'],tags:['3D + 2D','Menu','Posters','Photos'],text:["Instagram content combining 3D animation, 2D, and real life, plus menu, posters, and photography for a Wrocław venue."]},
     {id:'latino',disc:['content','marketing'],num:'06',title:'Latino Bar Wrocław',role:'Content · Video',vfx:false,radial:['Short-form','Social','Promos'],tags:['Short-form','Nightlife','Social'],text:["High-energy short-form content for a Wrocław bar, built for social."]},
-    {id:'meeet',disc:['content'],num:'07',title:'Meeet Events',role:'Events · Content',vfx:false,radial:['Content','Planning','Organizing','Coverage'],tags:['Content','Planning','Events'],text:["Content plus planning and organizing the event itself — coverage and social cut-downs."]},
+    {id:'meeet',disc:['content'],num:'07',title:'Meeet Events',role:'Events · Content',vfx:false,radial:['Content','Planning','Organizing','Coverage'],tags:['Content','Planning','Events'],text:["Content plus planning and organizing the event itself, coverage and social cut-downs."]},
     {id:'gym',disc:['content'],num:'08',title:'Gym · Photo & Video',role:'Video · Photography',vfx:false,radial:['Brand film','Photography','Direction'],tags:['Brand film','Photography','Talent'],text:["Brand photography and high-energy video for a local gym, with trainers directed on camera."]},
-    {id:'hos',disc:['brand','marketing','web'],num:'09',title:'House of Spices',role:'Full-service',vfx:false,radial:['Design','Social','Strategy','Events','Menu','Photos'],tags:['Design','Social','Strategy','Events'],text:["A second Indian restaurant from the SWAGATH owner. Almost everything: design, social, strategy, planning, events — plus menu, posters, fliers, and food photography."]},
+    {id:'hos',disc:['brand','marketing','web'],num:'09',title:'House of Spices',role:'Full-service',vfx:false,radial:['Design','Social','Strategy','Events','Menu','Photos'],tags:['Design','Social','Strategy','Events'],text:["A second Indian restaurant from the SWAGATH owner. Almost everything: design, social, strategy, planning, events, plus menu, posters, fliers, and food photography."]},
     {id:'wera',disc:['brand'],num:'10',title:'Wera · Psycholog',role:'Branding · Photoshoot',vfx:false,radial:['Photoshoot','Visiting card','Fliers','QR · Linktree'],tags:['Photoshoot','Visiting card','Fliers','QR'],text:["A photoshoot and full design for a psychologist: visiting card and fliers, plus a QR code routing to a Linktree of all her accounts."]},
-    {id:'pt',disc:['brand'],num:'11',title:'Personal Trainer · Gosia',role:'Branding · Photoshoot · Logo',vfx:false,radial:['Photoshoot','Logo','Poster','Design'],tags:['Photoshoot','Logo','Poster'],text:["A photoshoot plus a full identity for personal trainer Małgorzata Rakicka (Gosia): logo, posters, and print — shot, edited, and built into a brand."]},
-    {id:'swagath',disc:['marketing','web'],num:'12',title:'SWAGATH',role:'Marketing Manager · Full-service',vfx:false,radial:['Strategy','Design','Social','Web','Ordering','Reputation'],tags:['Strategy','Web','Reputation','Ads'],text:["Full marketing for a Wrocław restaurant. Fixed the dead website, activated ordering, defended a 4.5-star rating, and ran a live Google Ads campaign — the case study below."]},
+    {id:'pt',disc:['brand'],num:'11',title:'Personal Trainer · Gosia',role:'Branding · Photoshoot · Logo',vfx:false,radial:['Photoshoot','Logo','Poster','Design'],tags:['Photoshoot','Logo','Poster'],text:["A photoshoot plus a full identity for personal trainer Małgorzata Rakicka (Gosia): logo, posters, and print, shot, edited, and built into a brand."]},
+    {id:'swagath',disc:['marketing','web'],num:'12',title:'SWAGATH',role:'Marketing Manager · Full-service',vfx:false,radial:['Strategy','Design','Social','Web','Ordering','Reputation'],tags:['Strategy','Web','Reputation','Ads'],text:["Full marketing for a Wrocław restaurant. Fixed the dead website, activated ordering, defended a 4.5-star rating, and ran a live Google Ads campaign, the case study below."]},
     {id:'kskool',disc:['marketing','web'],num:'13',title:'K-Skool',role:'Content · Strategy',vfx:false,radial:['Content','Strategy','Positioning'],tags:['Strategy','Content','Creative'],text:["Content and marketing strategy for K-Skool: positioning, content pillars, and creative."]},
     {id:'arwa',disc:['web'],num:'14',title:'ARWA Co.',role:'Web design & build',vfx:false,radial:['Web design','Build','Identity'],tags:['Web design','Build','Identity'],text:["Designed and built the website for ARWA Co., from layout and identity to the live site."]},
     {id:'marktos',disc:['web'],num:'15',title:'marktOS App',role:'Product · AI',vfx:false,radial:['AI audit','Strategy','Automation'],tags:['AI','Audit','Strategy'],text:["The proprietary AI app that audits a local business, scores its digital health, and builds a 90-day strategy. The engine behind every engagement."]}
@@ -1473,7 +1442,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
   /* project id -> media cells */
   var V9='9/16',V16='16/9';
   var MEDIA={
-    face:[{t:'Before — raw plate',k:'Plate',vid:'media/faceswap_before.mp4',img:'media/faceswap_before.jpg',ar:V16},{t:'After — AI face swap',k:'VFX',vid:'media/faceswap_after.mp4',img:'media/faceswap_after.jpg',ar:V16}],
+    face:[{t:'Before, raw plate',k:'Plate',vid:'media/faceswap_before.mp4',img:'media/faceswap_before.jpg',ar:V16},{t:'After, AI face swap',k:'VFX',vid:'media/faceswap_after.mp4',img:'media/faceswap_after.jpg',ar:V16}],
     opera:[{t:'Opera · Desktop',k:'VFX',vid:'media/opera_desktop.mp4',img:'media/opera_desktop.jpg',ar:V16},{t:'Opera · Mobile',k:'VFX',vid:'media/opera_mobile.mp4',img:'media/opera_mobile.jpg',ar:V16}],
     reel:[{t:'Showreel 2026',k:'Reel',vid:'media/showreel.mp4',img:'media/showreel.jpg',ar:V16}],
     iskra:[{t:'Iskra · Hologram',k:'VFX',vid:'media/iskra.mp4',img:'media/iskra.jpg',ar:V16}],
@@ -1504,7 +1473,8 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     stage.innerHTML=inner+'<span class="pv-cap mono">'+esc(c.k)+' · '+esc(c.t)+'</span>';
     var thumbs=pBody.querySelectorAll('.pv-thumb');
     thumbs.forEach(function(t,k){ t.classList.toggle('on',k===i); });
-    var on=pBody.querySelector('.pv-thumb.on'); if(on&&on.scrollIntoView) on.scrollIntoView({block:'nearest',inline:'nearest'});
+    var on=pBody.querySelector('.pv-thumb.on'), thumbs=pBody.querySelector('.pv-thumbs');
+    if(on&&thumbs){ thumbs.scrollLeft=on.offsetLeft-thumbs.clientWidth/2+on.clientWidth/2; }
   }
   function openProject(id){
     var p=PROJ.filter(function(x){return x.id===id;})[0]; if(!p) return;
@@ -1631,14 +1601,14 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
 
   /* ---------- SWAGATH GROWTH CHART ---------- */
   var PHASES=[
-    {k:'Launch',s:'20–31 Jul',imp:738,act:7.3,ctr:4.88},
+    {k:'Launch',s:'20-31 Jul',imp:738,act:7.3,ctr:4.88},
     {k:'Scale',s:'August',imp:1648,act:9.2,ctr:3.55},
-    {k:'Drift',s:'1–10 Sep',imp:3715,act:9.3,ctr:2.03},
-    {k:'After',s:'11–13 Sep',imp:1627,act:null,ctr:2.30,opt:true}
+    {k:'Drift',s:'1-10 Sep',imp:3715,act:9.3,ctr:2.03},
+    {k:'After',s:'11-13 Sep',imp:1627,act:null,ctr:2.30,opt:true}
   ];
   var METRICS={
     imp:{max:4000,fmt:function(v){return v.toLocaleString();},note:'Impressions per day rose 5× while the budget held flat. Visibility is not the same as customers.'},
-    act:{max:11,fmt:function(v){return v;},note:'Tracked customer actions per day — calls, direction requests, menu views, not orders. Grew ~1.3× despite 5× the reach. Actions for 11–13 Sep had not reported at time of writing.'},
+    act:{max:11,fmt:function(v){return v;},note:'Tracked customer actions per day, calls, direction requests, menu views, not orders. Grew ~1.3× despite 5× the reach. Actions for 11-13 Sep had not reported at time of writing.'},
     ctr:{max:5.5,fmt:function(v){return v+'%';},note:'Click-through rate fell 58% as broad match bought cheaper, less relevant clicks. The correction phase pulls it back up.'}
   };
   var grid=document.getElementById('chartGrid');
@@ -1648,7 +1618,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     var cols=Array.prototype.slice.call(grid.children);
     function renderChart(m){ var mx=METRICS[m].max;
       cols.forEach(function(col,i){ var ph=PHASES[i], v=ph[m], fill=col.querySelector('.barfill'), val=col.querySelector('.val'); col.classList.remove('shown');
-        if(v==null){ fill.style.height='0'; val.textContent='—'; } else { fill.style.height=Math.max(3,(v/mx*100))+'%'; val.textContent=METRICS[m].fmt(v); }
+        if(v==null){ fill.style.height='0'; val.textContent='-'; } else { fill.style.height=Math.max(3,(v/mx*100))+'%'; val.textContent=METRICS[m].fmt(v); }
         setTimeout(function(){ col.classList.add('shown'); },430); });
       document.getElementById('chartNote').textContent=METRICS[m].note;
       document.querySelectorAll('.mbtn').forEach(function(b){ b.classList.toggle('active',b.dataset.m===m); });
@@ -1771,86 +1741,67 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     apply();
   })();
 
-  /* ---------- SERVICE PIPELINE (intro node graph) ---------- */
+  /* ---------- GALLERY: category cards (pin + fade) + client bar ---------- */
   (function(){
-    var canvas=document.getElementById('pipeCanvas'), wires=document.getElementById('pipeWires'), status=document.getElementById('pipeStatus');
-    if(!canvas) return;
-    var PIPE=[
-      {n:'Camera',d:'Shoot · direction'},{n:'Recording',d:'Capture · sound'},{n:'Editing',d:'Cut · motion'},
-      {n:'VFX',d:'Comp · cleanup'},{n:'Social Media',d:'Reels · content'},{n:'Marketing',d:'Ads · growth'}
+    var stack=document.getElementById('galStack'); if(!stack) return;
+    var bar=document.getElementById('galBar');
+    function cell(m){ return m.vid?'<video src="'+m.vid+'" poster="'+m.img+'" muted loop playsinline preload="none"></video>':'<img src="'+m.img+'" alt="" loading="lazy">'; }
+    /* work categorised by TYPE of work, each with a few preview clips/photos */
+    var CATS=[
+      {t:'Motion & VFX',d:'Compositing, cleanup, CG integration, motion and finishing.',media:[
+        {vid:'media/opera_desktop.mp4',img:'media/opera_desktop.jpg'},{vid:'media/iskra.mp4',img:'media/iskra.jpg'},
+        {vid:'media/catalice_breakdown.mp4',img:'media/catalice_breakdown.jpg'},{vid:'media/faceswap_after.mp4',img:'media/faceswap_after.jpg'}
+      ]},
+      {t:'Social Content',d:'Short-form reels and campaign content, produced weekly.',media:[
+        {vid:'media/catalice_promo.mp4',img:'media/catalice_promo.jpg'},{vid:'media/swagath_weekend.mp4',img:'media/swagath_weekend.jpg'},
+        {vid:'media/meeet_hw1.mp4',img:'media/meeet_hw1.jpg'},{vid:'media/latino_v02.mp4',img:'media/latino_v02.jpg'}
+      ]},
+      {t:'Photography',d:'People, product and food, lit and directed on set.',media:[
+        {img:'media/gosia_01.jpg'},{img:'media/gosia_03.jpg'},{img:'media/food_1.jpg'},{img:'media/food_5.jpg'}
+      ]},
+      {t:'Design & Branding',d:'Menus, food styling and brand systems for restaurants.',media:[
+        {img:'media/food_2.jpg'},{img:'media/food_4.jpg'},{img:'media/food_6.jpg'},{vid:'media/swagath_faluda.mp4',img:'media/swagath_faluda.jpg'}
+      ]}
     ];
-    var els=[], active=0;
-    function activate(i){ active=i; els.forEach(function(el,k){ el.classList.toggle('on',k===i); }); if(status) status.textContent=PIPE[i].n.toUpperCase()+' · '+PIPE[i].d.toUpperCase(); }
-    function build(){
-      canvas.querySelectorAll('.pipe-node').forEach(function(n){n.remove();});
-      var W=canvas.clientWidth, H=canvas.clientHeight; if(!W||!H) return;
-      var mobile=W<800; els=[]; var pts=[];
-      PIPE.forEach(function(p,i){
-        var el=document.createElement('div'); el.className='pipe-node';
-        el.innerHTML='<div class="ph"><span>'+('0'+(i+1)).slice(-2)+'</span><span class="cat"></span></div><div class="pb"><strong>'+p.n+'</strong><small>'+p.d+'</small></div><span class="port in"></span><span class="port out"></span>';
-        if(i===0) el.querySelector('.port.in').style.display='none';
-        if(i===PIPE.length-1) el.querySelector('.port.out').style.display='none';
-        canvas.appendChild(el);
-        var x,y;
-        if(mobile){ x=0.32; y=0.06+i*(0.88/(PIPE.length-1)); }
-        else { x=0.34+i*(0.60/(PIPE.length-1)); y=0.5+0.27*Math.sin(i*1.05+0.3); }
-        el.style.left=(x*W)+'px'; el.style.top=(y*H-el.offsetHeight/2)+'px';
-        pts.push({l:{x:el.offsetLeft,y:el.offsetTop+el.offsetHeight/2},r:{x:el.offsetLeft+el.offsetWidth,y:el.offsetTop+el.offsetHeight/2},t:{x:el.offsetLeft+el.offsetWidth/2,y:el.offsetTop},b:{x:el.offsetLeft+el.offsetWidth/2,y:el.offsetTop+el.offsetHeight}});
-        (function(idx){ el.addEventListener('mouseenter',function(){ activate(idx); }); })(i);
-        els.push(el);
-      });
-      var s='';
-      for(var i=0;i<pts.length-1;i++){
-        var a=mobile?pts[i].b:pts[i].r, b=mobile?pts[i+1].t:pts[i+1].l, m=mobile?((a.y+b.y)/2):((a.x+b.x)/2);
-        if(mobile) s+='<path d="M'+a.x+' '+a.y+' C'+a.x+' '+m+' '+b.x+' '+m+' '+b.x+' '+b.y+'" fill="none" stroke="#555" stroke-width="1.6"/>';
-        else s+='<path d="M'+a.x+' '+a.y+' C'+m+' '+a.y+' '+m+' '+b.y+' '+b.x+' '+b.y+'" fill="none" stroke="#555" stroke-width="1.6"/>';
-      }
-      wires.innerHTML=s; activate(active);
-    }
-    build();
-    var pt=null; addEventListener('resize',function(){ clearTimeout(pt); pt=setTimeout(build,180); },{passive:true});
-    setInterval(function(){ if(document.hidden||!els.length) return; activate((active+1)%PIPE.length); }, 1500);
-  })();
-
-  /* ---------- WORK program-window playhead ---------- */
-  (function(){
-    var v=document.querySelector('.wt-video'), head=document.getElementById('wtHead'), tc=document.getElementById('wtTC');
-    if(!v||!head) return;
-    function pad(n){return(n<10?'0':'')+n;}
-    function upd(){ if(!v.duration) return; var f=v.currentTime/v.duration; head.style.left=(2+f*96)+'%'; if(tc){var t=v.currentTime; tc.textContent=pad(Math.floor(t/60))+':'+pad(Math.floor(t%60));} }
-    v.addEventListener('timeupdate',upd); (function loop(){upd();requestAnimationFrame(loop);})();
-  })();
-
-  /* ---------- GALLERY (real projects, hover-play, click→modal) ---------- */
-  (function(){
-    var grid=document.getElementById('galGrid'); if(!grid) return;
-    var GAL=[
-      {id:'opera',media:'media/opera_desktop.mp4',poster:'media/opera_desktop.jpg',ar:16},
-      {id:'iskra',media:'media/iskra.mp4',poster:'media/iskra.jpg',ar:16},
-      {id:'catalice',media:'media/catalice_promo.mp4',poster:'media/catalice_promo.jpg',ar:9},
-      {id:'pt',media:'media/gosia_01.jpg',ar:9},
-      {id:'meeet',media:'media/meeet_hw1.mp4',poster:'media/meeet_hw1.jpg',ar:9},
-      {id:'latino',media:'media/latino_v02.mp4',poster:'media/latino_v02.jpg',ar:9},
-      {id:'swagath',media:'media/swagath_weekend.mp4',poster:'media/swagath_weekend.jpg',ar:9}
-    ];
-    function projById(id){ return PROJ.filter(function(p){return p.id===id;})[0]; }
-    function discTag(p){ return p.disc.map(function(x){var o=DISC.filter(function(y){return y.id===x;})[0];return o?o.n.split(' ')[0]:x;}).join(' · '); }
-    GAL.forEach(function(g,i){
-      var p=projById(g.id); if(!p) return;
-      var card=document.createElement('button'); card.type='button'; card.className='gcard '+(g.ar===16?'v16':'v9'); card.style.transitionDelay=(i*55)+'ms'; card.dataset.proj=g.id;
-      var isVid=/\.mp4$/.test(g.media);
-      var media=isVid?'<video src="'+g.media+'" poster="'+g.poster+'" muted loop playsinline preload="none"></video>':'<img src="'+g.media+'" alt="'+esc(p.title)+'" loading="lazy">';
-      card.innerHTML='<div class="gc-media">'+media+'</div><div class="gc-grad"></div><div class="gc-meta"><span class="gc-idx">'+('0'+(i+1)).slice(-2)+'</span><b>'+esc(p.title)+'</b><span class="gc-tag">'+esc(discTag(p))+'</span></div>';
-      grid.appendChild(card);
-      if(isVid){ var vid=card.querySelector('video');
-        card.addEventListener('mouseenter',function(){ vid.play().catch(function(){}); });
-        card.addEventListener('mouseleave',function(){ try{vid.pause();}catch(e){} });
-      }
-      card.addEventListener('click',function(){ openProject(g.id); });
+    CATS.forEach(function(c,i){
+      var tiles=c.media.map(function(m){ return '<div class="cat-tile">'+cell(m)+'</div>'; }).join('');
+      var track=document.createElement('div'); track.className='gstack-track';
+      track.innerHTML='<article class="gstack-card cat-card">'
+        +'<div class="gstack-top"><span class="gstack-num">'+('0'+(i+1)).slice(-2)+'</span>'
+        +'<div class="gstack-id"><span class="gstack-cat mono">CATEGORY / '+('0'+(i+1)).slice(-2)+'</span><h3>'+esc(c.t)+'</h3><p class="cat-desc">'+esc(c.d)+'</p></div></div>'
+        +'<div class="cat-media">'+tiles+'</div></article>';
+      stack.appendChild(track);
+      var card=track.querySelector('.gstack-card');
+      card.addEventListener('mouseenter',function(){ card.querySelectorAll('video').forEach(function(v){ v.play().catch(function(){}); }); });
+      card.addEventListener('mouseleave',function(){ card.querySelectorAll('video').forEach(function(v){ try{v.pause();}catch(e){} }); });
     });
-    var cards=[].slice.call(grid.querySelectorAll('.gcard'));
-    if('IntersectionObserver' in window && !reduce){ var io=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12}); cards.forEach(function(c){io.observe(c);}); }
-    else cards.forEach(function(c){c.classList.add('in');});
+    /* client bar: pick a business to open its full media viewer */
+    if(bar){
+      var CLIENTS=[
+        {id:'opera',thumb:'media/opera_desktop.jpg',name:'Opera'},{id:'iskra',thumb:'media/iskra.jpg',name:'Iskra'},
+        {id:'catalice',thumb:'media/catalice_promo.jpg',name:'Cat&Alice'},{id:'meeet',thumb:'media/meeet_hw1.jpg',name:'Meeet'},
+        {id:'latino',thumb:'media/latino_v02.jpg',name:'Latino Bar'},{id:'pt',thumb:'media/gosia_01.jpg',name:'Gosia'},
+        {id:'swagath',thumb:'media/swagath_weekend.jpg',name:'SWAGATH'},{id:'hos',thumb:'media/food_5.jpg',name:'House of Spices'}
+      ];
+      bar.innerHTML='<div class="gal-bar-head"><div class="mono orange">BY CLIENT</div><div class="mono muted">PICK A BUSINESS TO SEE MORE →</div></div>'
+        +'<div class="gbrow">'+CLIENTS.map(function(cl){ return '<button class="gbchip" type="button" data-proj="'+cl.id+'"><div class="gbthumb"><img src="'+cl.thumb+'" alt="'+esc(cl.name)+'" loading="lazy"></div><div class="gbname"><span>'+esc(cl.name)+'</span><span>↗</span></div></button>'; }).join('')+'</div>';
+      bar.addEventListener('click',function(e){ var b=e.target.closest('.gbchip'); if(b) openProject(b.dataset.proj); });
+    }
+    /* pin + fade: the pinned card stays in place and fades as the next card rises over it */
+    var tracks=[].slice.call(stack.querySelectorAll('.gstack-track'));
+    function stackScroll(){
+      var mob=matchMedia('(max-width:800px)').matches, last=tracks.length-1;
+      tracks.forEach(function(tr,i){
+        var card=tr.querySelector('.gstack-card'); if(!card) return;
+        if(mob||i===last){ card.style.opacity=''; card.style.filter=''; return; }
+        var r=tr.getBoundingClientRect();
+        var prog=Math.max(0,Math.min(1,-r.top/(tr.offsetHeight||1)));
+        var fade=Math.max(0,Math.min(1,(prog-0.45)/0.5));
+        card.style.opacity=(1-fade).toFixed(3);
+        card.style.filter='blur('+(fade*3).toFixed(1)+'px)';
+      });
+    }
+    if(!reduce){ addEventListener('scroll',stackScroll,{passive:true}); addEventListener('resize',stackScroll,{passive:true}); stackScroll(); }
   })();
 })();
 </script>
@@ -1874,6 +1825,88 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
     });
   }
   addEventListener('scroll',frame,{passive:true}); addEventListener('resize',frame,{passive:true}); frame();
+})();
+</script>
+
+<script id="fazal-camera-3d">
+/* Procedural wireframe cinema camera behind the contact CTA.
+   Built code-only (img2threejs discipline): macro body/lens/hump, meso ring/grip/shutter, micro record dot.
+   Three.js is fetched lazily only when the contact section approaches, and motion is disabled under reduced-motion. */
+(function(){
+  var canvas=document.getElementById('cam3d'); if(!canvas) return;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var started=false, THREE, scene, cam, rig, renderer, dot, mx=0, my=0, t=0;
+  function near(){ var c=document.getElementById('contact'); if(!c) return false; var r=c.getBoundingClientRect(); return r.top<innerHeight*1.7 && r.bottom>0; }
+  function loadThree(cb){ if(window.THREE){cb();return;} var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; s.onload=cb; s.onerror=function(){ canvas.style.display='none'; }; document.head.appendChild(s); }
+  function build(){
+    var g=new THREE.Group();
+    var ink=new THREE.LineBasicMaterial({color:0xf2f0eb,transparent:true,opacity:0.92});
+    var org=new THREE.LineBasicMaterial({color:0xd9572b,transparent:true,opacity:0.92});
+    function wire(geo,x,y,z,rx,m){ var seg=new THREE.LineSegments(new THREE.EdgesGeometry(geo), m||ink); seg.position.set(x||0,y||0,z||0); if(rx)seg.rotation.x=rx; g.add(seg); }
+    /* macro */
+    wire(new THREE.BoxGeometry(3.4,2,1.5));
+    wire(new THREE.BoxGeometry(1.3,0.7,1.2),-0.5,1.3,0);
+    wire(new THREE.CylinderGeometry(0.72,0.85,1.3,24),0.4,-0.1,1.35,Math.PI/2,org);
+    /* meso */
+    wire(new THREE.CylinderGeometry(0.9,0.9,0.14,24),0.4,-0.1,2.0,Math.PI/2,org);
+    wire(new THREE.BoxGeometry(0.55,1.95,1.4),1.75,0,0);
+    wire(new THREE.CylinderGeometry(0.17,0.17,0.22,14),1.45,1.12,0);
+    wire(new THREE.BoxGeometry(3.5,0.12,1.55),0,1.06,0);
+    /* micro: record dot */
+    dot=new THREE.Mesh(new THREE.SphereGeometry(0.12,12,12), new THREE.MeshBasicMaterial({color:0xd9572b,transparent:true,opacity:0.85}));
+    dot.position.set(-1.3,0.55,0.8); g.add(dot);
+    g.scale.setScalar(1.15);
+    return g;
+  }
+  function resize(){ var w=canvas.clientWidth||1,h=canvas.clientHeight||1; cam.aspect=w/h; cam.updateProjectionMatrix(); renderer.setSize(w,h,false); }
+  function loop(){ if(reduce) return; requestAnimationFrame(loop); t+=0.005;
+    rig.rotation.y=-0.55+Math.sin(t)*0.32+mx*0.55; rig.rotation.x=-0.12+my*0.28;
+    if(dot) dot.material.opacity=0.35+0.5*Math.abs(Math.sin(t*6));
+    renderer.render(scene,cam);
+  }
+  function init(){ THREE=window.THREE; if(!THREE){ canvas.style.display='none'; return; }
+    var w=canvas.clientWidth||1,h=canvas.clientHeight||1;
+    scene=new THREE.Scene();
+    cam=new THREE.PerspectiveCamera(38,w/h,0.1,100); cam.position.set(0.4,0.35,9.2);
+    renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2)); renderer.setSize(w,h,false);
+    rig=build(); scene.add(rig);
+    addEventListener('resize',resize,{passive:true});
+    addEventListener('pointermove',function(e){ mx=(e.clientX/innerWidth-0.5); my=(e.clientY/innerHeight-0.5); },{passive:true});
+    if(reduce){ rig.rotation.set(-0.14,-0.55,0.04); renderer.render(scene,cam); } else loop();
+  }
+  function tryStart(){ if(started||!near()) return; started=true; loadThree(init); }
+  addEventListener('scroll',tryStart,{passive:true}); addEventListener('resize',tryStart,{passive:true}); tryStart();
+})();
+</script>
+
+<script id="fazal-scroll-safety">
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  /* Controlled, click-only smooth nav (no global scroll-behavior, no scrollIntoView) */
+  var NAV_OFFSET=66;
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href'); if(!id||id.length<2) return;
+    var t=document.querySelector(id); if(!t) return;
+    e.preventDefault();
+    var y=t.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop)-NAV_OFFSET;
+    window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+  });
+  /* Bulletproof scroll lock: body.lock stays exactly in sync with modal state,
+     so no failed close/error path can leave the page unscrollable. */
+  function openModals(){ return document.querySelectorAll('.modal.open,.reel-modal.open,.proj-modal.open'); }
+  function refreshLock(){ document.body.classList.toggle('lock', openModals().length>0); }
+  var mo=new MutationObserver(refreshLock);
+  ['#modal','#reelModal','.proj-modal'].forEach(function(sel){ var el=document.querySelector(sel); if(el) mo.observe(el,{attributes:true,attributeFilter:['class']}); });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape') return;
+    var open=openModals(); if(!open.length) return;
+    open.forEach(function(m){ m.classList.remove('open'); });
+    document.querySelectorAll('.proj-modal video,.reel-modal video').forEach(function(v){ try{v.pause();}catch(_){}});
+    refreshLock();
+  });
+  refreshLock();
 })();
 </script>
 

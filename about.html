@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About — Fazal Khan</title>
-<meta name="description" content="Fazal Khan — Technical Director and VFX artist in Wrocław. Career, education, and craft.">
+<title>About · Fazal Khan</title>
+<meta name="description" content="Fazal Khan, Technical Director and VFX artist in Wrocław. Career, education, and craft.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -105,6 +105,40 @@ footer{border-top:1px solid var(--line);padding:26px 4vw;display:flex;justify-co
 .fc{transition:background .25s,transform .25s var(--ease)}
 .fc:hover{background:#0f0f0f;transform:translateY(-3px)}
 .wrap{position:relative;z-index:2}
+/* browser surfaces + keyboard focus */
+html{color-scheme:dark}
+:root{scrollbar-color:#3a3a3a #0b0b0b}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#0b0b0b}
+::-webkit-scrollbar-thumb{background:#333;border:3px solid #0b0b0b}
+::-webkit-scrollbar-thumb:hover{background:var(--orange)}
+.mono,.dt{font-variant-numeric:tabular-nums}
+a:focus-visible,button:focus-visible,.er:focus-visible,.skills span:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+:focus:not(:focus-visible){outline:none}
+/* ===== SERVICE PIPELINE (node graph) ===== */
+.pipeline-stage{position:relative;border:1px solid #303030;background:#060606;box-shadow:12px 12px 0 #000;overflow:hidden}
+.pipe-toolbar{height:44px;border-bottom:1px solid #292929;background:#0d0d0d;display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.pipe-canvas{position:relative;height:min(58vh,540px);background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:34px 34px;overflow:hidden}
+.pipe-canvas svg{position:absolute;inset:0;width:100%;height:100%}
+.pipe-node{position:absolute;width:132px;background:#0f0f0f;border:1px solid #444;box-shadow:6px 6px 0 #000;transition:border-color .3s,box-shadow .3s,transform .3s var(--ease);cursor:pointer}
+.pipe-node .ph{padding:7px 9px;border-bottom:1px solid #2a2a2a;font:8px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8c8c8c;display:flex;justify-content:space-between;align-items:center;background:#151515}
+.pipe-node .ph .cat{width:7px;height:7px;border-radius:1px;background:#89cfff}
+.pipe-node .pb{padding:10px}
+.pipe-node strong{font-size:13px;letter-spacing:-.02em}
+.pipe-node small{display:block;color:#8f8f8f;font:8px var(--mono);margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.pipe-node .port{position:absolute;width:8px;height:8px;background:#050505;border:1px solid #6a6a6a;top:50%;transform:translateY(-50%)}
+.pipe-node .port.in{left:-5px}.pipe-node .port.out{right:-5px}
+.pipe-node.on{border-color:var(--orange);box-shadow:6px 6px 0 #000,0 0 26px #d9572b44;transform:translateY(-3px)}
+.pipe-node.on .ph{color:var(--orange)}.pipe-node.on .ph .cat{background:var(--orange)}
+.pipe-node.on .port{background:#2a1206;border-color:var(--orange)}
+.pipe-overlay{position:absolute;left:0;top:44px;bottom:0;width:min(48%,460px);padding:clamp(20px,4vw,46px);display:flex;flex-direction:column;justify-content:center;gap:18px;background:linear-gradient(90deg,#060606f5 60%,#06060600);pointer-events:none;z-index:3}
+.pipe-overlay .svc-copy{font-size:clamp(28px,4.2vw,58px);line-height:.92;letter-spacing:-.05em;font-weight:800;text-transform:none;color:var(--white)}
+.pipe-overlay .svc-copy em{color:#666;font-style:normal}
+@media(max-width:800px){
+ .pipe-overlay{position:static;width:100%;background:none;padding:22px 16px 4px}
+ .pipe-overlay .svc-copy{font-size:8.5vw}
+ .pipe-canvas{height:auto;min-height:520px}
+}
 </style>
 </head>
 <body>
@@ -122,7 +156,7 @@ footer{border-top:1px solid var(--line);padding:26px 4vw;display:flex;justify-co
    <div class="kick mono">ABOUT · FAZAL KHAN</div>
    <h1>Ten years<br><em>behind the comp.</em></h1>
    <div class="role">Technical Director · VFX Artist · marktOS · Wrocław, Poland</div>
-   <p>A creative-media professional with over ten years in VFX, post-production, and AI-assisted video — compositing, motion design, and generative AI across commercial, broadcast, and digital, plus university-level teaching. Now focused on scaling creative output with AI and building marketing that actually moves the numbers, through the marktOS studio.</p>
+   <p>A creative-media professional with over ten years in VFX, post-production, and AI-assisted video, compositing, motion design, and generative AI across commercial, broadcast, and digital, plus university-level teaching. Now focused on scaling creative output with AI and building marketing that actually moves the numbers, through the marktOS studio.</p>
    <div class="contact">
     <a class="cbtn solid" href="mailto:fazalkhan.4426@gmail.com">fazalkhan.4426@gmail.com</a>
     <a class="cbtn" href="tel:+48721453840">+48 721 453 840</a>
@@ -139,17 +173,34 @@ footer{border-top:1px solid var(--line);padding:26px 4vw;display:flex;justify-co
   </div>
  </section>
 
+ <section class="band" id="service">
+  <div class="wrap">
+   <div class="pipeline-stage r-up">
+    <div class="pipe-toolbar">
+     <span class="mono" style="color:var(--muted)">service_pipeline.nk</span>
+     <span class="mono" id="pipeStatus" style="color:var(--muted)">CAMERA → MARKETING</span>
+    </div>
+    <div class="pipe-overlay">
+     <div class="mono" style="color:var(--muted)">THE SERVICE</div>
+     <div class="svc-copy">I work somewhere between <em>image-making</em>, technology and <em>business.</em></div>
+     <div class="mono" style="color:var(--orange)">ONE PIPELINE · CAMERA → MARKETING</div>
+    </div>
+    <div class="pipe-canvas" id="pipeCanvas"><svg id="pipeWires" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+   </div>
+  </div>
+ </section>
+
  <section class="band">
   <div class="wrap r-up">
    <div class="sh"><span class="n mono">01</span><h2>Experience</h2><span class="ln"></span></div>
    <div class="exp">
-    <div class="exp-item"><div class="er"><h3>Conforming &amp; Compositing Artist</h3><span class="dt">2020 – 2025</span></div><div class="co">JUICE · Wrocław</div>
+    <div class="exp-item"><div class="er"><h3>Conforming &amp; Compositing Artist</h3><span class="dt">2020-2025</span></div><div class="co">JUICE · Wrocław</div>
      <ul><li>Managed conforming workflows for high-resolution post-production pipelines.</li><li>Advanced compositing: chroma keying, wire removal, motion tracking, clean-plate creation.</li><li>AI-assisted work: face replacement, de-aging, and generative video effects.</li><li>Cross-departmental coordination via ShotGrid with editors, colorists, and producers.</li></ul></div>
-    <div class="exp-item"><div class="er"><h3>Academic Tutor · Creative Media</h3><span class="dt">2020 – present</span></div><div class="co">University of Lower Silesia (DSW) · Wrocław</div>
+    <div class="exp-item"><div class="er"><h3>Academic Tutor · Creative Media</h3><span class="dt">2020-present</span></div><div class="co">University of Lower Silesia (DSW) · Wrocław</div>
      <ul><li>Teaching VFX, 3D lighting, rendering, and animation to undergraduates.</li><li>Industry-standard pipelines: compositing, editing, and digital content.</li><li>Mentoring collaborative projects that simulate real production environments.</li></ul></div>
     <div class="exp-item"><div class="er"><h3>3D Generalist / VFX Artist</h3><span class="dt">2023</span></div><div class="co">Kizny Visuals · Wrocław</div>
      <ul><li>3D assets and CG content for commercial advertising campaigns.</li><li>CG-to-live-action integration via advanced compositing.</li></ul></div>
-    <div class="exp-item"><div class="er"><h3>VFX Artist</h3><span class="dt">2015 – 2017</span></div><div class="co">Greymatter VFX · Mumbai</div>
+    <div class="exp-item"><div class="er"><h3>VFX Artist</h3><span class="dt">2015-2017</span></div><div class="co">Greymatter VFX · Mumbai</div>
      <ul><li>Visual effects for television commercials and broadcast productions.</li><li>Compositing, keying, rotoscoping, and motion graphics under broadcast deadlines.</li></ul></div>
    </div>
   </div>
@@ -173,8 +224,8 @@ footer{border-top:1px solid var(--line);padding:26px 4vw;display:flex;justify-co
   <div class="wrap r-up">
    <div class="sh"><span class="n mono">03</span><h2>Education &amp; languages</h2><span class="ln"></span></div>
    <div class="facts">
-    <div class="fc"><div class="fk">Education</div><div class="fv">BA, Creative Media — University of Lower Silesia (DSW), Wrocław</div><div class="fv">Visual Effects &amp; Graphics Design — FX School, Mumbai</div></div>
-    <div class="fc"><div class="fk">Languages</div><div class="fv">English — native</div><div class="fv">Hindi — native</div><div class="fv">Polish — basic</div></div>
+    <div class="fc"><div class="fk">Education</div><div class="fv">BA, Creative Media, University of Lower Silesia (DSW), Wrocław</div><div class="fv">Visual Effects &amp; Graphics Design, FX School, Mumbai</div></div>
+    <div class="fc"><div class="fk">Languages</div><div class="fv">English, native</div><div class="fv">Hindi, native</div><div class="fv">Polish, basic</div></div>
     <div class="fc"><div class="fk">Based in</div><div class="fv">Wrocław, Poland · open to remote</div></div>
     <div class="fc"><div class="fk">Focus</div><div class="fv">VFX, post-production, and scaling creative output with generative AI</div></div>
    </div>
@@ -228,6 +279,48 @@ footer{border-top:1px solid var(--line);padding:26px 4vw;display:flex;justify-co
     },{passive:true});
     window.addEventListener('pointerleave',function(){ if(spot) spot.classList.remove('on'); });
   }
+})();
+</script>
+<script>
+/* Service pipeline node graph */
+(function(){
+  var canvas=document.getElementById('pipeCanvas'), wires=document.getElementById('pipeWires'), status=document.getElementById('pipeStatus');
+  if(!canvas) return;
+  var PIPE=[
+    {n:'Camera',d:'Shoot · direction'},{n:'Recording',d:'Capture · sound'},{n:'Editing',d:'Cut · motion'},
+    {n:'VFX',d:'Comp · cleanup'},{n:'Social Media',d:'Reels · content'},{n:'Marketing',d:'Ads · growth'}
+  ];
+  var els=[], active=0;
+  function activate(i){ active=i; els.forEach(function(el,k){ el.classList.toggle('on',k===i); }); if(status) status.textContent=PIPE[i].n.toUpperCase()+' · '+PIPE[i].d.toUpperCase(); }
+  function build(){
+    canvas.querySelectorAll('.pipe-node').forEach(function(n){n.remove();});
+    var W=canvas.clientWidth, H=canvas.clientHeight; if(!W||!H) return;
+    var mobile=W<800; els=[]; var pts=[];
+    PIPE.forEach(function(p,i){
+      var el=document.createElement('div'); el.className='pipe-node';
+      el.innerHTML='<div class="ph"><span>'+('0'+(i+1)).slice(-2)+'</span><span class="cat"></span></div><div class="pb"><strong>'+p.n+'</strong><small>'+p.d+'</small></div><span class="port in"></span><span class="port out"></span>';
+      if(i===0) el.querySelector('.port.in').style.display='none';
+      if(i===PIPE.length-1) el.querySelector('.port.out').style.display='none';
+      canvas.appendChild(el);
+      var x,y;
+      if(mobile){ x=0.32; y=0.06+i*(0.88/(PIPE.length-1)); }
+      else { x=0.34+i*(0.60/(PIPE.length-1)); y=0.5+0.27*Math.sin(i*1.05+0.3); }
+      el.style.left=(x*W)+'px'; el.style.top=(y*H-el.offsetHeight/2)+'px';
+      pts.push({l:{x:el.offsetLeft,y:el.offsetTop+el.offsetHeight/2},r:{x:el.offsetLeft+el.offsetWidth,y:el.offsetTop+el.offsetHeight/2},t:{x:el.offsetLeft+el.offsetWidth/2,y:el.offsetTop},b:{x:el.offsetLeft+el.offsetWidth/2,y:el.offsetTop+el.offsetHeight}});
+      (function(idx){ el.addEventListener('mouseenter',function(){ activate(idx); }); })(i);
+      els.push(el);
+    });
+    var s='';
+    for(var i=0;i<pts.length-1;i++){
+      var a=mobile?pts[i].b:pts[i].r, b=mobile?pts[i+1].t:pts[i+1].l, m=mobile?((a.y+b.y)/2):((a.x+b.x)/2);
+      if(mobile) s+='<path d="M'+a.x+' '+a.y+' C'+a.x+' '+m+' '+b.x+' '+m+' '+b.x+' '+b.y+'" fill="none" stroke="#555" stroke-width="1.6"/>';
+      else s+='<path d="M'+a.x+' '+a.y+' C'+m+' '+a.y+' '+m+' '+b.y+' '+b.x+' '+b.y+'" fill="none" stroke="#555" stroke-width="1.6"/>';
+    }
+    wires.innerHTML=s; activate(active);
+  }
+  build();
+  var pt=null; addEventListener('resize',function(){ clearTimeout(pt); pt=setTimeout(build,180); },{passive:true});
+  setInterval(function(){ if(document.hidden||!els.length) return; activate((active+1)%PIPE.length); }, 1500);
 })();
 </script>
 </body>
