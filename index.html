@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- v21 archived-site theme fonts (used by the light theme) -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,700&family=Archivo+Narrow:wght@600;700&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme','light');</script>
 
 <style>
 :root{
@@ -222,7 +225,7 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
  .process{height:210vh}.process-stage{width:90vw;height:55vh}.connector{display:none}
  .project{grid-template-columns:1fr;min-height:auto;padding:12vh 0}.project-image{order:-1}
  .case-grid{grid-template-columns:1fr}.system{grid-template-columns:1fr}.system-item{border-right:0;border-bottom:1px solid #333}
- .lab{grid-template-columns:1fr}.lab-info{border-left:0;border-top:1px solid #333}.growth-head{align-items:flex-start;flex-direction:column}.growth-chart{height:48vh}.growth-metrics{grid-template-columns:1fr}.growth-metrics>div{border-right:0;border-bottom:2px solid #111}.growth-metrics>div:last-child{border-bottom:0}.compare-caption{flex-direction:column;gap:7px}.cap{grid-template-columns:45px 1fr}.cap-desc{grid-column:2;margin-top:10px}
+ .lab{grid-template-columns:1fr}.lab-preview{height:clamp(240px,66vw,340px)}.lab-info{border-left:0;border-top:1px solid #333}.growth-head{align-items:flex-start;flex-direction:column}.growth-chart{height:48vh}.growth-metrics{grid-template-columns:1fr}.growth-metrics>div{border-right:0;border-bottom:2px solid #111}.growth-metrics>div:last-child{border-bottom:0}.compare-caption{flex-direction:column;gap:7px}.cap{grid-template-columns:45px 1fr}.cap-desc{grid-column:2;margin-top:10px}
  .options{grid-template-columns:1fr}.contact h2{font-size:25vw}footer{flex-direction:column;gap:10px}
 }
 </style>
@@ -418,20 +421,6 @@ footer{background:#000;padding:25px 4vw;display:flex;justify-content:space-betwe
 .proj-media .cap{position:absolute;left:8px;bottom:8px;color:#fff;background:#000a;padding:5px 7px;font:8px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:800px){
  .node-workspace{display:none}
- .map-mobile{display:block;border:1px solid #303030;background:#0a0a0a}
- .mm-disc{border-bottom:1px solid #1e1e1e}
- .mm-disc:last-child{border-bottom:0}
- .mm-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#0d0d0d;color:#fff;border:0;padding:18px 16px;text-align:left;cursor:pointer}
- .mm-head .mm-name{font:700 16px var(--sans);letter-spacing:-.02em}
- .mm-head .mm-n{display:block;font:9px var(--mono);color:var(--orange);letter-spacing:.1em;margin-bottom:5px}
- .mm-head .chev{transition:.3s var(--ease);color:#777;flex:none}
- .mm-disc.open .mm-head .chev{transform:rotate(90deg);color:var(--orange)}
- .mm-kids{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s var(--ease)}
- .mm-disc.open .mm-kids{grid-template-rows:1fr}
- .mm-kids-inner{overflow:hidden}
- .mm-proj{width:100%;text-align:left;background:transparent;border:0;border-top:1px solid #181818;color:#ccc;padding:15px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
- .mm-proj b{font:600 13px var(--sans);color:#fff}
- .mm-proj em{font-style:normal;font:8px var(--mono);color:#666;letter-spacing:.08em;text-transform:uppercase}
  .ba-grid{grid-template-columns:1fr}
  .phase-chart{height:min(52vh,400px)}
  .phase-chart .xl b{font-size:12px}
@@ -747,24 +736,830 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .mobile-menu a{font:800 clamp(30px,9vw,52px)/1 var(--sans);letter-spacing:-.04em;color:var(--white);text-transform:uppercase}
 .mobile-menu a:hover,.mobile-menu a:active{color:var(--orange)}
 @media(max-width:800px){ .nav-burger{display:flex} }
-/* ===== mobile work-map: vertical node graph (spine + nodes + connectors), not a plain dropdown ===== */
+/* ===== mobile work-map: vertical node-graph tree (mirrors the desktop node graph) ===== */
 @media(max-width:800px){
- .map-mobile{display:block;border:0;background:none;position:relative;padding-left:26px;margin-top:6px}
- .map-mobile:before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:#2a2a2a}
- .mm-disc{border:0;position:relative;margin-bottom:12px}
- .mm-disc:before{content:"";position:absolute;left:-23px;top:24px;width:12px;height:12px;border-radius:50%;background:#0f0f0f;border:2px solid #555;z-index:2;transition:.3s var(--ease)}
- .mm-disc.open:before{border-color:var(--orange);background:#2a1206;box-shadow:0 0 0 4px #d9572b18}
- .mm-head{background:#0f0f0f;border:1px solid #333;box-shadow:6px 6px 0 #000;transition:.3s var(--ease)}
- .mm-disc.open .mm-head{border-color:var(--orange)}
- .mm-kids{background:transparent}
- .mm-kids-inner{padding:6px 0 4px 12px}
- .mm-proj{position:relative;border:1px solid #262626;border-left:0;background:#0c0c0c;margin:0 0 8px 16px;padding:13px 14px}
- .mm-proj:last-child{margin-bottom:2px}
- .mm-proj:before{content:"";position:absolute;left:-16px;top:50%;width:16px;height:1px;background:#3a3a3a}
- .mm-proj:after{content:"";position:absolute;left:-19px;top:50%;width:6px;height:6px;border-radius:50%;background:#050505;border:1px solid #666;transform:translateY(-50%)}
+ .map-mobile{display:block;position:relative;margin-top:8px}
+ /* shared node-card look, lifted from the desktop graph nodes */
+ .mm-node{position:relative;background:#0f0f0f;border:1px solid #3a3a3a;border-radius:2px;box-shadow:6px 6px 0 #000}
+ .mm-nhead{display:flex;align-items:center;gap:7px;padding:8px 10px;border-bottom:1px solid #2b2b2b;background:#151515;font:8px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7d7d7d}
+ .mm-nhead .cat{width:7px;height:7px;border-radius:1px;background:#555;flex:none}
+ .mm-nhead .io{width:6px;height:6px;border-radius:50%;background:#555;margin-left:auto;flex:none}
+ .mm-nbody{padding:11px 12px}
+ .mm-nbody b{display:block;font:600 15px var(--sans);letter-spacing:-.02em;color:#fff}
+ .mm-nbody small{display:block;margin-top:5px;font:8px var(--mono);color:#6b6b6b;letter-spacing:.05em;line-height:1.5}
+ /* root node + stub down into the discipline spine */
+ .mm-root{margin-bottom:16px;border-color:var(--orange);box-shadow:6px 6px 0 #000,0 0 30px #d9572b22}
+ .mm-root .mm-nhead{background:#26130a;color:var(--orange)}
+ .mm-root .mm-nhead .cat,.mm-root .mm-nhead .io{background:var(--orange)}
+ .mm-root:after{content:"";position:absolute;left:7px;bottom:-16px;width:2px;height:16px;background:var(--orange)}
+ /* discipline rail: vertical spine + node dots */
+ .mm-rail{position:relative;padding-left:24px}
+ .mm-rail:before{content:"";position:absolute;left:7px;top:0;bottom:22px;width:2px;background:#2a2a2a}
+ .mm-disc{position:relative;margin-bottom:20px}
+ .mm-disc:last-child{margin-bottom:0}
+ .mm-disc:before{content:"";position:absolute;left:-17px;top:14px;width:12px;height:12px;border-radius:50%;background:#0f0f0f;border:2px solid var(--orange);box-shadow:0 0 0 4px #d9572b14;z-index:2}
+ .mm-disc:after{content:"";position:absolute;left:-11px;top:19px;width:11px;height:2px;background:var(--orange)}
+ .mm-discnode .mm-nhead{background:#1a1207;color:#c98a63}
+ .mm-discnode .mm-nhead .cat{background:var(--orange)}
+ /* project sub-tree: indented spine + connector stubs + node dots */
+ .mm-kids{position:relative;display:block;margin:12px 0 0;padding-left:22px}
+ .mm-kids:before{content:"";position:absolute;left:9px;top:-6px;bottom:20px;width:2px;background:#242424}
+ .mm-proj{display:block;width:100%;text-align:left;margin:0 0 10px;padding:0;-webkit-appearance:none;appearance:none;cursor:pointer}
+ .mm-proj:last-child{margin-bottom:0}
+ .mm-proj:before{content:"";position:absolute;left:-13px;top:16px;width:13px;height:2px;background:#333}
+ .mm-proj:after{content:"";position:absolute;left:-17px;top:12px;width:8px;height:8px;border-radius:50%;background:#050505;border:1px solid #6a6a6a;z-index:2;transition:.25s var(--ease)}
+ .mm-proj .mm-nhead{background:#121212}
+ .mm-proj .mm-nhead .cat{background:var(--blue)}
+ .mm-proj:hover,.mm-proj:active{border-color:var(--orange)}
  .mm-proj:hover:after,.mm-proj:active:after{border-color:var(--orange);background:#2a1206}
+ .mm-proj:hover .mm-nhead .io,.mm-proj:active .mm-nhead .io{background:var(--orange)}
 }
 </style>
+
+
+<style id="fazal-gallery-expanded">
+/* =========================================================
+   GALLERY EXPANSION
+   Give artwork room to breathe and NEVER crop portfolio media.
+   ========================================================= */
+
+/* Main project gallery cards */
+.gal-grid{
+  gap:18px;
+}
+.gcard.v16{
+  aspect-ratio:16/10;
+}
+.gcard.v9{
+  aspect-ratio:9/16;
+}
+.gc-media{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#090909;
+}
+.gc-media img,
+.gc-media video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  transform:none !important;
+}
+.gcard:hover .gc-media img,
+.gcard:hover .gc-media video{
+  transform:scale(1.025) !important;
+}
+
+/* The large stacked category gallery */
+.gstack-track{
+  height:clamp(760px,92vh,1080px);
+}
+.gstack-track:last-child{
+  min-height:clamp(700px,84vh,960px);
+}
+.gstack-card{
+  padding:clamp(24px,3vw,44px);
+}
+.gstack-media{
+  height:clamp(480px,58vh,700px);
+  grid-template-columns:1.65fr 1fr;
+  gap:18px;
+}
+.gm-main,
+.gm-side figure{
+  background:#080808;
+}
+.gm-main img,
+.gm-main video,
+.gm-side img,
+.gm-side video{
+  object-fit:contain;
+  object-position:center;
+  background:#080808;
+}
+.gm-side{
+  gap:18px;
+}
+
+/* Category gallery: make every individual image substantially larger */
+.cat-media{
+  grid-auto-rows:clamp(220px,30vh,340px);
+  gap:18px;
+}
+.cat-tile{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#080808;
+}
+.cat-tile img,
+.cat-tile video{
+  object-fit:contain;
+  object-position:center;
+  background:#080808;
+}
+
+/* SWAGATH content gallery */
+.sw-gallery{
+  gap:18px;
+}
+.sw-cell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#090909;
+}
+.sw-cell.wide{
+  aspect-ratio:16/10;
+}
+.sw-cell.tall{
+  aspect-ratio:9/16;
+  min-height:clamp(520px,68vh,780px);
+}
+.sw-cell img,
+.sw-cell video{
+  object-fit:contain;
+  object-position:center;
+  background:#090909;
+}
+
+/* Project detail modal/gallery */
+.proj-media{
+  gap:16px;
+}
+.proj-media .pm{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#080808;
+}
+.proj-media video,
+.proj-media img{
+  object-fit:contain;
+  object-position:center;
+  background:#080808;
+}
+
+/* VFX comparison should still fill its frame because it is an interactive
+   before/after comparison rather than a normal gallery image. */
+.vfx-stage .vfx-after video,
+.vfx-stage .vfx-after img,
+.vfx-stage .vfx-before video,
+.vfx-stage .vfx-before img{
+  object-fit:contain;
+  background:#050505;
+}
+
+/* Mobile: keep the images large, but stack rather than squeeze them */
+@media(max-width:800px){
+  .gstack-track,
+  .gstack-track:last-child{
+    height:auto;
+    min-height:0;
+    margin-bottom:28px;
+  }
+  .gstack-card{
+    padding:20px;
+  }
+  .gstack-media,
+  .gstack-media.solo{
+    height:auto;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .gm-main{
+    min-height:clamp(360px,72vw,560px);
+    aspect-ratio:16/10;
+  }
+  .gm-side{
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .gm-side figure{
+    min-height:clamp(260px,58vw,420px);
+    aspect-ratio:1/1;
+  }
+  .cat-media{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:auto;
+    gap:12px;
+  }
+  .cat-tile{
+    min-height:clamp(280px,58vw,430px);
+    aspect-ratio:1/1;
+  }
+  .sw-gallery{
+    gap:12px;
+  }
+  .sw-cell.tall{
+    min-height:clamp(420px,115vw,650px);
+  }
+}
+
+@media(max-width:480px){
+  .gstack-card{
+    padding:16px;
+  }
+  .gm-side{
+    grid-template-columns:1fr;
+  }
+  .gm-side figure{
+    min-height:clamp(340px,95vw,520px);
+    aspect-ratio:4/3;
+  }
+  .cat-media{
+    grid-template-columns:1fr;
+  }
+  .cat-tile{
+    min-height:clamp(360px,100vw,560px);
+    aspect-ratio:4/3;
+  }
+  .sw-gallery{
+    grid-template-columns:1fr;
+  }
+  .sw-cell.wide,
+  .sw-cell.tall{
+    grid-column:span 1;
+    min-height:clamp(360px,100vw,620px);
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<style id="global-text-spacing-fix">
+/* =========================================================
+   GLOBAL TYPOGRAPHY / SPACING PASS
+   Keeps the existing design language, but gives every text
+   block consistent breathing room and prevents display type
+   from colliding with nearby copy.
+   ========================================================= */
+
+:root{
+  --text-gap-xs: .45rem;
+  --text-gap-sm: .75rem;
+  --text-gap-md: 1.15rem;
+  --text-gap-lg: 1.8rem;
+  --text-gap-xl: 2.8rem;
+}
+
+/* Predictable baseline */
+body{
+  line-height:1.5;
+}
+
+p{
+  line-height:1.6;
+  margin-top:0;
+  margin-bottom:var(--text-gap-md);
+}
+
+h1,h2,h3,h4,h5,h6{
+  line-height:.94;
+  margin-top:0;
+  margin-bottom:var(--text-gap-md);
+  text-wrap:balance;
+}
+
+h1 + p,h2 + p,h3 + p,h4 + p{
+  margin-top:.15rem;
+}
+
+.mono{
+  line-height:1.35;
+}
+
+/* Large editorial/display headings: stop the next line from
+   visually crashing into the previous line. */
+.hero h1,
+.hero h2,
+.section-title,
+.section-head h2,
+.case-header h2,
+.hybrid-title,
+.gstack-id h3,
+.sw-content-head h3,
+.project-title{
+  line-height:.9;
+  letter-spacing:-.045em;
+  margin-bottom:clamp(1rem,2vw,1.8rem);
+}
+
+/* The huge "EVERY PROJECT STARTS WITH..." type in the screenshot */
+.project-intro,
+.project-intro h1,
+.project-intro h2,
+.project-start,
+.project-starts,
+.projects-title{
+  line-height:.88;
+  letter-spacing:-.05em;
+}
+
+/* Keep explanatory copy separated from labels/headlines */
+.section-kicker,
+.eyebrow,
+.case-header .mono,
+.sw-content-head .mono{
+  margin-bottom:.8rem;
+}
+
+.section-head p,
+.sw-content-head p,
+.case-header p,
+.hybrid p,
+.intro p{
+  max-width:70ch;
+  margin-top:0;
+  margin-bottom:var(--text-gap-lg);
+  line-height:1.6;
+}
+
+/* Buttons/tabs: don't let adjacent labels visually merge */
+button,
+.tab,
+.filter,
+.nav-link{
+  line-height:1.2;
+}
+
+/* Lists */
+ul,ol{
+  margin-top:0;
+  margin-bottom:var(--text-gap-lg);
+  padding-left:1.25em;
+}
+
+li{
+  line-height:1.5;
+  margin-bottom:.4rem;
+}
+
+/* Cards */
+.gstack-top{
+  gap:clamp(.75rem,1.4vw,1.35rem);
+}
+
+.gstack-id{
+  gap:.65rem;
+}
+
+.gstack-id h3{
+  margin-bottom:.65rem;
+}
+
+.cat-desc{
+  line-height:1.55;
+  margin-top:0;
+  margin-bottom:1.2rem;
+}
+
+/* Case study text rhythm */
+.growth-head,
+.ba-head,
+.sw-content-head{
+  margin-bottom:clamp(1.5rem,3vw,2.8rem);
+}
+
+.growth-head h3,
+.ba-head h3{
+  margin-top:.55rem;
+  margin-bottom:0;
+}
+
+.growth-status{
+  line-height:1.35;
+}
+
+.chart-note{
+  line-height:1.45;
+  margin-top:.75rem;
+  margin-bottom:1.5rem;
+}
+
+.growth-metrics{
+  margin-top:clamp(1.5rem,3vw,2.5rem);
+}
+
+/* Keep figure captions away from artwork */
+.sw-cell figcaption{
+  margin-top:.65rem;
+  line-height:1.3;
+}
+
+/* Navigation/header spacing */
+header nav,
+.nav,
+.navigation{
+  gap:clamp(.7rem,1.5vw,1.5rem);
+}
+
+/* Avoid accidental whitespace collapse in dense technical labels */
+.tech-label,
+.node-label,
+.timeline-label{
+  line-height:1.25;
+}
+
+/* Mobile needs slightly more breathing room, not tighter type */
+@media(max-width:800px){
+  body{line-height:1.5}
+
+  p{
+    line-height:1.58;
+    margin-bottom:1.1rem;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    line-height:.94;
+    margin-bottom:1rem;
+  }
+
+  .hero h1,
+  .hero h2,
+  .section-title,
+  .section-head h2,
+  .case-header h2,
+  .hybrid-title,
+  .gstack-id h3,
+  .sw-content-head h3{
+    line-height:.92;
+    letter-spacing:-.035em;
+    margin-bottom:1rem;
+  }
+
+  .section-head p,
+  .sw-content-head p,
+  .case-header p,
+  .hybrid p,
+  .intro p{
+    margin-bottom:1.5rem;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+
+
+<style id="mobile-vertical-nodegraph-only">
+/* =========================================================
+   MOBILE ONLY — INTERACTIVE NODES
+   Compact Nuke/Houdini-inspired graph. The graph expands
+   a selected node in-place; SVG noodles connect every
+   visible node to its actual parent.
+   Desktop is untouched.
+   ========================================================= */
+@media (max-width:800px){
+  #work-map .node-workspace{
+    display:none !important;
+  }
+
+  #work-map .map-mobile{
+    display:block !important;
+    width:100%;
+    margin:18px 0 28px;
+  }
+
+  #work-map .mm-stack{
+    position:relative;
+    width:100%;
+    min-height:570px;
+    padding:52px 10px 42px;
+    box-sizing:border-box;
+    overflow:hidden;
+    border:1px solid #242424;
+    background:
+      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+      #050505;
+    background-size:24px 24px;
+  }
+
+  #work-map .mm-stack:before{
+    content:"WORK_MAP · MOBILE";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:31px;
+    padding:9px 10px;
+    box-sizing:border-box;
+    border-bottom:1px solid #222;
+    color:#555;
+    background:#0a0a0a;
+    font:8px var(--mono);
+    letter-spacing:.1em;
+    z-index:30;
+  }
+
+  #work-map .mm-stack:after{
+    content:"SELECT NODE · VIEW BRANCH · TAP PROJECT TO OPEN";
+    position:absolute;
+    left:10px;
+    bottom:9px;
+    color:#444;
+    font:7px var(--mono);
+    letter-spacing:.06em;
+    z-index:30;
+  }
+
+  /* SVG noodles sit behind all graph nodes. */
+  #work-map .mm-wires{
+    position:absolute;
+    inset:31px 0 30px;
+    width:100%;
+    height:calc(100% - 61px);
+    overflow:visible;
+    z-index:2;
+    pointer-events:none;
+  }
+
+  #work-map .mm-wire{
+    fill:none;
+    stroke:#414141;
+    stroke-width:1.25;
+    vector-effect:non-scaling-stroke;
+  }
+
+  #work-map .mm-wire.hot{
+    stroke:#d9572b;
+    stroke-width:1.8;
+  }
+
+  #work-map .mm-wire.project{
+    stroke:#555;
+    stroke-width:1.15;
+  }
+
+  #work-map .mm-root{
+    position:relative;
+    width:138px;
+    min-height:54px;
+    margin:0 auto 34px;
+    background:#101010;
+    border:1px solid #3d3d3d;
+    box-shadow:4px 4px 0 #000;
+    z-index:10;
+  }
+
+  /* Discipline rows are actual graph branches, not a long canvas. */
+  #work-map .mm-rail{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    z-index:5;
+  }
+
+  #work-map .mm-disc{
+    position:relative;
+    display:grid;
+    grid-template-columns:43% 1fr;
+    align-items:start;
+    column-gap:12px;
+    min-height:58px;
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+
+  #work-map .mm-discnode{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    width:100%;
+    min-height:54px;
+    margin:0 !important;
+    padding:0;
+    background:#111;
+    border:1px solid #303030;
+    box-shadow:none;
+    transform:none !important;
+    cursor:pointer;
+    z-index:8;
+    transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+  }
+
+  #work-map .mm-discnode:before,
+  #work-map .mm-discnode:after,
+  #work-map .mm-disc:before,
+  #work-map .mm-disc:after,
+  #work-map .mm-kids:before,
+  #work-map .mm-proj:before,
+  #work-map .mm-proj:after{
+    display:none !important;
+    content:none !important;
+  }
+
+  #work-map .mm-discnode:active{
+    transform:translateY(-1px) !important;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-discnode{
+    border-color:var(--orange);
+    box-shadow:4px 4px 0 #000;
+  }
+
+  #work-map .mm-discnode .mm-nhead{
+    padding:6px 8px;
+    font-size:7px;
+  }
+
+  #work-map .mm-discnode .mm-nbody{
+    padding:8px 9px 9px;
+  }
+
+  #work-map .mm-discnode .mm-nbody b{
+    display:block;
+    font-size:11px;
+    line-height:1.08;
+    white-space:nowrap;
+  }
+
+  #work-map .mm-discnode .mm-nbody small{
+    display:block;
+    margin-top:4px;
+    color:#707070;
+    font-size:7px;
+    line-height:1.2;
+  }
+
+  /* Small disclosure glyph: interaction cue, not a dropdown UI. */
+  #work-map .mm-discnode .mm-nbody:after{
+    content:"＋";
+    float:right;
+    margin-top:-14px;
+    color:#555;
+    font:10px var(--mono);
+  }
+
+  #work-map .mm-disc.active-mobile .mm-discnode .mm-nbody:after{
+    content:"−";
+    color:var(--orange);
+  }
+
+  /* Selected branch occupies the right-hand graph lane. */
+  #work-map .mm-kids{
+    position:relative;
+    display:none;
+    grid-column:2;
+    width:100%;
+    margin:0;
+    padding:0 0 0 10px;
+    flex-direction:column;
+    gap:6px;
+    max-height:none;
+    overflow:visible;
+    opacity:0;
+    transform:translateX(-5px);
+    z-index:7;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-kids{
+    display:flex;
+    opacity:1;
+    transform:none;
+  }
+
+  #work-map .mm-proj{
+    position:relative;
+    display:block;
+    width:100%;
+    min-height:0;
+    margin:0;
+    padding:0;
+    background:#0c0c0c;
+    border:1px solid #292929;
+    box-shadow:none;
+    text-align:left;
+    cursor:pointer;
+    transition:border-color .18s ease,transform .18s ease;
+  }
+
+  #work-map .mm-proj:active{
+    transform:translateY(-1px);
+    border-color:var(--orange);
+  }
+
+  #work-map .mm-proj .mm-nhead{
+    padding:4px 6px;
+    font-size:6px;
+  }
+
+  #work-map .mm-proj .mm-nbody{
+    padding:6px 7px;
+  }
+
+  #work-map .mm-proj .mm-nbody b{
+    display:block;
+    font-size:8px;
+    line-height:1.12;
+  }
+
+  #work-map .mm-proj .mm-nbody small{
+    display:block;
+    margin-top:3px;
+    font-size:6px;
+    line-height:1.15;
+    color:#666;
+  }
+
+  #work-map .mm-index{
+    display:none;
+  }
+
+  #work-map .mm-ports{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border:1px solid #666;
+    border-radius:50%;
+    background:#070707;
+    z-index:12;
+    pointer-events:none;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #work-map .mm-kids{transition:none}
+  }
+}
+
+@media (max-width:480px){
+  #work-map .mm-stack{
+    min-height:540px;
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  #work-map .mm-root{
+    width:126px;
+  }
+
+  #work-map .mm-disc{
+    grid-template-columns:42% 1fr;
+    column-gap:10px;
+  }
+
+  #work-map .mm-discnode .mm-nbody b{
+    font-size:10px;
+  }
+
+  #work-map .mm-proj .mm-nbody b{
+    font-size:7.5px;
+  }
+}
+</style>
+
+
+<style id="mobile-draggable-nodegraph">
+@media (max-width:800px){
+  #work-map .mm-stack{
+    touch-action:pan-y;
+    cursor:default;
+  }
+
+  #work-map .mm-node[data-draggable="1"]{
+    touch-action:none;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+  }
+
+  #work-map .mm-node[data-draggable="1"]:active,
+  #work-map .mm-node.dragging{
+    cursor:grabbing;
+  }
+
+  #work-map .mm-node.dragging{
+    border-color:var(--orange) !important;
+    box-shadow:4px 4px 0 #000,0 0 18px #d9572b18 !important;
+  }
+
+  #work-map .mm-stack .mm-wire.drag-hot{
+    stroke:var(--orange);
+    stroke-width:2;
+  }
+}
+</style>
+
+
+<!-- =========================================================
+     JAPANESE COMIC / ANIME THEME
+     Visual-only layer: preserves the existing portfolio content,
+     structure, interactions, gallery stack and mobile node graph.
+     ========================================================= -->
 
 </head>
 
@@ -823,11 +1618,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  <a class="nav-name" href="#top">FAZAL KHAN</a>
  <div class="nav-links">
   <a href="#gallery">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme"><span class="tt-dot" aria-hidden="true"></span><span class="tt-label">LIGHT</span></button>
  </div>
  <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
  <a href="#gallery">Work</a><a href="#work-map">Map</a><a href="about.html">About</a><a href="#contact">Start a project</a>
+ <button class="theme-toggle mobile" id="themeToggleMobile" type="button" aria-label="Switch between light and dark theme"><span class="tt-dot" aria-hidden="true"></span><span class="tt-label">LIGHT MODE</span></button>
 </div>
 
 <!-- HERO -->
@@ -1025,33 +1822,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     <p>The growth above runs on real output, bilingual social reels and food photography, produced weekly.</p>
    </div>
    <div class="sw-gallery stagger">
-    <figure class="sw-cell wide"><img src="media/food_1.jpg" alt="Swagath thali" loading="lazy"><figcaption class="mono">THALI</figcaption></figure>
-    <figure class="sw-cell wide"><img src="media/food_2.jpg" alt="Swagath spread" loading="lazy"><figcaption class="mono">SPREAD</figcaption></figure>
-    <figure class="sw-cell wide"><img src="media/food_4.jpg" alt="Swagath plated dish" loading="lazy"><figcaption class="mono">PLATED</figcaption></figure>
-    <figure class="sw-cell wide"><img src="media/food_6.jpg" alt="Swagath table" loading="lazy"><figcaption class="mono">TABLE</figcaption></figure>
-    <figure class="sw-cell tall"><video src="media/swagath_weekend.mp4" poster="media/swagath_weekend.jpg" autoplay muted loop playsinline preload="none"></video><figcaption class="mono">WEEKEND · REEL</figcaption></figure>
-    <figure class="sw-cell tall"><video src="media/swagath_faluda.mp4" poster="media/swagath_faluda.jpg" autoplay muted loop playsinline preload="none"></video><figcaption class="mono">FALUDA · REEL</figcaption></figure>
-    <figure class="sw-cell tall"><video src="media/swagath_drink.mp4" poster="media/swagath_drink.jpg" autoplay muted loop playsinline preload="none"></video><figcaption class="mono">DRINK · REEL</figcaption></figure>
-    <figure class="sw-cell tall"><img src="media/food_5.jpg" alt="Swagath dish" loading="lazy"><figcaption class="mono">DISH</figcaption></figure>
+     <figure class="sw-cell wide"><img src="media/food_1.jpg" alt="Swagath thali" loading="lazy"><figcaption class="mono">THALI</figcaption></figure>
+     <figure class="sw-cell wide"><img src="media/food_4.jpg" alt="Swagath plated dish" loading="lazy"><figcaption class="mono">PLATED</figcaption></figure>
+     <figure class="sw-cell tall"><video src="media/swagath_weekend.mp4" poster="media/swagath_weekend.jpg" autoplay muted loop playsinline preload="none"></video><figcaption class="mono">WEEKEND · REEL</figcaption></figure>
+     <figure class="sw-cell tall"><video src="media/swagath_faluda.mp4" poster="media/swagath_faluda.jpg" autoplay muted loop playsinline preload="none"></video><figcaption class="mono">FALUDA · REEL</figcaption></figure>
+    </div>
    </div>
   </div>
- </div>
-</section>
-
-<!-- HYBRID -->
-<section class="hybrid">
- <div class="container">
-  <div class="mono muted">WHY THIS COMBINATION</div>
-  <h2 class="hybrid-title" data-par="0.05">ONE PERSON.<br><span class="dim">MULTIPLE</span><br>DISCIPLINES.</h2>
-  <div class="system stagger">
-   <div class="system-item"><div class="system-number mono">01</div><div class="system-name">IMAGE</div><div class="system-desc">Camera, photography, cinematography.</div></div>
-   <div class="system-item"><div class="system-number mono">02</div><div class="system-name">VFX</div><div class="system-desc">Compositing, CG, finishing.</div></div>
-   <div class="system-item"><div class="system-number mono">03</div><div class="system-name">MOTION</div><div class="system-desc">2D, 3D, animation, editing.</div></div>
-   <div class="system-item"><div class="system-number mono">04</div><div class="system-name">MARKETING</div><div class="system-desc">Content, advertising, positioning.</div></div>
-   <div class="system-item"><div class="system-number mono">05</div><div class="system-name">AI</div><div class="system-desc">Automation, systems, efficiency.</div></div>
-  </div>
- </div>
-</section>
+ </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
@@ -1594,22 +2372,133 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
   var discSwitchTimer=null;
   function setDisc(id){ if(id===activeDisc) return; activeDisc=id;
     filterWrap.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active',b.dataset.disc===id); });
-    mobileWrap.querySelectorAll('.mm-disc').forEach(function(m){ m.classList.toggle('open',m.dataset.disc===id); });
+    mobileWrap.querySelectorAll('.mm-disc').forEach(function(m){ m.classList.toggle('active-mobile',m.dataset.disc===id); var b=m.querySelector('.mm-discnode'); if(b) b.setAttribute('aria-expanded',m.dataset.disc===id?'true':'false'); });
     hideRadial(); renderProjects();
   }
 
-  /* mobile accordion */
-  DISC.forEach(function(d){
-    var wrap=document.createElement('div'); wrap.className='mm-disc'+(d.id===activeDisc?' open':''); wrap.dataset.disc=d.id;
-    var list=projsFor(d.id);
-    var kids=list.map(function(p){ return '<button class="mm-proj" data-proj="'+p.id+'" type="button"><b>'+esc(p.title)+'</b><em>'+esc(p.role)+'</em></button>'; }).join('');
-    wrap.innerHTML='<button class="mm-head" type="button"><span><span class="mm-n">DISCIPLINE · '+list.length+'</span><span class="mm-name">'+esc(d.n)+'</span></span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button><div class="mm-kids"><div class="mm-kids-inner">'+kids+'</div></div>';
-    wrap.querySelector('.mm-head').addEventListener('click',function(){ var open=wrap.classList.contains('open'); mobileWrap.querySelectorAll('.mm-disc').forEach(function(m){m.classList.remove('open');}); if(!open){ wrap.classList.add('open'); activeDisc=d.id; } });
-    wrap.querySelectorAll('.mm-proj').forEach(function(btn){ btn.addEventListener('click',function(){ openProject(btn.dataset.proj); }); });
-    mobileWrap.appendChild(wrap);
-  });
+  /* mobile: interactive Nuke/Houdini-style node graph */
+  if(mobileWrap){
+    var mroot='<div class="mm-node mm-root" data-mobile-root="1"><div class="mm-nhead"><span class="cat"></span>ROOT<i class="io"></i></div><div class="mm-nbody"><b>FAZAL</b><small>Creative Director · marktOS</small></div></div>';
 
-  /* sync initial active filter chip */
+    var mrail=DISC.map(function(d){
+      var list=projsFor(d.id);
+      var kids=list.map(function(p){
+        return '<button class="mm-node mm-proj" type="button" data-proj="'+p.id+'">'
+          +'<div class="mm-nhead"><span class="cat"></span>P'+esc(p.num)+'<i class="io"></i></div>'
+          +'<div class="mm-nbody"><b>'+esc(p.title)+'</b><small>'+esc(p.role)+'</small></div>'
+          +'</button>';
+      }).join('');
+
+      return '<div class="mm-disc'+(d.id===activeDisc?' active-mobile':'')+'" data-disc="'+d.id+'">'
+        +'<button class="mm-node mm-discnode" type="button" aria-expanded="'+(d.id===activeDisc?'true':'false')+'">'
+        +'<div class="mm-nhead"><span class="cat"></span>DISC · '+list.length+'<i class="io"></i></div>'
+        +'<div class="mm-nbody"><b>'+esc(d.n)+'</b><small>'+list.length+' project'+(list.length===1?'':'s')+'</small></div>'
+        +'</button>'
+        +'<div class="mm-kids">'+kids+'</div>'
+        +'</div>';
+    }).join('');
+
+    mobileWrap.innerHTML='<div class="mm-stack">'+mroot+'<div class="mm-rail">'+mrail+'</div><svg class="mm-wires" aria-hidden="true"></svg></div>';
+
+    function mobileWire(a,b,cls){
+      if(!a||!b) return '';
+      var dx=Math.max(22,Math.abs(b.x-a.x)*.42);
+      return '<path class="mm-wire '+(cls||'')+'" d="M '+a.x.toFixed(1)+' '+a.y.toFixed(1)
+        +' C '+(a.x+dx).toFixed(1)+' '+a.y.toFixed(1)
+        +' '+(b.x-dx).toFixed(1)+' '+b.y.toFixed(1)
+        +' '+b.x.toFixed(1)+' '+b.y.toFixed(1)+'"></path>';
+    }
+
+    function mobilePoint(el,side,svgRect){
+      var r=el.getBoundingClientRect();
+      return {
+        x:(side==='left'?r.left:r.right)-svgRect.left,
+        y:r.top+r.height/2-svgRect.top
+      };
+    }
+
+    function drawMobileWires(){
+      var stack=mobileWrap.querySelector('.mm-stack');
+      var svg=mobileWrap.querySelector('.mm-wires');
+      if(!stack||!svg) return;
+
+      var sr=svg.getBoundingClientRect();
+      var root=stack.querySelector('.mm-root');
+      if(!root) return;
+
+      svg.setAttribute('viewBox','0 0 '+Math.max(1,sr.width)+' '+Math.max(1,sr.height));
+
+      var s='';
+      var rp=mobilePoint(root,'right',sr);
+
+      /* Root -> every discipline: same hierarchy as the desktop graph. */
+      mobileWrap.querySelectorAll('.mm-disc').forEach(function(disc){
+        var node=disc.querySelector('.mm-discnode');
+        if(!node) return;
+        var p=mobilePoint(node,'left',sr);
+        s+=mobileWire(rp,p,disc.dataset.disc===activeDisc?'hot':'');
+      });
+
+      /* Active discipline -> its visible project nodes. */
+      var active=mobileWrap.querySelector('.mm-disc.active-mobile');
+      if(active){
+        var parent=active.querySelector('.mm-discnode');
+        var pp=mobilePoint(parent,'right',sr);
+        active.querySelectorAll('.mm-proj').forEach(function(proj){
+          var cp=mobilePoint(proj,'left',sr);
+          s+=mobileWire(pp,cp,'project');
+        });
+      }
+
+      svg.innerHTML=s;
+    }
+
+    mobileWrap.querySelectorAll('.mm-discnode').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var d=btn.closest('.mm-disc');
+        var id=d && d.dataset.disc;
+        if(!id) return;
+
+        /* Graph interaction: one branch open at a time. */
+        var already=d.classList.contains('active-mobile');
+        mobileWrap.querySelectorAll('.mm-disc').forEach(function(item){
+          item.classList.remove('active-mobile');
+          var b=item.querySelector('.mm-discnode');
+          if(b) b.setAttribute('aria-expanded','false');
+        });
+
+        if(!already){
+          d.classList.add('active-mobile');
+          btn.setAttribute('aria-expanded','true');
+          setDisc(id);
+        }else{
+          activeDisc=id;
+          filterWrap.querySelectorAll('button').forEach(function(b){
+            b.classList.toggle('active',b.dataset.disc===id);
+          });
+          hideRadial();
+        }
+
+        requestAnimationFrame(function(){
+          requestAnimationFrame(drawMobileWires);
+        });
+      });
+    });
+
+    mobileWrap.querySelectorAll('.mm-proj').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        openProject(btn.dataset.proj);
+      });
+    });
+
+    /* Initial branch is VFX; draw once after layout settles. */
+    requestAnimationFrame(function(){
+      requestAnimationFrame(drawMobileWires);
+    });
+    addEventListener('resize',function(){
+      requestAnimationFrame(drawMobileWires);
+    },{passive:true});
+  }  /* sync initial active filter chip */
   filterWrap.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active',b.dataset.disc===activeDisc); });
   if(canvas){ requestAnimationFrame(buildGraph); setTimeout(buildGraph,120); }
   var rt=null; addEventListener('resize',function(){ hideRadial(); clearTimeout(rt); rt=setTimeout(buildGraph,180); },{passive:true});
@@ -1804,22 +2693,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
         +'<div class="gbrow">'+CLIENTS.map(function(cl){ return '<button class="gbchip" type="button" data-proj="'+cl.id+'"><div class="gbthumb"><img src="'+cl.thumb+'" alt="'+esc(cl.name)+'" loading="lazy"></div><div class="gbname"><span>'+esc(cl.name)+'</span><span>↗</span></div></button>'; }).join('')+'</div>';
       bar.addEventListener('click',function(e){ var b=e.target.closest('.gbchip'); if(b) openProject(b.dataset.proj); });
     }
-    /* parallax stack: each pinned card scales down + dims as the next card scrolls up over it */
-    var tracks=[].slice.call(stack.querySelectorAll('.gstack-track')), n=tracks.length;
-    function stackScroll(){
-      var mob=matchMedia('(max-width:800px)').matches;
-      tracks.forEach(function(tr,i){
-        var card=tr.querySelector('.gstack-card'); if(!card) return;
-        if(mob){ card.style.transform=''; card.style.filter=''; card.style.opacity=''; return; }
-        var r=tr.getBoundingClientRect();
-        var prog=Math.max(0,Math.min(1,-r.top/(tr.offsetHeight||1)));
-        var target=1-(n-1-i)*0.05;                 /* deeper cards settle smaller */
-        card.style.transform='scale('+(1-(1-target)*prog).toFixed(4)+')';
-        card.style.filter='brightness('+(1-prog*0.42).toFixed(3)+')';
-        card.style.opacity=(1-prog*0.12).toFixed(3);
-      });
-    }
-    if(!reduce){ addEventListener('scroll',stackScroll,{passive:true}); addEventListener('resize',stackScroll,{passive:true}); stackScroll(); }
+    /* stacking handled purely by CSS sticky (see #fazal-stack-clean) */
   })();
 })();
 </script>
@@ -1934,6 +2808,859 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
   refreshLock();
 })();
 </script>
+
+
+
+
+
+<script id="mobile-draggable-nodegraph-js">
+(function(){
+  function initVerticalMobileGraph(){
+    var wrap=document.getElementById('mapMobile');
+    if(!wrap || wrap.dataset.verticalInit==='1') return;
+    wrap.dataset.verticalInit='1';
+
+    function isMobile(){
+      return window.matchMedia('(max-width:800px)').matches;
+    }
+
+    function setup(){
+      if(!isMobile()) return;
+
+      var stack=wrap.querySelector('.mm-stack');
+      var svg=wrap.querySelector('.mm-wires');
+      if(!stack || !svg) return;
+
+      var nodes=wrap.querySelectorAll('.mm-node');
+
+      /* Make every graph node draggable on mobile. */
+      nodes.forEach(function(node){
+        node.setAttribute('data-draggable','1');
+
+        var dragging=false, pointerId=null;
+        var startX=0, startY=0, startLeft=0, startTop=0;
+
+        function rectInStack(){
+          var sr=stack.getBoundingClientRect();
+          var r=node.getBoundingClientRect();
+          return {
+            left:r.left-sr.left,
+            top:r.top-sr.top,
+            width:r.width,
+            height:r.height
+          };
+        }
+
+        node.addEventListener('pointerdown',function(e){
+          if(e.button!==undefined && e.button!==0) return;
+          if(!isMobile()) return;
+
+          dragging=true;
+          pointerId=e.pointerId;
+          node.classList.add('dragging');
+
+          try{ node.setPointerCapture(pointerId); }catch(_){}
+
+          var r=rectInStack();
+          startX=e.clientX;
+          startY=e.clientY;
+          startLeft=r.left;
+          startTop=r.top;
+
+          node.style.position='absolute';
+          node.style.left=startLeft+'px';
+          node.style.top=startTop+'px';
+          node.style.margin='0';
+          node.style.transform='none';
+
+          e.preventDefault();
+        });
+
+        node.addEventListener('pointermove',function(e){
+          if(!dragging || e.pointerId!==pointerId) return;
+
+          var sr=stack.getBoundingClientRect();
+          var r=node.getBoundingClientRect();
+
+          var nx=startLeft+(e.clientX-startX);
+          var ny=startTop+(e.clientY-startY);
+
+          var maxX=Math.max(4,sr.width-r.width-4);
+          var maxY=Math.max(38,sr.height-r.height-38);
+
+          nx=Math.max(4,Math.min(maxX,nx));
+          ny=Math.max(38,Math.min(maxY,ny));
+
+          node.style.left=nx+'px';
+          node.style.top=ny+'px';
+
+          draw();
+          e.preventDefault();
+        });
+
+        function release(e){
+          if(!dragging || (e.pointerId!==undefined && e.pointerId!==pointerId)) return;
+          dragging=false;
+          node.classList.remove('dragging');
+          try{ node.releasePointerCapture(pointerId); }catch(_){}
+          pointerId=null;
+          draw();
+        }
+
+        node.addEventListener('pointerup',release);
+        node.addEventListener('pointercancel',release);
+      });
+
+      function point(node,side){
+        var sr=svg.getBoundingClientRect();
+        var r=node.getBoundingClientRect();
+
+        var x;
+        if(side==='top') x=r.left+r.width/2-sr.left;
+        else if(side==='bottom') x=r.left+r.width/2-sr.left;
+        else if(side==='left') x=r.left-sr.left;
+        else x=r.right-sr.left;
+
+        var y;
+        if(side==='top') y=r.top-sr.top;
+        else if(side==='bottom') y=r.bottom-sr.top;
+        else y=r.top+r.height/2-sr.top;
+
+        return {x:x,y:y};
+      }
+
+      /*
+       * Vertical flow-chart connector:
+       * parent bottom → short vertical drop → horizontal branch → child top.
+       * If the nodes are roughly aligned, it becomes a simple curved vertical line.
+       */
+      function flowPath(a,b,cls){
+        var dy=Math.max(12,b.y-a.y);
+        var midY=a.y+Math.min(34,Math.max(12,dy*.42));
+
+        return '<path class="mm-wire '+(cls||'')+'" d="M '+a.x.toFixed(1)+' '+a.y.toFixed(1)+
+          ' C '+a.x.toFixed(1)+' '+midY.toFixed(1)+
+          ' '+b.x.toFixed(1)+' '+(b.y-18).toFixed(1)+
+          ' '+b.x.toFixed(1)+' '+b.y.toFixed(1)+'"></path>';
+      }
+
+      function draw(){
+        if(!stack || !svg) return;
+
+        var sr=svg.getBoundingClientRect();
+        svg.setAttribute('viewBox','0 0 '+Math.max(1,sr.width)+' '+Math.max(1,sr.height));
+
+        var root=stack.querySelector('.mm-root');
+        var discs=Array.prototype.slice.call(wrap.querySelectorAll('.mm-disc'));
+        var output='';
+
+        if(root){
+          var rp=point(root,'bottom');
+
+          /*
+           * Root branches vertically to every discipline.
+           * The discipline nodes themselves form the next graph tier.
+           */
+          discs.forEach(function(d){
+            var dn=d.querySelector('.mm-discnode');
+            if(!dn) return;
+
+            var dp=point(dn,'top');
+            var cls=d.classList.contains('active-mobile')?'hot':'';
+
+            output+=flowPath(rp,dp,cls);
+          });
+        }
+
+        /*
+         * Active discipline → its projects, also flowing downward.
+         */
+        var active=wrap.querySelector('.mm-disc.active-mobile');
+        if(active){
+          var parent=active.querySelector('.mm-discnode');
+
+          if(parent){
+            var pp=point(parent,'bottom');
+
+            active.querySelectorAll('.mm-proj').forEach(function(project){
+              var cp=point(project,'top');
+              var cls='project'+(project.classList.contains('dragging')?' drag-hot':'');
+              output+=flowPath(pp,cp,cls);
+            });
+          }
+        }
+
+        svg.innerHTML=output;
+      }
+
+      /* Redraw after the branch expands/collapses. */
+      draw();
+      requestAnimationFrame(function(){ requestAnimationFrame(draw); });
+
+      window.addEventListener('resize',function(){
+        if(isMobile()) draw();
+      },{passive:true});
+
+      /*
+       * MutationObserver keeps wires correct when the active branch changes
+       * height through the existing interaction.
+       */
+      var observer=new MutationObserver(function(){
+        requestAnimationFrame(draw);
+      });
+      observer.observe(stack,{subtree:true,attributes:true,attributeFilter:['class','style','aria-expanded']});
+    }
+
+    setup();
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initVerticalMobileGraph,{once:true});
+  }else{
+    initVerticalMobileGraph();
+  }
+})();
+</script>
+
+
+<style id="mobile-vertical-flow-final">
+@media (max-width:800px){
+  /*
+    MOBILE WORK MAP
+    Root at top → discipline tier → project tier.
+    This is intentionally a vertical flow chart rather than a side-by-side
+    dropdown/list layout. Desktop is untouched.
+  */
+
+  #work-map .mm-stack{
+    min-height:760px !important;
+    height:760px !important;
+    padding:52px 10px 42px !important;
+    overflow:hidden !important;
+  }
+
+  #work-map .mm-root{
+    position:relative !important;
+    display:block !important;
+    width:min(150px,44vw) !important;
+    min-height:54px !important;
+    margin:0 auto 48px !important;
+    left:auto !important;
+    top:auto !important;
+    transform:none !important;
+    z-index:12 !important;
+  }
+
+  /*
+    Disciplines are a vertical graph tier.
+    Each node sits in the center so the flow reads immediately top-to-bottom.
+  */
+  #work-map .mm-rail{
+    position:relative !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:18px !important;
+    width:100% !important;
+    padding:0 !important;
+    z-index:8 !important;
+  }
+
+  #work-map .mm-disc{
+    position:relative !important;
+    display:block !important;
+    width:min(210px,62vw) !important;
+    min-height:54px !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  #work-map .mm-discnode{
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    min-height:54px !important;
+    margin:0 !important;
+    transform:none !important;
+    z-index:10 !important;
+  }
+
+  /*
+    Projects become a second-level vertical branch directly below
+    the selected discipline.
+  */
+  #work-map .mm-kids{
+    position:relative !important;
+    display:none !important;
+    width:min(190px,56vw) !important;
+    margin:14px auto 0 !important;
+    padding:0 !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:8px !important;
+    grid-column:auto !important;
+    opacity:0 !important;
+    transform:translateY(-5px) !important;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-kids{
+    display:flex !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  #work-map .mm-proj{
+    position:relative !important;
+    width:100% !important;
+    min-height:44px !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:left !important;
+  }
+
+  #work-map .mm-disc.active-mobile{
+    z-index:11 !important;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-discnode{
+    border-color:var(--orange) !important;
+    box-shadow:4px 4px 0 #000 !important;
+  }
+
+  /*
+    Connector layer: full graph canvas, behind nodes.
+  */
+  #work-map .mm-wires{
+    position:absolute !important;
+    inset:31px 0 30px !important;
+    width:100% !important;
+    height:calc(100% - 61px) !important;
+    z-index:3 !important;
+    pointer-events:none !important;
+    overflow:visible !important;
+  }
+
+  #work-map .mm-wire{
+    fill:none !important;
+    stroke:#3b3b3b !important;
+    stroke-width:1.25 !important;
+    vector-effect:non-scaling-stroke !important;
+  }
+
+  #work-map .mm-wire.hot{
+    stroke:var(--orange) !important;
+    stroke-width:1.8 !important;
+  }
+
+  #work-map .mm-wire.project{
+    stroke:#5a5a5a !important;
+    stroke-width:1.15 !important;
+  }
+
+  #work-map .mm-wire.drag-hot{
+    stroke:var(--orange) !important;
+    stroke-width:1.7 !important;
+  }
+
+  /*
+    Small port cues make the graph feel like a real node editor.
+  */
+  #work-map .mm-node[data-draggable="1"]{
+    touch-action:none !important;
+    cursor:grab !important;
+    user-select:none !important;
+    -webkit-user-select:none !important;
+  }
+
+  #work-map .mm-node.dragging{
+    cursor:grabbing !important;
+    border-color:var(--orange) !important;
+    box-shadow:4px 4px 0 #000,0 0 18px rgba(217,87,43,.12) !important;
+    z-index:40 !important;
+  }
+
+  #work-map .mm-root:after{
+    display:none !important;
+  }
+
+  #work-map .mm-rail:before,
+  #work-map .mm-disc:before,
+  #work-map .mm-disc:after,
+  #work-map .mm-kids:before,
+  #work-map .mm-proj:before,
+  #work-map .mm-proj:after{
+    display:none !important;
+    content:none !important;
+  }
+
+  #work-map .mm-discnode .mm-nbody:after{
+    content:"＋" !important;
+    float:right !important;
+    margin-top:-14px !important;
+    color:#555 !important;
+    font:10px var(--mono) !important;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-discnode .mm-nbody:after{
+    content:"−" !important;
+    color:var(--orange) !important;
+  }
+}
+
+@media (max-width:480px){
+  #work-map .mm-stack{
+    min-height:720px !important;
+    height:720px !important;
+  }
+
+  #work-map .mm-root{
+    width:132px !important;
+    margin-bottom:42px !important;
+  }
+
+  #work-map .mm-disc{
+    width:205px !important;
+  }
+
+  #work-map .mm-kids{
+    width:184px !important;
+  }
+}
+</style>
+
+
+<style id="mobile-horizontal-discipline-tier">
+@media (max-width:800px){
+  /*
+    MOBILE GRAPH:
+    ROOT
+      ↓
+    [ VFX ] [ CONTENT ] [ BRANDING ] [ MARKETING ] [ WEB ]
+    Each discipline can open its own project branch underneath.
+  */
+
+  #work-map .mm-stack{
+    min-height:620px !important;
+    height:620px !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    padding:52px 18px 42px !important;
+  }
+
+  #work-map .mm-root{
+    width:138px !important;
+    margin:0 auto 46px !important;
+  }
+
+  /* One horizontal discipline tier. */
+  #work-map .mm-rail{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:12px !important;
+    width:max-content !important;
+    min-width:100% !important;
+    padding:0 4px !important;
+  }
+
+  #work-map .mm-disc{
+    display:block !important;
+    flex:0 0 150px !important;
+    width:150px !important;
+    min-height:54px !important;
+    margin:0 !important;
+  }
+
+  #work-map .mm-discnode{
+    width:150px !important;
+    min-height:54px !important;
+  }
+
+  /*
+    When a discipline is opened, its projects stay directly below it,
+    preserving the vertical flow inside that branch.
+  */
+  #work-map .mm-kids{
+    display:none !important;
+    width:150px !important;
+    margin:12px 0 0 !important;
+    gap:7px !important;
+  }
+
+  #work-map .mm-disc.active-mobile .mm-kids{
+    display:flex !important;
+  }
+
+  #work-map .mm-proj{
+    width:150px !important;
+    min-height:42px !important;
+  }
+
+  /* Horizontal scroll is only for the graph canvas, not the page. */
+  #work-map .mm-stack{
+    scrollbar-width:thin;
+    scrollbar-color:#333 transparent;
+  }
+
+  /* Keep the connector layer across the full horizontal graph width. */
+  #work-map .mm-wires{
+    width:100% !important;
+    height:calc(100% - 61px) !important;
+    pointer-events:none !important;
+  }
+
+  /*
+    Root-to-discipline connectors now terminate at the top of each
+    side-by-side discipline node.
+  */
+  #work-map .mm-wire{
+    stroke:#3b3b3b !important;
+  }
+
+  #work-map .mm-wire.hot{
+    stroke:var(--orange) !important;
+  }
+}
+
+@media (max-width:480px){
+  #work-map .mm-stack{
+    min-height:600px !important;
+    height:600px !important;
+  }
+
+  #work-map .mm-disc,
+  #work-map .mm-discnode,
+  #work-map .mm-kids,
+  #work-map .mm-proj{
+    width:142px !important;
+  }
+
+  #work-map .mm-disc{
+    flex-basis:142px !important;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="fazal-theme-system">
+/* ============================================================
+   THEME — "WORKLOG / REPAIR TICKET"  (light; default & only for now)
+   Palette, fonts and highlights from the supplied concept.
+   The dark styles remain in the file but are hidden: the toggle is
+   removed and <html> is forced to data-theme="light".
+   ============================================================ */
+html[data-theme="light"]{
+  --paper:#EDE7D9; --paper2:#E3DBC8; --card:#F5F0E3;
+  --ink:#171410; --ink2:#4B4436;
+  --blue:#1B3A6B; --fault:#D8321B; --fixed:#0E9F5D;
+  /* remap the site's semantic tokens onto the worklog palette */
+  --black:#EDE7D9;
+  --orange:#D8321B;              /* primary highlight -> hazard red */
+  --green:#0E9F5D;
+  --muted:#4B4436;
+  --line:#cdc2a6;               /* soft warm divider; framed cards use ink */
+  --panel:#F5F0E3;
+  --sans:"Archivo",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --hand:"Caveat",cursive;
+  color-scheme:light;
+}
+/* single theme for now — hide the toggle everywhere */
+.theme-toggle{display:none !important}
+
+/* ---------- page: paper + blueprint grid ---------- */
+html[data-theme="light"] body{
+  background:#EDE7D9;color:#171410;
+  background-image:linear-gradient(rgba(23,20,16,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,20,16,.045) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+html[data-theme="light"] ::selection{background:#D8321B;color:#EDE7D9}
+html[data-theme="light"] .muted{color:#4B4436}
+html[data-theme="light"] .orange{color:#D8321B}
+
+/* ---------- nav ---------- */
+html[data-theme="light"] .nav{mix-blend-mode:normal;color:#171410}
+html[data-theme="light"] .nav-name,html[data-theme="light"] .nav-links a{color:#171410}
+html[data-theme="light"] .nav-burger span{background:#171410}
+html[data-theme="light"] .mobile-menu{background:#ede7d9f7}
+html[data-theme="light"] .mobile-menu a{color:#171410}
+html[data-theme="light"] .mobile-menu a:hover{color:#D8321B}
+
+/* ---------- hero: program window becomes a framed light device ---------- */
+html[data-theme="light"] .hero-bottom p{color:#171410}
+html[data-theme="light"] .hero-top strong{color:#171410}
+html[data-theme="light"] .side-word{color:#171410;opacity:.08}
+html[data-theme="light"] .hero-program-window{background:#F5F0E3;border:3px solid #171410;box-shadow:10px 10px 0 #1B3A6B;backdrop-filter:none}
+html[data-theme="light"] .program-titlebar{background:#171410;color:#EDE7D9;border-color:#171410}
+html[data-theme="light"] .program-title-center,html[data-theme="light"] .program-title-left,html[data-theme="light"] .program-title-right{color:#EDE7D9}
+html[data-theme="light"] .program-timeline{background:#EDE7D9;color:#4B4436}
+html[data-theme="light"] .timeline-track{background:#e2dac6;border-color:#171410}
+html[data-theme="light"] .clip{border-color:#171410;color:#171410}
+html[data-theme="light"] .showreel-fullscreen-btn{background:#171410;border-color:#171410;color:#EDE7D9}
+html[data-theme="light"] .hero-reel-btn{background:#171410;color:#EDE7D9;border-color:#171410}
+html[data-theme="light"] .techbar .readout{background:#F5F0E3;border-color:#171410;color:#4B4436}
+
+/* ---------- generic sections -> paper ---------- */
+html[data-theme="light"] .node-lab,html[data-theme="light"] .contact,html[data-theme="light"] .capabilities{background:#EDE7D9;color:#171410}
+html[data-theme="light"] .about,html[data-theme="light"] .play{background:#E5DDCB;color:#171410}
+html[data-theme="light"] .node-lab h1,html[data-theme="light"] .node-lab h2,html[data-theme="light"] .node-lab h3,
+html[data-theme="light"] .about h1,html[data-theme="light"] .about h2,html[data-theme="light"] .about h3,
+html[data-theme="light"] .play h1,html[data-theme="light"] .play h2,html[data-theme="light"] .play h3,
+html[data-theme="light"] .contact h1,html[data-theme="light"] .contact h2,html[data-theme="light"] .contact h3,
+html[data-theme="light"] .capabilities h1,html[data-theme="light"] .capabilities h2,html[data-theme="light"] .capabilities h3{color:#171410}
+html[data-theme="light"] .node-lab-head p,html[data-theme="light"] .about-copy p,html[data-theme="light"] .play p,html[data-theme="light"] .contact-intro{color:#4B4436}
+html[data-theme="light"] .about-copy p strong{color:#171410}
+
+/* ---------- capabilities ---------- */
+html[data-theme="light"] .cap-name{color:#171410}
+html[data-theme="light"] .cap-desc{color:#4B4436}
+html[data-theme="light"] .cap-list,html[data-theme="light"] .cap{border-color:#171410}
+html[data-theme="light"] .cap-no{color:#D8321B}
+html[data-theme="light"] .cap:hover{background:#E5DDCB}
+
+/* ---------- work map / node graph -> worklog cards ---------- */
+html[data-theme="light"] .node-workspace{background:#EDE7D9;border:3px solid #171410;box-shadow:10px 10px 0 #1B3A6B}
+html[data-theme="light"] .node-toolbar{background:#171410;border-color:#171410}
+html[data-theme="light"] .node-toolbar .mono{color:#EDE7D9 !important}
+html[data-theme="light"] .node-tool{background:#231f18;border-color:#3a332a;color:#cfc6b3}
+html[data-theme="light"] .node-tool.active{color:#EDE7D9;border-color:#D8321B;background:#D8321B}
+html[data-theme="light"] .node-canvas{background-image:linear-gradient(#17141010 1px,transparent 1px),linear-gradient(90deg,#17141010 1px,transparent 1px)}
+html[data-theme="light"] .graph-node{background:#F5F0E3;border:2px solid #171410;box-shadow:5px 5px 0 #171410;color:#171410;border-radius:0}
+html[data-theme="light"] .graph-node .node-head{background:#171410;color:#EDE7D9;border-color:#171410}
+html[data-theme="light"] .graph-node .node-body,html[data-theme="light"] .graph-node strong{color:#171410}
+html[data-theme="light"] .graph-node small{color:#4B4436}
+html[data-theme="light"] .graph-node.gn-root{border-color:#D8321B;box-shadow:6px 6px 0 #D8321B}
+html[data-theme="light"] .graph-node.gn-root .node-head{background:#D8321B;color:#fff}
+html[data-theme="light"] .graph-node .node-head .cat{background:#1B3A6B}
+html[data-theme="light"] .graph-node.gn-proj .node-head .cat{background:#D8321B}
+html[data-theme="light"] .graph-node .port{background:#EDE7D9;border-color:#171410}
+html[data-theme="light"] .node-readout{color:#4B4436}
+html[data-theme="light"] .node-readout b{color:#D8321B}
+html[data-theme="light"] .node-filter button{border-color:#171410;color:#4B4436}
+html[data-theme="light"] .node-filter button.active,html[data-theme="light"] .node-filter button:hover{color:#EDE7D9;background:#171410;border-color:#171410}
+html[data-theme="light"] #mapWires path{stroke:#1B3A6B !important}
+
+/* mobile node graph */
+html[data-theme="light"] .mm-node{background:#F5F0E3;border-color:#171410;color:#171410}
+html[data-theme="light"] .mm-nhead{background:#171410;color:#EDE7D9}
+html[data-theme="light"] .mm-nbody b{color:#171410}
+html[data-theme="light"] .mm-nbody small{color:#4B4436}
+html[data-theme="light"] .mm-root{border-color:#D8321B}
+html[data-theme="light"] .mm-root .mm-nhead{background:#D8321B;color:#fff}
+html[data-theme="light"] .mm-wire{stroke:#1B3A6B !important}
+html[data-theme="light"] .mm-wire.hot,html[data-theme="light"] .mm-wire.drag-hot{stroke:#D8321B !important}
+html[data-theme="light"] .mm-stack{background-image:linear-gradient(#17141010 1px,transparent 1px),linear-gradient(90deg,#17141010 1px,transparent 1px) !important;background-size:24px 24px !important}
+
+/* VFX breakdown */
+html[data-theme="light"] .vfx-breakdown{border-color:#171410}
+html[data-theme="light"] .vfx-bd-head h3{color:#171410}
+html[data-theme="light"] .vfx-tabs{border-color:#171410}
+html[data-theme="light"] .vtab{color:#4B4436}
+html[data-theme="light"] .vtab.active{background:#D8321B;color:#fff}
+html[data-theme="light"] .vfx-stage{background:#E5DDCB;border-color:#171410;box-shadow:8px 8px 0 #171410}
+html[data-theme="light"] .vfx-after video,html[data-theme="light"] .vfx-after img,html[data-theme="light"] .vfx-before video,html[data-theme="light"] .vfx-before img{background:#E5DDCB}
+html[data-theme="light"] .vfx-line{background:#171410}
+html[data-theme="light"] .vfx-handle{background:#F5F0E3;border-color:#171410;color:#171410}
+
+/* ---------- gallery cards ---------- */
+html[data-theme="light"] .gstack-card{background:#F5F0E3 !important;border:3px solid #171410;box-shadow:12px 12px 0 #1B3A6B;color:#171410}
+html[data-theme="light"] .gstack-id h3{color:#171410}
+html[data-theme="light"] .gstack-num{-webkit-text-stroke:1px #171410;color:transparent}
+html[data-theme="light"] .gstack-cat{color:#1B3A6B}
+html[data-theme="light"] .cat-desc{color:#4B4436}
+html[data-theme="light"] .gstack-open{border:2px solid #171410;color:#171410}
+html[data-theme="light"] .gstack-open:hover{background:#D8321B;border-color:#D8321B;color:#fff}
+html[data-theme="light"] .gcard{background:#E5DDCB}
+html[data-theme="light"] .gc-tag{color:#EDE7D9}
+
+/* media frames: warm paper backplate so letterboxed clips blend */
+html[data-theme="light"] .cat-tile,html[data-theme="light"] .cat-tile img,html[data-theme="light"] .cat-tile video,
+html[data-theme="light"] .gm-main,html[data-theme="light"] .gm-main img,html[data-theme="light"] .gm-main video,
+html[data-theme="light"] .gm-side figure,html[data-theme="light"] .gm-side img,html[data-theme="light"] .gm-side video,
+html[data-theme="light"] .gc-media,
+html[data-theme="light"] .sw-cell,html[data-theme="light"] .sw-cell img,html[data-theme="light"] .sw-cell video,
+html[data-theme="light"] .proj-media .pm,html[data-theme="light"] .proj-media img,html[data-theme="light"] .proj-media video{background:#E3DBC8 !important}
+html[data-theme="light"] .cat-tile,html[data-theme="light"] .gm-main,html[data-theme="light"] .gm-side figure,html[data-theme="light"] .sw-cell{border:2px solid #171410}
+
+/* client bar */
+html[data-theme="light"] .gal-bar,html[data-theme="light"] .gal-head{border-color:#171410}
+html[data-theme="light"] .gbchip{background:#F5F0E3;border:2px solid #171410}
+html[data-theme="light"] .gbchip:hover{border-color:#D8321B}
+html[data-theme="light"] .gbthumb{background:#E3DBC8}
+html[data-theme="light"] .gbname{color:#171410}
+
+/* ---------- case study + growth (before/after = red -> green) ---------- */
+html[data-theme="light"] .case{background:#EDE7D9;color:#171410}
+html[data-theme="light"] .case .orange,html[data-theme="light"] .phase-chart .col.opt .xl b{color:#D8321B !important}
+html[data-theme="light"] .growth-chart{background:#F5F0E3;border-color:#171410}
+html[data-theme="light"] .growth-metrics{border-color:#171410}
+html[data-theme="light"] .growth-metrics>div{border-color:#171410}
+html[data-theme="light"] .growth-metrics .from{color:#D8321B}
+html[data-theme="light"] .growth-metrics strong{color:#0E9F5D}
+html[data-theme="light"] .metric-toggle .mbtn{border-color:#171410;color:#171410}
+html[data-theme="light"] .metric-toggle .mbtn.active{background:#171410;color:#EDE7D9}
+html[data-theme="light"] .phase-chart{border-color:#171410}
+html[data-theme="light"] .phase-chart .col{border-color:#171410}
+html[data-theme="light"] .phase-chart .barfill{background:#1B3A6B}
+html[data-theme="light"] .phase-chart .col.opt .barfill{background:#D8321B}
+html[data-theme="light"] .phase-chart .val{color:#171410}
+html[data-theme="light"] .ba-grid,html[data-theme="light"] .ba-cell{border-color:#171410}
+html[data-theme="light"] .ba-cell .ch .d{border-color:#171410;background:#c9bfa4}
+html[data-theme="light"] .ba-cell.good .ch .d{background:#0E9F5D;border-color:#0E9F5D}
+html[data-theme="light"] .ba-cell.good .cv{color:#0E9F5D}
+html[data-theme="light"] .ba-toggle{border-color:#171410}
+html[data-theme="light"] .ba-toggle button{color:#171410}
+html[data-theme="light"] .ba-toggle button.on{background:#171410;color:#EDE7D9}
+html[data-theme="light"] .sw-content-head h3{color:#171410}
+html[data-theme="light"] .sw-content-head p{color:#4B4436}
+
+/* ---------- play / grade bay ---------- */
+html[data-theme="light"] .lab{border:3px solid #171410;box-shadow:10px 10px 0 #171410}
+html[data-theme="light"] .lab-preview{background:#E3DBC8}
+html[data-theme="light"] .lab-info{border-color:#171410}
+html[data-theme="light"] .lab-info h3{color:#171410}
+html[data-theme="light"] .lab-info p{color:#4B4436}
+html[data-theme="light"] .slider-row label{color:#4B4436}
+html[data-theme="light"] .lab-presets button,html[data-theme="light"] .lab-toggle,html[data-theme="light"] .lab-source button{background:#F5F0E3;border-color:#171410;color:#4B4436}
+html[data-theme="light"] .lab-presets button.on,html[data-theme="light"] .lab-presets button:hover,html[data-theme="light"] .lab-toggle:hover{border-color:#D8321B;color:#171410}
+html[data-theme="light"] .lab-corner{color:#D8321B}
+
+/* ---------- contact ---------- */
+html[data-theme="light"] .contact h2 span{color:#D8321B}
+html[data-theme="light"] .contact-btn{border:2px solid #171410;color:#171410}
+html[data-theme="light"] .contact-btn:hover{box-shadow:6px 6px 0 #1B3A6B}
+html[data-theme="light"] .contact-btn.primary{background:#D8321B;border-color:#D8321B;color:#fff}
+html[data-theme="light"] .contact-email{border-color:#D8321B;color:#171410}
+html[data-theme="light"] .cam3d{display:none}
+
+/* ---------- forms / modals -> light ---------- */
+html[data-theme="light"] .form-shell,html[data-theme="light"] .reel-shell,html[data-theme="light"] .proj-shell{background:#F5F0E3;border:3px solid #171410;color:#171410;box-shadow:14px 14px 0 #171410}
+html[data-theme="light"] .form-head h2,html[data-theme="light"] .form-head p,html[data-theme="light"] .question,html[data-theme="light"] .proj-head h3{color:#171410}
+html[data-theme="light"] .form-head p,html[data-theme="light"] .proj-body p{color:#4B4436}
+html[data-theme="light"] .form-close,html[data-theme="light"] .reel-close,html[data-theme="light"] .proj-close{background:#171410;color:#EDE7D9;border-color:#171410}
+html[data-theme="light"] .field label{color:#4B4436}
+html[data-theme="light"] .field input,html[data-theme="light"] .field textarea,html[data-theme="light"] .field select{background:#EDE7D9;border-color:#171410;color:#171410}
+html[data-theme="light"] .option{background:#EDE7D9;border-color:#171410;color:#4B4436}
+html[data-theme="light"] .option.selected,html[data-theme="light"] .option:hover{background:#F5F0E3;border-color:#D8321B;color:#171410}
+html[data-theme="light"] .form-nav button{background:#EDE7D9;border-color:#171410;color:#171410}
+html[data-theme="light"] .form-nav .next,html[data-theme="light"] .form-nav .submit{background:#D8321B;border-color:#D8321B;color:#fff}
+html[data-theme="light"] .form-progress span{background:#cdc2a6}
+html[data-theme="light"] .form-progress span.active{background:#D8321B}
+html[data-theme="light"] .proj-chips span{border-color:#171410;color:#171410}
+html[data-theme="light"] .pv-stage,html[data-theme="light"] .pv-thumb{background:#E3DBC8;border-color:#171410}
+html[data-theme="light"] .reel-screen{background:#E3DBC8}
+html[data-theme="light"] .reel-ui,html[data-theme="light"] .reel-info{color:#4B4436;border-color:#171410}
+
+/* footer stays ink (on-theme worklog anchor) */
+
+/* toggle control base (kept but hidden) */
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:inherit;padding:7px 12px;font:9px var(--mono);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px}
+.theme-toggle .tt-dot{width:11px;height:11px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,currentColor 0 50%,transparent 50% 100%);flex:none}
+</style>
+
+<script id="fazal-theme-toggle">
+/* single theme for now: force the worklog light theme, ignore any saved choice */
+(function(){ try{localStorage.setItem('fazal-theme','light');}catch(e){} document.documentElement.setAttribute('data-theme','light'); })();
+</script>
+
+<style id="fazal-theme-idfix">
+/* ID-scoped light overrides — beat the mobile blocks' #gallery / #work-map
+   !important dark rules so the worklog theme holds on mobile too. */
+
+/* gallery category cards (mobile sticky stack uses #gallery ... !important) */
+html[data-theme="light"] #gallery .gstack-card{background:#F5F0E3 !important;border:3px solid #171410 !important;color:#171410 !important;box-shadow:12px 12px 0 #1B3A6B !important}
+html[data-theme="light"] #gallery .gstack-card h1,html[data-theme="light"] #gallery .gstack-card h2,html[data-theme="light"] #gallery .gstack-card h3,html[data-theme="light"] #gallery .gstack-id h3{color:#171410 !important}
+html[data-theme="light"] #gallery .gstack-card p,html[data-theme="light"] #gallery .cat-desc{color:#4B4436 !important}
+html[data-theme="light"] #gallery .gstack-cat{color:#1B3A6B !important}
+html[data-theme="light"] #gallery .gstack-num{color:transparent !important;-webkit-text-stroke:1px #171410 !important}
+html[data-theme="light"] #gallery .gstack-open{background:#EDE7D9 !important;border:2px solid #171410 !important;color:#171410 !important}
+html[data-theme="light"] #gallery .cat-tile,html[data-theme="light"] #gallery .cat-tile img,html[data-theme="light"] #gallery .cat-tile video,
+html[data-theme="light"] #gallery .gm-main,html[data-theme="light"] #gallery .gm-main img,html[data-theme="light"] #gallery .gm-main video,
+html[data-theme="light"] #gallery .gm-side figure,html[data-theme="light"] #gallery .gm-side img,html[data-theme="light"] #gallery .gm-side video{background:#E3DBC8 !important}
+
+/* mobile work-map node graph (#work-map ... !important dark rules) */
+html[data-theme="light"] #work-map .mm-stack{background:#EDE7D9 !important;background-image:linear-gradient(#17141010 1px,transparent 1px),linear-gradient(90deg,#17141010 1px,transparent 1px) !important;background-size:24px 24px !important}
+html[data-theme="light"] #work-map .mm-node,html[data-theme="light"] #work-map .mm-root,html[data-theme="light"] #work-map .mm-discnode,html[data-theme="light"] #work-map .mm-proj{background:#F5F0E3 !important;border-color:#171410 !important;color:#171410 !important}
+html[data-theme="light"] #work-map .mm-nbody,html[data-theme="light"] #work-map .mm-nbody b{color:#171410 !important}
+html[data-theme="light"] #work-map .mm-nbody small{color:#4B4436 !important}
+html[data-theme="light"] #work-map .mm-nhead{background:#171410 !important;color:#EDE7D9 !important}
+html[data-theme="light"] #work-map .mm-root{border-color:#D8321B !important}
+html[data-theme="light"] #work-map .mm-root .mm-nhead{background:#D8321B !important;color:#fff !important}
+html[data-theme="light"] #work-map .mm-disc.active-mobile .mm-discnode{border-color:#D8321B !important}
+html[data-theme="light"] #work-map .mm-wire{stroke:#1B3A6B !important}
+html[data-theme="light"] #work-map .mm-wire.hot,html[data-theme="light"] #work-map .mm-wire.drag-hot{stroke:#D8321B !important}
+html[data-theme="light"] #work-map .mm-discnode .mm-nbody:after,html[data-theme="light"] #work-map .mm-disc.active-mobile .mm-discnode .mm-nbody:after{color:#D8321B !important}
+html[data-theme="light"] #work-map .node-filter button{background:#171410 !important;color:#EDE7D9 !important;border-color:#171410 !important}
+html[data-theme="light"] #work-map .node-filter button.active{background:#D8321B !important;color:#fff !important}
+
+/* warm the video containers (dark screens behind letterbox) */
+html[data-theme="light"] .program-viewer{background:#E3DBC8}
+html[data-theme="light"] .about-photo{background:#E3DBC8}
+</style>
+
+<style id="fazal-stack-clean">
+/* ============================================================
+   CLEAN STICKY-STACK GALLERY
+   Native scroll + CSS sticky (no JS transforms). Each category
+   card pins, the next rises over it with a small offset; later
+   cards sit on top. One consolidated implementation.
+   ============================================================ */
+.gal-stack{position:relative;overflow:visible}
+.gstack-track{position:relative;height:150vh;margin:0 !important;padding:0 !important;overflow:visible !important}
+.gstack-track:not(:first-child){margin-top:-72vh !important}   /* overlap: next card rises over the pinned one */
+.gstack-track:last-child{height:auto;min-height:96vh}
+.gstack-card{
+  position:sticky !important;top:84px;height:84vh;width:100%;
+  margin:0 !important;overflow:hidden;
+  display:flex !important;flex-direction:column;
+  transform:none !important;filter:none !important;opacity:1 !important;transition:none !important;
+  will-change:auto !important;
+}
+.gstack-track:nth-child(1) .gstack-card{top:84px;z-index:1}
+.gstack-track:nth-child(2) .gstack-card{top:96px;z-index:2}
+.gstack-track:nth-child(3) .gstack-card{top:108px;z-index:3}
+.gstack-track:nth-child(4) .gstack-card{top:120px;z-index:4}
+.gstack-track:nth-child(5) .gstack-card{top:132px;z-index:5}
+.gstack-track:nth-child(6) .gstack-card{top:144px;z-index:6}
+.gstack-track:nth-child(7) .gstack-card{top:156px;z-index:7}
+.gstack-track:nth-child(8) .gstack-card{top:168px;z-index:8}
+/* card fills: header fixed height, media grid fills the rest */
+.gstack-card .gstack-top{flex:none}
+.gstack-card .cat-media{flex:1;min-height:0;height:auto !important;grid-auto-rows:1fr !important;overflow:hidden}
+.gstack-card .gstack-media{flex:1;min-height:0;height:auto !important}
+
+@media(max-width:800px){
+  .gstack-track{height:165svh !important;min-height:0 !important}
+  .gstack-track:not(:first-child){margin-top:-78svh !important}
+  .gstack-track:last-child{height:auto !important;min-height:96svh !important}
+  .gstack-card{top:64px !important;height:calc(100svh - 84px) !important;padding:16px !important}
+  .gstack-track:nth-child(1) .gstack-card{top:64px}
+  .gstack-track:nth-child(2) .gstack-card{top:74px}
+  .gstack-track:nth-child(3) .gstack-card{top:84px}
+  .gstack-track:nth-child(4) .gstack-card{top:94px}
+  .gstack-track:nth-child(5) .gstack-card{top:104px}
+  .gstack-track:nth-child(6) .gstack-card{top:114px}
+  .gstack-card .cat-media{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}
+}
+@media(prefers-reduced-motion:reduce){
+  .gstack-card{position:relative !important;height:auto !important;top:auto !important;margin-bottom:24px !important}
+  .gstack-track{height:auto !important}
+}
+</style>
 
 </body>
 </html>
