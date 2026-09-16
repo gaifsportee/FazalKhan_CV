@@ -3229,118 +3229,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
 </style>
 
 
-<style id="mobile-horizontal-discipline-tier">
-@media (max-width:800px){
-  /*
-    MOBILE GRAPH:
-    ROOT
-      ↓
-    [ VFX ] [ CONTENT ] [ BRANDING ] [ MARKETING ] [ WEB ]
-    Each discipline can open its own project branch underneath.
-  */
 
-  #work-map .mm-stack{
-    min-height:620px !important;
-    height:620px !important;
-    overflow-x:auto !important;
-    overflow-y:hidden !important;
-    padding:52px 18px 42px !important;
-  }
-
-  #work-map .mm-root{
-    width:138px !important;
-    margin:0 auto 46px !important;
-  }
-
-  /* One horizontal discipline tier. */
-  #work-map .mm-rail{
-    display:flex !important;
-    flex-direction:row !important;
-    align-items:flex-start !important;
-    justify-content:flex-start !important;
-    gap:12px !important;
-    width:max-content !important;
-    min-width:100% !important;
-    padding:0 4px !important;
-  }
-
-  #work-map .mm-disc{
-    display:block !important;
-    flex:0 0 150px !important;
-    width:150px !important;
-    min-height:54px !important;
-    margin:0 !important;
-  }
-
-  #work-map .mm-discnode{
-    width:150px !important;
-    min-height:54px !important;
-  }
-
-  /*
-    When a discipline is opened, its projects stay directly below it,
-    preserving the vertical flow inside that branch.
-  */
-  #work-map .mm-kids{
-    display:none !important;
-    width:150px !important;
-    margin:12px 0 0 !important;
-    gap:7px !important;
-  }
-
-  #work-map .mm-disc.active-mobile .mm-kids{
-    display:flex !important;
-  }
-
-  #work-map .mm-proj{
-    width:150px !important;
-    min-height:42px !important;
-  }
-
-  /* Horizontal scroll is only for the graph canvas, not the page. */
-  #work-map .mm-stack{
-    scrollbar-width:thin;
-    scrollbar-color:#333 transparent;
-  }
-
-  /* Keep the connector layer across the full horizontal graph width. */
-  #work-map .mm-wires{
-    width:100% !important;
-    height:calc(100% - 61px) !important;
-    pointer-events:none !important;
-  }
-
-  /*
-    Root-to-discipline connectors now terminate at the top of each
-    side-by-side discipline node.
-  */
-  #work-map .mm-wire{
-    stroke:#3b3b3b !important;
-  }
-
-  #work-map .mm-wire.hot{
-    stroke:var(--orange) !important;
-  }
-}
-
-@media (max-width:480px){
-  #work-map .mm-stack{
-    min-height:600px !important;
-    height:600px !important;
-  }
-
-  #work-map .mm-disc,
-  #work-map .mm-discnode,
-  #work-map .mm-kids,
-  #work-map .mm-proj{
-    width:142px !important;
-  }
-
-  #work-map .mm-disc{
-    flex-basis:142px !important;
-  }
-}
-</style>
 
 
 
@@ -3659,6 +3548,43 @@ html[data-theme="light"] .about-photo{background:#E3DBC8}
 @media(prefers-reduced-motion:reduce){
   .gstack-card{position:relative !important;height:auto !important;top:auto !important;margin-bottom:24px !important}
   .gstack-track{height:auto !important}
+}
+</style>
+
+<style id="fazal-mobile-fixes">
+@media(max-width:800px){
+  /* ============ HERO: declutter overlapping HUD + fix overflow ============ */
+  .hero-reel-overlay{display:none !important}   /* collided with the nav */
+  .techbar{display:none !important}             /* collided with the role line */
+  .hero-showreel-frame{width:90vw !important;height:auto !important;top:50% !important}
+  .hero-program-window{box-shadow:0 18px 50px rgba(0,0,0,.4) !important}
+  html[data-theme="light"] .hero-program-window{box-shadow:6px 6px 0 #1B3A6B !important}
+  /* fullscreen button now sits BELOW the video, full width */
+  .showreel-fullscreen-btn{
+    position:static !important;left:auto !important;right:auto !important;bottom:auto !important;
+    display:block;width:100%;margin:0;border-width:1px 0 0 0 !important;
+    text-align:center;padding:14px 12px !important;font-size:9px !important;letter-spacing:.12em}
+  html[data-theme="light"] .showreel-fullscreen-btn{background:#171410 !important;color:#EDE7D9 !important;border-color:#171410 !important}
+  /* hero copy: calmer spacing so letters/lines read cleanly */
+  .hero-top{top:86px !important;left:5vw !important}
+  .hero-top .mono,.hero-bottom .mono{letter-spacing:.06em}
+  .hero-bottom{bottom:118px !important;max-width:88vw !important}
+  .hero-bottom p{font-size:18px !important;line-height:1.18 !important}
+
+  /* hero timeline track: reset a stray left offset meant for the other section */
+  .hero-program-window .timeline-track{position:relative !important;left:0 !important;right:auto !important}
+
+  /* solid nav bar so sticky sections don't bleed through underneath */
+  html[data-theme="light"] .nav{background:#EDE7D9 !important;border-bottom:1px solid #d9d2c2}
+  /* discipline filter: wrap so every label is readable (no cramped side-scroll) */
+  #work-map .node-filter{flex-wrap:wrap !important;overflow:visible !important;gap:7px}
+  #work-map .node-filter button{font-size:10px}
+
+  /* ============ GALLERY: neat square preview tiles, centered ============ */
+  #gallery .gstack-card .cat-media{flex:1 !important;min-height:0 !important;height:auto !important;
+    grid-auto-rows:auto !important;align-content:center !important;gap:10px !important;overflow:hidden}
+  #gallery .cat-tile{aspect-ratio:1/1 !important;min-height:0 !important;background:#E3DBC8 !important}
+  #gallery .cat-tile img,#gallery .cat-tile video{object-fit:cover !important;object-position:center !important}
 }
 </style>
 
