@@ -2673,8 +2673,8 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.docum
       var cols=c.media.length<=4?c.media.length:3;
       var track=document.createElement('div'); track.className='gstack-track';
       track.innerHTML='<article class="gstack-card cat-card">'
-        +'<div class="gstack-top"><span class="gstack-num">'+('0'+(i+1)).slice(-2)+'</span>'
-        +'<div class="gstack-id"><span class="gstack-cat mono">CATEGORY / '+('0'+(i+1)).slice(-2)+'</span><h3>'+esc(c.t)+'</h3><p class="cat-desc">'+esc(c.d)+'</p></div></div>'
+        +'<div class="gstack-top">'
+        +'<div class="gstack-id"><span class="gstack-cat mono">CATEGORY</span><h3>'+esc(c.t)+'</h3><p class="cat-desc">'+esc(c.d)+'</p></div></div>'
         +'<div class="cat-media" style="--cols:'+cols+'">'+tiles+'</div></article>';
       stack.appendChild(track);
       var card=track.querySelector('.gstack-card');
