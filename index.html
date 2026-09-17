@@ -3794,27 +3794,40 @@ html[data-theme="dark"] .gstack-card .gstack-top {
 }
 
 @media(max-width: 800px) {
-  .gstack-track { height: 120svh !important; }
-  .gstack-track:not(:first-child) { margin-top: -65svh !important; }
-  .gstack-track:last-child { height: auto !important; margin-top: -65svh !important; }
-  .gstack-card {
-    top: 66px !important;
-    height: calc(100svh - 78px) !important;
-    padding: 0 !important;
+  /* Mobile: drop the desktop pin/overlap; let each category flow naturally so
+     every preview is visible and there is no dead gap under the headline. */
+  #galStack { overflow: visible !important; }
+  #galStack .gstack-track,
+  #galStack .gstack-track:not(:first-child),
+  #galStack .gstack-track:last-child {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 18px 0 !important;
   }
-  .gstack-track:nth-child(1) .gstack-card { top: 66px !important; }
-  .gstack-track:nth-child(2) .gstack-card { top: 66px !important; }
-  .gstack-track:nth-child(3) .gstack-card { top: 66px !important; }
-  .gstack-track:nth-child(4) .gstack-card { top: 66px !important; }
-  .gstack-track:nth-child(5) .gstack-card { top: 66px !important; }
-  .gstack-track:nth-child(6) .gstack-card { top: 66px !important; }
-  .gstack-card .gstack-top {
+  #galStack .gstack-card {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    gap: 0 !important;
+  }
+  #galStack .gstack-card .gstack-top {
     padding: 16px 16px 10px !important;
   }
-  .gstack-card .cat-media {
+  #galStack .gstack-card .cat-desc { margin-bottom: 2px !important; }
+  #galStack .gstack-card .cat-media {
+    flex: none !important;
+    margin-top: 0 !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: auto !important;
     gap: 10px !important;
-    padding: 12px 16px 16px !important;
+    padding: 12px 16px 18px !important;
+  }
+  #galStack .cat-tile {
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
   }
 }
 
